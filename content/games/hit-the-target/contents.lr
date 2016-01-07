@@ -1,8 +1,28 @@
+_hidden: no
+---
 name: Hit The Target
 ---
-description:
-
-A target game!
+founder: dohodathi
+---
+description: A target game!
+---
+gamemode: single
+---
+gametype: turnbased
+---
+season: summer, winter
+---
+status: draft
+---
+created: 2010-01-01
+---
+lastchange: 2016-01-07
+---
+maxplayers: 8
+---
+minplayers: 2
+---
+version: 0.1
 ---
 rules:
 

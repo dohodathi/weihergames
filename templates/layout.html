@@ -1,14 +1,14 @@
 <!doctype html>
 <meta charset="utf-8">
 <link rel="stylesheet" href="{{ '/static/style.css'|url }}">
-<title>{% block title %}Welcome{% endblock %} — weihergames</title>
+<title>{% block title %}No Title{% endblock %} — weihergames</title>
 <body>
   <header>
     <h1>weihergames</h1>
     <nav>
       <ul class="nav navbar-nav">
         <li{% if this._path == '/' %} class="active"{% endif
-          %}><a href="{{ '/'|url }}">Welcome</a></li>
+          %}><a href="{{ '/'|url }}">Start</a></li>
         {% for href, title in [
           ['/about', 'History'],
           ['/games', 'Games']
@@ -23,6 +23,6 @@
     {% block body %}{% endblock %}
   </div>
   <footer>
-    &copy; Copyright 2016 by Dominik Hoffendahl, Daniel Thiel.
+    &copy; Copyright 2016 by Dominik Hoffendahl, Daniel Thiel. Build with <a href="https://www.getlektor.com/">Lektor</a>.
   </footer>
 </body>

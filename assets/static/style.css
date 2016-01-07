@@ -1,25 +1,31 @@
 body {
     font-family: 'Verdana', sans-serif;
     margin: 50px 25px;
+    background:url('/images/deckblatt1opt.jpg') #00B4CC no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
 }
 
 a {
-    color: #2a99b6;
+    color: #343838;
 }
 
 a:hover {
-    color: #33bbdf;
+    color: #005F6B;
 }
 
 header, footer, div.page {
+    color: #343838;
     width: 760px;
     margin: 0 auto;
-    background: #daeef3;
+    background: #00B4CC;
     padding: 20px 30px;
 }
 
 header h1 {
-    color: #169bbd;
+    color: #343838;
     margin: 0;
     font-weight: normal;
     font-size: 42px;
