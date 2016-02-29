@@ -2,6 +2,7 @@
 *.pyc
 *.egg-info
 .cache
+venv/
 packages/*/build
 packages/*/dist
 webpack/node_modules
