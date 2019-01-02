@@ -1,0 +1,17 @@
+{
+    "matches": 
+        [
+            {"time": "2018-02-14T09:10:57", "result": {"Dominik": 10, "Daniel": 8, "Marcel":7}},
+            {"time": "2018-02-14T09:11:57", "result": {"Dominik": 10, "Daniel": 2, "Marcel":2}},
+            {"time": "2018-02-14T09:12:57", "result": {"Dominik": 8, "Daniel": 15}},
+            {"time": "2018-02-14T09:13:57", "result": {"Dominik": 15, "Marcel": 13}},
+            {"time": "2018-02-14T09:14:57", "result": {"Daniel": 4, "Marcel": 15}},
+            {"time": "2018-02-14T09:15:57", "result": {"Dominik": 15, "Marcel": 6}},
+            {"time": "2018-02-14T09:16:57", "result": {"Dominik": 15, "Daniel": 17}},
+            {"time": "2018-02-14T09:17:57", "result": {"Dominik": 1, "Daniel": 15}}
+        ], 
+    "members": {
+        "Daniel": {}, 
+        "Dominik": {}, 
+        "Marcel":{}}
+}

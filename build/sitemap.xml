@@ -4,15 +4,15 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2018-02-16</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/grundsatzregeln/</loc>
-     <lastmod>2018-02-16</lastmod>
+     <loc>/rangliste/</loc>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -20,7 +20,7 @@
     
     <url>
      <loc>/weiherlympics/</loc>
-     <lastmod>2018-02-16</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -28,14 +28,26 @@
     
         
     <url>
+     <loc>/grundsatzregeln/</loc>
+     <lastmod>2018-06-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/games_generic/</loc>
+     <lastmod>2018-06-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>/game_hit_the_line/</loc>
-     <lastmod>2018-02-16</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/game_jumpergame/</loc>
-     <lastmod>2018-02-16</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

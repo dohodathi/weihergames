@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Daniel Thiel, Dominik Hoffendahl">
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Jumpergame - Weihergames</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="..">Weihergames</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                    <li >
+                        <a href="../rangliste/">Rangliste</a>
+                    </li>
+                    <li >
+                        <a href="../grundsatzregeln/">Grundsatz</a>
+                    </li>
+                    <li >
+                        <a href="../weiherlympics/">Weiherlympics</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Games <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../game_hit_the_line/">Hit The Line</a>
+</li>
+                            
+<li class="active">
+    <a href="./">Jumpergame</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../game_hit_the_line/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li class="disabled">
+                        <a rel="prev" >
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#jumpergame">Jumpergame</a></li>
+            <li><a href="#generelles">Generelles</a></li>
+            <li><a href="#regeln">Regeln</a></li>
+            <li><a href="#alternative-regeln">Alternative Regeln</a></li>
+            <li><a href="#anmerkungen">Anmerkungen</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="jumpergame">Jumpergame</h1>
+<p>Mehrere Spieler mussen versuchen, mit gesammelten Steinen, diese so über eine Wasserfläche werfen, somit die Steine möglichst oft auf dem Wasser springen.</p>
+<h2 id="generelles">Generelles</h2>
+<ul>
+<li>Status<ul>
+<li>letzte Änderung: 2018-02-14</li>
+<li>Freigegeben: Ja/Nein (am 2018-xx-yy)</li>
+</ul>
+</li>
+<li>Anzahl Spieler<ul>
+<li>keine(?) Einschränkungen (ab 2 bis X)</li>
+<li>gerade, ungerade Anzahl an Spielern</li>
+</ul>
+</li>
+<li>Field of Play<ul>
+<li>keine Einschränkungen (bzw liste aller Einschränkungen)</li>
+<li>Elemente zB Weiher, Tisch, Zimmer, Rasen, Gelände, Sand (Weiher, Table, Room, Turf, Terrain, Sand)</li>
+</ul>
+</li>
+<li>Ausrüstung<ul>
+<li>keine</li>
+</ul>
+</li>
+<li>Ziel<ul>
+<li>(grober) Überblick des Ziels, definiert schon mal die Begriffe (wie Durchgang)</li>
+<li>Der Sieger muss als erstes die festeglegte Sieg-Punktzahl erreichen.</li>
+<li>In jedem Durchgang wird ein Punkt vergeben.</li>
+</ul>
+</li>
+</ul>
+<h2 id="regeln">Regeln</h2>
+<ol>
+<li><strong>Spielfeld</strong> Zur Ausfuhrung des Spiels wird eine freie und gr ¨ ¨ oßere Wasserfl¨ ache ben¨ otigt. Zudem muss das anliegende Land aus kleineren Steinen bestehen. Die Spieler stehen w¨ ahrend der Runden am Ufer.</li>
+<li>Beim Wurf eines Steins darf der Spieler nicht im Wasser stehen.</li>
+<li>Dieses Spiel wird in Runden aufgeteilt. Eine Runde besteht aus zwei Teilen. Zun¨ achst muss jeder Spieler vier Steine sammeln. Daraufhin wird abwechselnd in vier Wurfrunden geworfen.</li>
+<li>Die Sammelzeit betr¨ agt 1 Minute.</li>
+<li>In der Sammelzeit muss jeder Spieler vier Steine sammeln. Mit Ablauf der Zeit zeigt jeder jedem das gesammelte.</li>
+<li>Gr¨ oße und Form der Steine sind frei w¨ ahlbar. Steine mussen jedoch von der spielenden Spielfl ¨ ¨ ache kommen.</li>
+<li>Hat ein Spieler weniger Steine so kann er nur die entsprechende Anzahl werfen.</li>
+<li>Hat ein Spieler mehr als vier Steine so muss er die die doppelte Anzahl an Uberhang abgeben.</li>
+<li>Die Steine drfen w¨ ahrend der Runde nicht den Boden beruhren, ansonsten sind diese ung ¨ ultig. ¨</li>
+<li>Die Wurfrunden werden in einer Runde immer vom gleichen Spieler angefangen.</li>
+<li>Nach jeder Runde werden die Wurfrunden vom n¨ achsten Spieler angefangen.</li>
+<li>Ein Wurf erfolgt mit frei w¨ ahlbaren Stein.</li>
+<li>Nachdem jeder Speiler vier Wurfe, soweit Sie diese Anzahl an Steinen haben, erbracht hat, ist die Runde zu Ende.</li>
+<li>Der Spieler, wessen Stein, am ¨ oftesten auf dem Wasser springt, erh¨ alt einen Punkt.</li>
+<li>Haben mehrere Spieler die meisten Sprunge erreicht wird die Wurfrunde getied. ¨</li>
+<li>Hat ein Wurf, viele, unz¨ ahlige oder mehr als 8 Sprunge wird der entsprechende Wurf als unendlich ¨ gewertet. Ein Wurf mit unendlichen Sprungen ist mit jedem anderen unendlichen Wurf gleichwertig.</li>
+<li>Ist dennoch eine eindeutige Unterscheidung von unendlichen Wurfen m ¨ ¨ oglich, kann der bessere Wurf als solcher gewertet werden. Dazu mussen die Spieler einig sein.</li>
+<li>Jede Runde wird immer zu Ende gespielt.</li>
+<li>Hat ein Spieler nach einer Runde 15 oder mehr Punkte, hat dieser gewonnen.</li>
+<li><strong>Overtime</strong> Haben mehrere Spieler nach einer Runde 15 oder mehr Punkte, hat der Spieler mit den meisten Punkten gewonnen. Haben mehrere Spieler die hchste Punktzahl kommen diese Spieler in die Overtime.</li>
+<li>Eine Overtime l¨ auft ab wie normale Runden, jedoch mit 2 Minuten Sammelzeit</li>
+<li>Nach jeder Runde der Overtime wird abgerechnet. Hat ein Spieler eine h¨ ohere Punktzahl, so hat dieser gewonnen.</li>
+</ol>
+<h2 id="alternative-regeln">Alternative Regeln</h2>
+<p>Gültigkeit bei Weiherlympics oder Abweichungen die benutzt werden dürfen, wenn sich alle Spieler darauf einigen.</p>
+<p>Aufbau wie Regeln...</p>
+<h2 id="anmerkungen">Anmerkungen</h2>
+<p>Sachen die aufgefallen sind und evtl ins Regelbuch mit einfließen müssen.</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '..';</script>
+        <script src="../js/base.js"></script>
+        <script src="../search/require.js"></script>
+        <script src="../search/search.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+</html>

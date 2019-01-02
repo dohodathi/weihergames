@@ -48,15 +48,23 @@
                     <li >
                         <a href="..">Home</a>
                     </li>
-                    <li class="active">
-                        <a href="./">Grundsatz</a>
+                    <li >
+                        <a href="../rangliste/">Rangliste</a>
                     </li>
                     <li >
                         <a href="../weiherlympics/">Weiherlympics</a>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Games <b class="caret"></b></a>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Regelwerk <b class="caret"></b></a>
                         <ul class="dropdown-menu">
+                            
+<li class="active">
+    <a href="./">Grundsatz</a>
+</li>
+                            
+<li >
+    <a href="../games_generic/">Games</a>
+</li>
                             
 <li >
     <a href="../game_hit_the_line/">Hit The Line</a>
@@ -76,12 +84,12 @@
                     </a>
                 </li>
                     <li >
-                        <a rel="next" href="..">
+                        <a rel="next" href="../weiherlympics/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../weiherlympics/">
+                        <a rel="prev" href="../games_generic/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -94,6 +102,8 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#grundsatzregeln">Grundsatzregeln</a></li>
+            <li><a href="#standard-punkte-regel-spr">Standard-Punkte-Regel (SPR)</a></li>
+            <li><a href="#season-rules">Season Rules</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -103,8 +113,19 @@
 <ol>
 <li>Der Spaß steht immer im Vordergrund.</li>
 <li>Alle Regeln müssen nur so genau genommen werden wie sie die Spieler akzeptieren.</li>
-<li>...</li>
-</ol></div>
+<li>Jeder Stein/Ball der aus der Hand fällt während der Runde wird ungültig.</li>
+<li>Ein ungültiger Zug/Wurf/Aktion wird als ungültig gewertet. Dabei sollte beachtet werden, dass der <em>Worst-Case</em> angenommen wird. Im Zweifel wird die Runde gegen den Spieler gewertet.</li>
+<li>Ist nicht geregelt welcher Spieler anfängt/etc wird dies per Zufall entschieden.</li>
+</ol>
+<h2 id="standard-punkte-regel-spr">Standard-Punkte-Regel (SPR)</h2>
+<p>Wenn nicht anders definiert, gilt für ein Game die <em>SPR</em>. Eine Runde wird je nach Game definiert und auch die erreichbare Punkte je Runde. Jeder Spieler muss gleich viele Runden absolviert haben.
+Ein Satz geht bis <code>round(30/playerscount)</code>. Hat ein Spieler die Satz-Punktzahl erreicht, können die anderen Spieler die Runde vervollständigen. Ein Spieler gewinnt den Satz nur wenn die benötigten Punkte erricht sind und mindestens 2 Punkte Vorsprung vorhanden sind. Es werden so viele weitere Runden ausgespielt bis die Bedingungen von einem Spieler erreicht worden sind.
+Wenn nicht anders definiert geht ein Game nur ein Satz lang. Je nach Game können unterschiedliche Anzahl Sätze angegeben werden. Einigen sich die Spieler, werden eben diese Sätze ausgespielt.</p>
+<h2 id="season-rules">Season Rules</h2>
+<p>Jedes Spiel welches in einer Season aufgenommen wird, muss bis zu 5 Spieler unterstützen.</p>
+<p>Bei 2 Spielern: <em>Schlag-den-Raab</em> Punkteregel (Punktzahl korreliert mit Spielnummer, zB erstes Spiel 1Punkt, fünftes Spiel 5Punkte).</p>
+<p>Bei über 2 Spielern: Es gilt die 3/1Punkt-Regel Der erste erhält 3Punkte, der zweite 1Punkt. Alle weiteren keine Punkte</p>
+<p>Bei über 5 Spielern: Für jedes Spiel werden Gruppen bis 5 Spielern per Zufall erstellt. Je Gruppe gilt die 3/1Punkt-Regel.</p></div>
         </div>
 
         <footer class="col-md-12">

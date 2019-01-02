@@ -1,0 +1,11 @@
+site_name: Weihergames
+site_author: Daniel Thiel, Dominik Hoffendahl
+pages:
+- Home: 'index.md'
+- Rangliste: 'rangliste.md'
+- Weiherlympics: 'weiherlympics.md'
+- Regelwerk:
+    - Grundsatz: 'grundsatzregeln.md'
+    - Games: 'games_generic.md'
+    - Hit The Line: 'game_hit_the_line.md'
+    - Jumpergame: 'game_jumpergame.md'
