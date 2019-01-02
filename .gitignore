@@ -1,8 +1,66 @@
-.DS_Store
-*.pyc
+# Sublime project files
+*.sublime-project
+*.sublime-workspace
+
+# Coverage:
+.coverage
+
+# Markdown compiled:
+README.html
+
+# Virtuel Environment VENV
+venv
+
+# Folder where the logs are saved
+logs
+logger/logs
+*.log
+tmp
+temp.py
+
+# Celery:
+celerybeat-schedule
+celerybeat.pid
+
+# Windows batch files
+*.bat
+*~
+*.db
+
+# python extensions
+*.py[cod]
+
+# C extensions
+*.so
+
+# Packages
+*.egg
 *.egg-info
-.cache
-venv/
-packages/*/build
-packages/*/dist
-webpack/node_modules
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+lib
+lib64
+__pycache__
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+
+# Translations
+*.mo
+
+# Mr Developer
+.mr.developer.cfg
+.project
+.pydevproject
