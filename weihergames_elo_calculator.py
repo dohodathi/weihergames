@@ -99,7 +99,8 @@ def create_plot(procesedData):
     plotdata = []
     for name, data in procesedData['members'].items():
         trace = plotly.graph_objs.Scatter(
-            x = len(procesedData['matches']),
+            # x = procesedData['matches'],
+            x = [i+1 for i in range(len(procesedData['matches']))],
             y = data['ELO_HISTORY'],
             name = name,
             text = data['MATCH_DATA'],
