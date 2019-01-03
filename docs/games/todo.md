@@ -1,12 +1,7 @@
 
-# Spielregeln der Games
-
-
-Nur Games die hier aufgelistet sind oder gar ein eigenes vollständiges Regelwerk haben dürfen als Weihergame ausgepielt werden!
-
+# Spiele mit unfertigem Regelwerk (TODO)
 
 Alle Games die noch kein eigenes vollständiges Regelwerk haben, sind auf dieser Seite zu finden.
-
 
 Folgende Games haben noch gar kein eigenes Regelwerk und müssen daher (falls gespielt) komplett im Sinne der Weihergames von den Spielern ausgelegt werden.
 
