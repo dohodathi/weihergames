@@ -11,6 +11,7 @@ README.html
 # Virtuel Environment VENV
 venv
 venv_win
+build
 
 # Folder where the logs are saved
 logs
