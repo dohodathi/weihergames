@@ -4,8 +4,8 @@ pages:
 - Home: 'index.md'
 - Rangliste: 'rangliste.md'
 - Weiherlympics: 'weiherlympics.md'
-- Regelwerk:
-    - Grundsatz: 'grundsatzregeln.md'
-    - Games: 'games_generic.md'
-    - Hit The Line: 'game_hit_the_line.md'
-    - Jumpergame: 'game_jumpergame.md'
+- Spiele:
+    - Grundregeln: 'games/grundregeln.md'
+    - Unfertige Regeln (TODO): 'games/todo.md'
+    - Hit The Line: 'games/hit_the_line.md'
+    - Jumpergame: 'games/jumpergame.md'
