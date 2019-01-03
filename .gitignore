@@ -10,6 +10,7 @@ README.html
 
 # Virtuel Environment VENV
 venv
+venv_win
 
 # Folder where the logs are saved
 logs
