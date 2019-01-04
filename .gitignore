@@ -1,3 +1,6 @@
+# Project related files
+temp-plot.py
+
 # Sublime project files
 *.sublime-project
 *.sublime-workspace

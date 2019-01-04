@@ -105,6 +105,10 @@ def create_plot(procesedData):
             name = name,
             text = data['MATCH_DATA'],
             hoverinfo = 'text',
+            line = dict(
+                width = 2,
+                color = 'rgb(0, 0, 0)'
+            )
         )
         plotdata.append(trace)
     layout = dict(title = 'WEIHERGAMES ELO CHART',
