@@ -3,7 +3,9 @@ site_author: Daniel Thiel, Dominik Hoffendahl
 pages:
 - Home: 'index.md'
 - Rangliste: 'rangliste.md'
-- Weiherlympics: 'weiherlympics.md'
+- Weiherlympics:
+    - Infos: 'weiherlympics.md'
+    - Weiherlympics I: 'weiherlympics_001.md'
 - Spiele:
     - Grundregeln: 'games/grundregeln.md'
     - Unfertige Regeln (TODO): 'games/todo.md'

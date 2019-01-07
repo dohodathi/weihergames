@@ -16,8 +16,8 @@ Gruppe A, Court:
 
 Gruppe B, Pool:
 
-- Pool Shot, 5Schuss, Bo7
-- Pool Golf, 5Versuche, 9Loch
+- Pool Shot, 5 Schuss, Bo7
+- Pool Golf, 5 Versuche, 9Loch
 
 Gruppe C, Cross:
 
@@ -27,11 +27,14 @@ Gruppe C, Cross:
 Gruppe D, Classics:
 
 - Hit the Line, 1pt/rd, to15 OT
-- Hit the Target, 4Schuss, to15 OT, Bo3
-- Jumpergame, 4Schuss, to15 OT
+- Hit the Target, 4 Schuss, to15 OT, Bo3
+- Jumpergame, 4 Schuss, to15 OT
 - Epizentrum, max 1pt/rd, to15 OT
 
+
 ### Reihenfolge
+
+Geloste Reihenfolge.
 
 1. Speedminton, __4 Punkte__
 2. Lattenschießen, __5 Punkte__
