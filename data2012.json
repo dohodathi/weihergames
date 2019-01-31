@@ -1,73 +1,411 @@
 {
-    "matches": 
-        [
-            {"time": "2011-03-08T00:00:00", "result": {"THEEL":12, "DOOMPY":13}, "game": "Weihergolf 18-Loch Wurfmodus", "location": "Weiher", "remarks": "ergebniss war +6,+5 (18 minus x)"},
-            {"time": "2011-03-20T00:00:00", "result": {"THEEL":0, "DOOMPY":6}, "game": "Weihergolf 9-Loch-Standard", "location": "Weiher", "remarks": "9-X, da negativ weider hochgerechnet"},
-            {"time": "2011-03-20T01:00:00", "result": {"THEEL":16, "DOOMPY":14}, "game": "Crossboccia", "location": "Weiher", "remarks": ""},
-            {"time": "2011-04-02T00:00:00", "result": {"THEEL":7, "DOOMPY":15}, "game": "Crossboccia", "location": "Weiher", "remarks": ""},
-            {"time": "2011-04-02T01:00:00", "result": {"THEEL":14, "DOOMPY":16}, "game": "Jumpergame", "location": "Weiher", "remarks": ""},
-            {"time": "2011-04-02T02:00:00", "result": {"THEEL":8, "DOOMPY":10, "MAZL":7}, "game": "Hit The Line", "location": "Weiher", "remarks": ""},
-            {"time": "2011-04-03T00:00:00", "result": {"THEEL":10, "MAZL":15}, "game": "Crossboccia", "location": "Weiher", "remarks": ""},
-            {"time": "2011-04-03T01:00:00", "result": {"THEEL":10, "DOOMPY":8, "MAZL":6}, "game": "Hit The Line", "location": "Weiher", "remarks": ""},
-            {"time": "2011-06-12T01:00:00", "result": {"THEEL":15, "DOOMPY":6}, "game": "Crossboccia", "location": "Weiher", "remarks": ""},
-            {"time": "2011-06-12T02:00:00", "result": {"THEEL":15, "DOOMPY":12}, "game": "Melee-Boccia", "location": "Weiher", "remarks": ""},
-            {"time": "2011-06-12T03:00:00", "result": {"THEEL":11, "DOOMPY":15}, "game": "Crossboccia", "location": "Weiher", "remarks": ""},
-            {"time": "2011-06-16T00:00:00", "result": {"THEEL":15, "DOOMPY":12}, "game": "Crossboccia", "location": "Weiher", "remarks": ""},
-            {"time": "2011-06-17T00:00:00", "result": {"THEEL":1, "DOOMPY":2}, "game": "Sadistenspiel", "location": "Weiher", "remarks": ""},
-            {"time": "2011-06-28T00:00:00", "result": {"THEEL":10, "DOOMPY":12}, "game": "Crossboccia", "location": "Weiher", "remarks": ""},
-            {"time": "2011-06-28T01:00:00", "result": {"THEEL":2, "DOOMPY":12}, "game": "Crossboccia", "location": "Weiher", "remarks": ""},
+    "matches": [
+        {
+            "time": "2011-03-08T00:00:00",
+            "result": { "THEEL": 12, "DOOMPY": 13 },
+            "game": "Weihergolf 18-Loch Wurfmodus",
+            "location": "Weiher",
+            "remarks": "ergebnis war +6,+5 (18 minus x)"
+        },
+        {
+            "time": "2011-03-20T00:00:00",
+            "result": { "THEEL": 0, "DOOMPY": 6 },
+            "game": "Weihergolf 9-Loch-Standard",
+            "location": "Weiher",
+            "remarks": "9-X, da negativ weider hochgerechnet"
+        },
+        {
+            "time": "2011-03-20T01:00:00",
+            "result": { "THEEL": 16, "DOOMPY": 14 },
+            "game": "Crossboccia",
+            "location": "Weiher",
+            "remarks": ""
+        },
+        {
+            "time": "2011-04-02T00:00:00",
+            "result": { "THEEL": 7, "DOOMPY": 15 },
+            "game": "Crossboccia",
+            "location": "Weiher",
+            "remarks": ""
+        },
+        {
+            "time": "2011-04-02T01:00:00",
+            "result": { "THEEL": 14, "DOOMPY": 16 },
+            "game": "Jumpergame",
+            "location": "Weiher",
+            "remarks": ""
+        },
+        {
+            "time": "2011-04-02T02:00:00",
+            "result": { "THEEL": 8, "DOOMPY": 10, "MAZL": 7 },
+            "game": "Hit The Line",
+            "location": "Weiher",
+            "remarks": ""
+        },
+        {
+            "time": "2011-04-03T00:00:00",
+            "result": { "THEEL": 10, "MAZL": 15 },
+            "game": "Crossboccia",
+            "location": "Weiher",
+            "remarks": ""
+        },
+        {
+            "time": "2011-04-03T01:00:00",
+            "result": { "THEEL": 10, "DOOMPY": 8, "MAZL": 6 },
+            "game": "Hit The Line",
+            "location": "Weiher",
+            "remarks": ""
+        },
+        {
+            "time": "2011-06-12T01:00:00",
+            "result": { "THEEL": 15, "DOOMPY": 6 },
+            "game": "Crossboccia",
+            "location": "Weiher",
+            "remarks": ""
+        },
+        {
+            "time": "2011-06-12T02:00:00",
+            "result": { "THEEL": 15, "DOOMPY": 12 },
+            "game": "Melee-Boccia",
+            "location": "Weiher",
+            "remarks": ""
+        },
+        {
+            "time": "2011-06-12T03:00:00",
+            "result": { "THEEL": 11, "DOOMPY": 15 },
+            "game": "Crossboccia",
+            "location": "Weiher",
+            "remarks": ""
+        },
+        {
+            "time": "2011-06-16T00:00:00",
+            "result": { "THEEL": 15, "DOOMPY": 12 },
+            "game": "Crossboccia",
+            "location": "Weiher",
+            "remarks": ""
+        },
+        {
+            "time": "2011-06-17T00:00:00",
+            "result": { "THEEL": 1, "DOOMPY": 2 },
+            "game": "Sadistenspiel",
+            "location": "Weiher",
+            "remarks": ""
+        },
+        {
+            "time": "2011-06-28T00:00:00",
+            "result": { "THEEL": 10, "DOOMPY": 12 },
+            "game": "Crossboccia",
+            "location": "Weiher",
+            "remarks": ""
+        },
+        {
+            "time": "2011-06-28T01:00:00",
+            "result": { "THEEL": 2, "DOOMPY": 12 },
+            "game": "Crossboccia",
+            "location": "Weiher",
+            "remarks": ""
+        },
 
-            {"time": "2012-01-26T00:00:00", "result": {"THEEL":4, "DOOMPY":2}, "game": "Speedminton", "location": "Bolzplatz Neufahrn", "remarks": ""},
-            {"time": "2012-01-26T00:00:00", "result": {"THEEL":10, "DOOMPY":15}, "game": "Crossboccia", "location": "Bolzplatz Neufahrn", "remarks": ""},
-            {"time": "2012-03-09T00:00:00", "result": {"THEEL":4, "DOOMPY":0}, "game": "Speedminton", "location": "Stadion Neufahrn", "remarks": ""},
-            {"time": "2012-03-09T00:00:00", "result": {"THEEL":9, "DOOMPY":15}, "game": "Crossboccia", "location": "TSV Neufahrn Halle", "remarks": ""},
-            {"time": "2012-03-10T00:00:00", "result": {"THEEL":28, "DOOMPY":33}, "game": "Lattenschießen", "location": "Bolzplatz Neufahrn", "remarks": ""},
-            {"time": "2012-03-10T00:00:00", "result": {"THEEL":33, "DOOMPY":27}, "game": "Lattenschießen", "location": "Bolzplatz Neufahrn", "remarks": ""},
-            {"time": "2012-03-10T00:00:00", "result": {"THEEL":27, "DOOMPY":34}, "game": "Lattenschießen", "location": "Bolzplatz Neufahrn", "remarks": ""},
-            {"time": "2012-03-10T00:00:00", "result": {"THEEL":4, "DOOMPY":1}, "game": "Speedminton", "location": "Bolzplatz Neufahrn", "remarks": ""},
-            {"time": "2012-03-11T00:00:00", "result": {"THEEL":15, "DOOMPY":11}, "game": "Crossboccia", "location": "Schlüter", "remarks": ""},
-            {"time": "2012-03-16T00:00:00", "result": {"THEEL":3, "DOOMPY":1}, "game": "Speedminton", "location": "Bolzplatz Neufahrn", "remarks": ""},
-            {"time": "2012-03-16T00:00:00", "result": {"THEEL":15, "DOOMPY":9}, "game": "Crossboccia", "location": "Marktplatz Neufahrn", "remarks": ""},
-            {"time": "2012-03-18T00:00:00", "result": {"THEEL":15, "DOOMPY":8}, "game": "Crossboccia", "location": "TSV Neufahrn Halle", "remarks": ""},
-            {"time": "2012-03-18T00:00:00", "result": {"THEEL":15, "DOOMPY":5}, "game": "Crossboccia", "location": "TSV Neufahrn Halle", "remarks": ""},
-            {"time": "2012-03-20T00:00:00", "result": {"THEEL":7, "DOOMPY":15}, "game": "Crossboccia", "location": "Dommy Homebase", "remarks": ""},
-            {"time": "2012-03-20T00:00:00", "result": {"THEEL":34, "DOOMPY":27}, "game": "Lattenschießen", "location": "Bolzplatz Neufahrn", "remarks": ""},
-            {"time": "2012-03-21T00:00:00", "result": {"THEEL":22, "DOOMPY":34}, "game": "Lattenschießen", "location": "Bolzplatz Neufahrn", "remarks": ""},
-            {"time": "2012-03-21T00:00:00", "result": {"THEEL":22, "DOOMPY":31}, "game": "Lattenschießen", "location": "Bolzplatz Neufahrn", "remarks": ""},
-            {"time": "2012-03-21T00:00:00", "result": {"THEEL":6, "DOOMPY":15}, "game": "Crossboccia", "location": "Bolzplatz Neufahrn", "remarks": ""},
-            {"time": "2012-03-21T00:00:00", "result": {"THEEL":6, "DOOMPY":15}, "game": "Hit The Line", "location": "Weiher", "remarks": ""},
-            {"time": "2012-03-21T00:00:00", "result": {"THEEL":4, "DOOMPY":15}, "game": "Crossboccia", "location": "Weiher", "remarks": ""},
-            {"time": "2012-03-24T00:00:00", "result": {"THEEL":10, "DOOMPY":15}, "game": "Crossboccia", "location": "OBI Freising", "remarks": ""},
-            {"time": "2012-03-24T00:00:00", "result": {"THEEL":7, "DOOMPY":15}, "game": "Crossboccia", "location": "Schlüter", "remarks": ""},
-            {"time": "2012-03-26T00:00:00", "result": {"THEEL":16, "DOOMPY":18}, "game": "Jumpergame", "location": "Weiher", "remarks": ""},
-            {"time": "2012-03-26T00:00:00", "result": {"THEEL":15, "DOOMPY":5}, "game": "Weihergolf", "location": "Schlüter", "remarks": "", "pointrule": ["lowerwins"]},
-            {"time": "2012-04-01T00:00:00", "result": {"THEEL":3, "DOOMPY":1}, "game": "Cart-Zone", "location": "Industriegebiet Neufahrn", "remarks": ""},
-            {"time": "2012-04-01T00:00:00", "result": {"THEEL":1, "DOOMPY":3}, "game": "Cart-Rail", "location": "Industriegebiet Neufahrn", "remarks": ""},
-            {"time": "2012-04-25T00:00:00", "result": {"THEEL":8, "DOOMPY":15}, "game": "Crossboccia", "location": "Schlüter", "remarks": ""},
-            {"time": "2012-04-26T00:00:00", "result": {"THEEL":14 , "DOOMPY":0}, "game": "Kubb", "location": "Boltzplatz Neufahrn", "remarks": ""},
-            {"time": "2012-04-26T00:00:00", "result": {"THEEL":0, "DOOMPY":10}, "game": "Kubb", "location": "Boltzplatz Neufahrn", "remarks": ""},
-            {"time": "2012-04-26T00:00:00", "result": {"THEEL":0, "DOOMPY":13}, "game": "Kubb", "location": "Boltzplatz Neufahrn", "remarks": ""},
-            {"time": "2012-04-28T00:00:00", "result": {"THEEL":13, "DOOMPY":16}, "game": "Crossboccia", "location": "Echinger Weiher", "remarks": ""},
+        {
+            "time": "2012-01-26T00:00:00",
+            "result": { "THEEL": 4, "DOOMPY": 2 },
+            "game": "Speedminton",
+            "location": "Bolzplatz Neufahrn",
+            "remarks": ""
+        },
+        {
+            "time": "2012-01-26T00:00:00",
+            "result": { "THEEL": 10, "DOOMPY": 15 },
+            "game": "Crossboccia",
+            "location": "Bolzplatz Neufahrn",
+            "remarks": ""
+        },
+        {
+            "time": "2012-03-09T00:00:00",
+            "result": { "THEEL": 4, "DOOMPY": 0 },
+            "game": "Speedminton",
+            "location": "Stadion Neufahrn",
+            "remarks": ""
+        },
+        {
+            "time": "2012-03-09T00:00:00",
+            "result": { "THEEL": 9, "DOOMPY": 15 },
+            "game": "Crossboccia",
+            "location": "TSV Neufahrn Halle",
+            "remarks": ""
+        },
+        {
+            "time": "2012-03-10T00:00:00",
+            "result": { "THEEL": 28, "DOOMPY": 33 },
+            "game": "Lattenschießen",
+            "location": "Bolzplatz Neufahrn",
+            "remarks": ""
+        },
+        {
+            "time": "2012-03-10T00:00:00",
+            "result": { "THEEL": 33, "DOOMPY": 27 },
+            "game": "Lattenschießen",
+            "location": "Bolzplatz Neufahrn",
+            "remarks": ""
+        },
+        {
+            "time": "2012-03-10T00:00:00",
+            "result": { "THEEL": 27, "DOOMPY": 34 },
+            "game": "Lattenschießen",
+            "location": "Bolzplatz Neufahrn",
+            "remarks": ""
+        },
+        {
+            "time": "2012-03-10T00:00:00",
+            "result": { "THEEL": 4, "DOOMPY": 1 },
+            "game": "Speedminton",
+            "location": "Bolzplatz Neufahrn",
+            "remarks": ""
+        },
+        {
+            "time": "2012-03-11T00:00:00",
+            "result": { "THEEL": 15, "DOOMPY": 11 },
+            "game": "Crossboccia",
+            "location": "Schlüter",
+            "remarks": ""
+        },
+        {
+            "time": "2012-03-16T00:00:00",
+            "result": { "THEEL": 3, "DOOMPY": 1 },
+            "game": "Speedminton",
+            "location": "Bolzplatz Neufahrn",
+            "remarks": ""
+        },
+        {
+            "time": "2012-03-16T00:00:00",
+            "result": { "THEEL": 15, "DOOMPY": 9 },
+            "game": "Crossboccia",
+            "location": "Marktplatz Neufahrn",
+            "remarks": ""
+        },
+        {
+            "time": "2012-03-18T00:00:00",
+            "result": { "THEEL": 15, "DOOMPY": 8 },
+            "game": "Crossboccia",
+            "location": "TSV Neufahrn Halle",
+            "remarks": ""
+        },
+        {
+            "time": "2012-03-18T00:00:00",
+            "result": { "THEEL": 15, "DOOMPY": 5 },
+            "game": "Crossboccia",
+            "location": "TSV Neufahrn Halle",
+            "remarks": ""
+        },
+        {
+            "time": "2012-03-20T00:00:00",
+            "result": { "THEEL": 7, "DOOMPY": 15 },
+            "game": "Crossboccia",
+            "location": "Dommy Homebase",
+            "remarks": ""
+        },
+        {
+            "time": "2012-03-20T00:00:00",
+            "result": { "THEEL": 34, "DOOMPY": 27 },
+            "game": "Lattenschießen",
+            "location": "Bolzplatz Neufahrn",
+            "remarks": ""
+        },
+        {
+            "time": "2012-03-21T00:00:00",
+            "result": { "THEEL": 22, "DOOMPY": 34 },
+            "game": "Lattenschießen",
+            "location": "Bolzplatz Neufahrn",
+            "remarks": ""
+        },
+        {
+            "time": "2012-03-21T00:00:00",
+            "result": { "THEEL": 22, "DOOMPY": 31 },
+            "game": "Lattenschießen",
+            "location": "Bolzplatz Neufahrn",
+            "remarks": ""
+        },
+        {
+            "time": "2012-03-21T00:00:00",
+            "result": { "THEEL": 6, "DOOMPY": 15 },
+            "game": "Crossboccia",
+            "location": "Bolzplatz Neufahrn",
+            "remarks": ""
+        },
+        {
+            "time": "2012-03-21T00:00:00",
+            "result": { "THEEL": 6, "DOOMPY": 15 },
+            "game": "Hit The Line",
+            "location": "Weiher",
+            "remarks": ""
+        },
+        {
+            "time": "2012-03-21T00:00:00",
+            "result": { "THEEL": 4, "DOOMPY": 15 },
+            "game": "Crossboccia",
+            "location": "Weiher",
+            "remarks": ""
+        },
+        {
+            "time": "2012-03-24T00:00:00",
+            "result": { "THEEL": 10, "DOOMPY": 15 },
+            "game": "Crossboccia",
+            "location": "OBI Freising",
+            "remarks": ""
+        },
+        {
+            "time": "2012-03-24T00:00:00",
+            "result": { "THEEL": 7, "DOOMPY": 15 },
+            "game": "Crossboccia",
+            "location": "Schlüter",
+            "remarks": ""
+        },
+        {
+            "time": "2012-03-26T00:00:00",
+            "result": { "THEEL": 16, "DOOMPY": 18 },
+            "game": "Jumpergame",
+            "location": "Weiher",
+            "remarks": ""
+        },
+        {
+            "time": "2012-03-26T00:00:00",
+            "result": { "THEEL": 15, "DOOMPY": 5 },
+            "game": "Weihergolf",
+            "location": "Schlüter",
+            "remarks": "",
+            "pointrule": ["lowerwins"]
+        },
+        {
+            "time": "2012-04-01T00:00:00",
+            "result": { "THEEL": 3, "DOOMPY": 1 },
+            "game": "Cart-Zone",
+            "location": "Industriegebiet Neufahrn",
+            "remarks": ""
+        },
+        {
+            "time": "2012-04-01T00:00:00",
+            "result": { "THEEL": 1, "DOOMPY": 3 },
+            "game": "Cart-Rail",
+            "location": "Industriegebiet Neufahrn",
+            "remarks": ""
+        },
+        {
+            "time": "2012-04-25T00:00:00",
+            "result": { "THEEL": 8, "DOOMPY": 15 },
+            "game": "Crossboccia",
+            "location": "Schlüter",
+            "remarks": ""
+        },
+        {
+            "time": "2012-04-26T00:00:00",
+            "result": { "THEEL": 14, "DOOMPY": 0 },
+            "game": "Kubb",
+            "location": "Boltzplatz Neufahrn",
+            "remarks": ""
+        },
+        {
+            "time": "2012-04-26T00:00:00",
+            "result": { "THEEL": 0, "DOOMPY": 10 },
+            "game": "Kubb",
+            "location": "Boltzplatz Neufahrn",
+            "remarks": ""
+        },
+        {
+            "time": "2012-04-26T00:00:00",
+            "result": { "THEEL": 0, "DOOMPY": 13 },
+            "game": "Kubb",
+            "location": "Boltzplatz Neufahrn",
+            "remarks": ""
+        },
+        {
+            "time": "2012-04-28T00:00:00",
+            "result": { "THEEL": 13, "DOOMPY": 16 },
+            "game": "Crossboccia",
+            "location": "Echinger Weiher",
+            "remarks": ""
+        },
 
-            {"time": "2018-05-11T00:00:00", "result": {"THEEL":2, "DOOMPY":1}, "game": "Pool Shot", "location": "Lago di Garda", "remarks": ""},
-            {"time": "2018-05-12T00:00:00", "result": {"THEEL":14, "DOOMPY":16}, "game": "Crossboccia", "location": "Lago di Garda", "remarks": ""},
-            
-            {"time": "2018-05-14T10:00:00", "result": {"THEEL":2, "DOOMPY":0}, "game": "Speedminton", "location": "Lago di Garda", "remarks": "Weiherlympics I"},
-            {"time": "2018-05-14T11:00:00", "result": {"THEEL":2, "DOOMPY":1}, "game": "Lattenschießen", "location": "Lago di Garda", "remarks": "Weiherlympics I"},
-            {"time": "2018-05-14T12:00:00", "result": {"THEEL":13, "DOOMPY":15}, "game": "Prox the Line", "location": "Lago di Garda", "remarks": "Weiherlympics I"},
-            {"time": "2018-05-14T13:00:00", "result": {"THEEL":1, "DOOMPY":2}, "game": "Körperball", "location": "Lago di Garda", "remarks": "Weiherlympics I"},
-            {"time": "2018-05-14T14:00:00", "result": {"THEEL":32, "DOOMPY":29}, "game": "Pool Golf", "location": "Lago di Garda", "remarks": "Weiherlympics I", "pointrule": ["lowerwins"]},
-            {"time": "2018-05-14T15:00:00", "result": {"THEEL":2, "DOOMPY":4}, "game": "Pool Shot", "location": "Lago di Garda", "remarks": "Weiherlympics I"},
-            {"time": "2018-05-15T10:00:00", "result": {"THEEL":15, "DOOMPY":11}, "game": "Crossboccia", "location": "Lago di Garda", "remarks": "Weiherlympics I"},
-            {"time": "2018-05-15T11:00:00", "result": {"THEEL":1, "DOOMPY":6}, "game": "Fußgolf", "location": "Lago di Garda", "remarks": "Weiherlympics I", "pointrule": ["lowerwins"]}
-        ], 
+        {
+            "time": "2018-05-11T00:00:00",
+            "result": { "THEEL": 2, "DOOMPY": 1 },
+            "game": "Pool Shot",
+            "location": "Lago di Garda",
+            "remarks": ""
+        },
+        {
+            "time": "2018-05-12T00:00:00",
+            "result": { "THEEL": 14, "DOOMPY": 16 },
+            "game": "Crossboccia",
+            "location": "Lago di Garda",
+            "remarks": ""
+        },
+
+        {
+            "time": "2018-05-14T10:00:00",
+            "result": { "THEEL": 2, "DOOMPY": 0 },
+            "game": "Speedminton",
+            "location": "Lago di Garda",
+            "remarks": "Weiherlympics I"
+        },
+        {
+            "time": "2018-05-14T11:00:00",
+            "result": { "THEEL": 2, "DOOMPY": 1 },
+            "game": "Lattenschießen",
+            "location": "Lago di Garda",
+            "remarks": "Weiherlympics I"
+        },
+        {
+            "time": "2018-05-14T12:00:00",
+            "result": { "THEEL": 13, "DOOMPY": 15 },
+            "game": "Prox the Line",
+            "location": "Lago di Garda",
+            "remarks": "Weiherlympics I"
+        },
+        {
+            "time": "2018-05-14T13:00:00",
+            "result": { "THEEL": 1, "DOOMPY": 2 },
+            "game": "Körperball",
+            "location": "Lago di Garda",
+            "remarks": "Weiherlympics I"
+        },
+        {
+            "time": "2018-05-14T14:00:00",
+            "result": { "THEEL": 32, "DOOMPY": 29 },
+            "game": "Pool Golf",
+            "location": "Lago di Garda",
+            "remarks": "Weiherlympics I",
+            "pointrule": ["lowerwins"]
+        },
+        {
+            "time": "2018-05-14T15:00:00",
+            "result": { "THEEL": 2, "DOOMPY": 4 },
+            "game": "Pool Shot",
+            "location": "Lago di Garda",
+            "remarks": "Weiherlympics I"
+        },
+        {
+            "time": "2018-05-15T10:00:00",
+            "result": { "THEEL": 15, "DOOMPY": 11 },
+            "game": "Crossboccia",
+            "location": "Lago di Garda",
+            "remarks": "Weiherlympics I"
+        },
+        {
+            "time": "2018-05-15T11:00:00",
+            "result": { "THEEL": 1, "DOOMPY": 6 },
+            "game": "Fußgolf",
+            "location": "Lago di Garda",
+            "remarks": "Weiherlympics I",
+            "pointrule": ["lowerwins"]
+        }
+    ],
     "members": {
-        "THEEL": {}, 
+        "THEEL": {},
         "DOOMPY": {},
         "MAZL": {}
     },
     "games": {
-        "Fußgolf": {"lowerwins": true},
-        "Kubb": {"specific_leveling_value":1}
+        "Fußgolf": { "lowerwins": true },
+        "Kubb": { "specific_leveling_value": 1 }
     }
 }
