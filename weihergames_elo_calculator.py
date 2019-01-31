@@ -33,7 +33,6 @@ def start_calculation():
     # Load data
     j = json.load(open('data2012.json'))
 
-
     # pprint(j)
 
     # Sanity check of json file:
