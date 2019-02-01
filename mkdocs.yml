@@ -1,7 +1,8 @@
 site_name: Weihergames
 site_author: Daniel Thiel, Dominik Hoffendahl
+
 theme:
-  name: 'material'
+  name: material
 pages:
 - Home: 'index.md'
 - Rangliste: 'rangliste.md'
