@@ -1,6 +1,17 @@
 # WEIHERGAMES
 
+## DOOMPY
 
+<img src="images/vectorstock_21320352.png" style="float: center; margin-left: .5em; width: 250px">
+
+## THEEL
+
+
+<img src="images/vectorstock_21106731.png" style="float: center; margin-left: .5em; width: 250px">
+
+## MAZL
+
+_no information_
 
 ## Achievments
 

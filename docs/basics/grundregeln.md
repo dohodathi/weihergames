@@ -1,4 +1,6 @@
-## Grundregeln
+# Grundregeln
+
+## Fundamentale Regeln
 
 Diese gelten für alles im Zusammenhang mit den Weihergames.
 
