@@ -1,90 +1,232 @@
-<div id="playercard">
-    <div class="header">
-        <div class="playerstats">
-            <img class="playerstats-image" src="{{ data.player.img }}" />
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
 
-            <div class="playerstats-elo">
-                <div class="label">elo rating</div>
-                <div class="value">{{ data.player.elo }}</div>
+                background-color: #27282d;
+            }
+
+            /* general layout */
+            #playercard {
+                color: white;
+            }
+
+            #playercard img {
+                border-radius: 50%;
+                object-fit: contain;
+                vertical-align: top;
+            }
+
+            #playercard .header {
+                margin: 16px;
+                margin-bottom: 0px;
+
+                background-color: transparent;
+            }
+
+            #playercard .body {
+                margin: 16px;
+                margin-top: 0px;
+
+                background-color: #2f2e33;
+            }
+
+            /* details:header */
+            .header .playerstats {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+            }
+
+            .header .playername {
+                position: relative;
+                display: flex;
+                align-items: center;
+
+                height: 68px;
+
+                background-color: #18171d;
+            }
+
+            .header .playername h1 {
+                margin: 0;
+                margin-left: 110px;
+
+                font-size: 24px;
+                font-weight: 700;
+            }
+
+            .header .playername img {
+                position: absolute;
+                bottom: 34px;
+                left: 16px;
+                z-index: 1;
+
+                width: 94px;
+                height: 94px;
+
+                background-color: white;
+            }
+
+            /* details:body */
+            .body .stats { }
+
+            .body .stats-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                padding: 0 16px;
+                height: 65px;
+            }
+
+            .body .stats-percentage {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                padding: 0 16px;
+                height: 65px;
+            }
+
+            .body .stats-ratio {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                padding: 0 16px;
+                height: 65px;
+            }
+
+            .body .graph {
+                height: 180px;
+
+                background-color: #27282D;
+                border-top: 1px solid #3A3A3A;
+                border-bottom: 1px solid #3A3A3A;
+            }
+
+            /* gamelist */
+            .gamelist {}
+
+            .gamelist .gamelist-item {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                padding: 0 16px;
+                height: 80px;
+
+                border-bottom: 1px solid #3A3A3A;
+            }
+
+            .gamelist .gamelist-item-playerimg {
+                width: 45px;
+                height: 45px;
+
+                border: 1px solid #707070;
+                background-color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="playercard">
+            <div class="header">
+                <div class="playerstats">
+                    <div class="playerstats-elo">
+                        <div class="label">elo rating</div>
+                        <div class="value">{{ data.player.elo }}</div>
+                    </div>
+
+                    <div class="playerstats-rank">
+                        <div class="value">{{ data.player.rank }}</div>
+                        <div class="label">
+                            <div class="world">World</div>
+                            <div class="rank">Rank</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="playername">
+                    <img src="{{ data.player.img }}" />
+                    <h1>{{ data.player.name }}</h1>
+                </div>
             </div>
 
-            <div class="playerstats-rank">
-                <div class="value">{{ data.player.rank }}</div>
-                <div class="label">
-                    <div class="world">World</div>
-                    <div class="rank">Rank</div>
+            <div class="body">
+                <div class="stats">
+                    <div class="stats-header">
+                        <div>Statistics</div>
+                        <div>Ladder</div>
+                        <div>Seasons</div>
+                        <div>All</div>
+                    </div>
+
+                    <div class="stats-percentage">
+                        <div class="title">Win rate</div>
+                        <div class="value">
+                            {{ data.player.sumLadderWon / (data.player.sumLadderTie + data.player.sumLadderLose) * 100
+                            }}%
+                        </div>
+                        <div class="value">
+                            {{ data.player.sumSeasonWon / (data.player.sumSeasonTie + data.player.sumSeasonLose) * 100
+                            }}%
+                        </div>
+                        <div class="value">
+                            {{ data.player.sumWon / (data.player.sumTie + data.player.sumLose) * 100 }}%
+                        </div>
+                    </div>
+
+                    <div class="stats-ratio">
+                        <div class="title">Matches</div>
+
+                        <div class="value">
+                            <span class="stats-ratio-win">{{ data.player.sumLadderWon }}</span>&nbsp;/&nbsp;
+                            <span class="stats-ratio-tie">{{ data.player.sumLadderTie }}</span>&nbsp;/&nbsp;
+                            <span class="stats-ratio-lose">{{ data.player.sumLadderLose }}</span>
+                        </div>
+
+                        <div class="value">
+                            <span class="stats-ratio-win">{{ data.player.sumSeasonWon }}</span>&nbsp;/&nbsp;
+                            <span class="stats-ratio-tie">{{ data.player.sumSeasonTie }}</span>&nbsp;/&nbsp;
+                            <span class="stats-ratio-lose">{{ data.player.sumSeasonLose }}</span>
+                        </div>
+
+                        <div class="value">
+                            <span class="stats-ratio-win">{{ data.player.sumWon }}</span>&nbsp;/&nbsp;
+                            <span class="stats-ratio-tie">{{ data.player.sumTie }}</span>&nbsp;/&nbsp;
+                            <span class="stats-ratio-lose">{{ data.player.sumLose }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="graph">
+                    Graph anhand letzter Spiele mit ELO Werten
+                </div>
+
+                <div class="gamelist">
+                    {% for game in data.games %}
+                    <div class="gamelist-item">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        {% for opponent in game.opponents %}
+                        <img class="gamelist-item-playerimg" src="{{ opponent.img }}" />
+                        {% endfor %}
+
+                        <span class="gamelist-item-playername">
+                            {% for opponent in game.opponents %} {{ opponent.name }}&nbsp; {% endfor %}
+                        </span>
+
+                        <span class="gamelist-item-score-{{ game.win ? 'win' : 'lose' }}">
+                            {{ game.result }}
+                        </span>
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
-
-        <div class="playername">
-            <h1>{{ data.player.name }}</h1>
-        </div>
-    </div>
-
-    <div class="stats">
-        <div class="stats-header">
-            <div>Statistics</div>
-            <div>Ladder</div>
-            <div>Seasons</div>
-            <div>All</div>
-        </div>
-
-        <div class="stats-percentage">
-            <div class="title">Win rate</div>
-            <div class="value">
-                {{ data.player.sumLadderWon / (data.player.sumLadderTie + data.player.sumLadderLose) * 100 }}%
-            </div>
-            <div class="value">
-                {{ data.player.sumSeasonWon / (data.player.sumSeasonTie + data.player.sumSeasonLose) * 100 }}%
-            </div>
-            <div class="value">{{ data.player.sumWon / (data.player.sumTie + data.player.sumLose) * 100 }}%</div>
-        </div>
-
-        <div class="stats-ratio">
-            <div class="title">Matches</div>
-
-            <div class="value">
-                <span class="stats-ratio-win">{{ data.player.sumLadderWon }}</span>&nbsp;/&nbsp;
-                <span class="stats-ratio-tie">{{ data.player.sumLadderTie }}</span>&nbsp;/&nbsp;
-                <span class="stats-ratio-lose">{{ data.player.sumLadderLose }}</span>
-            </div>
-
-            <div class="value">
-                <span class="stats-ratio-win">{{ data.player.sumSeasonWon }}</span>&nbsp;/&nbsp;
-                <span class="stats-ratio-tie">{{ data.player.sumSeasonTie }}</span>&nbsp;/&nbsp;
-                <span class="stats-ratio-lose">{{ data.player.sumSeasonLose }}</span>
-            </div>
-
-            <div class="value">
-                <span class="stats-ratio-win">{{ data.player.sumWon }}</span>&nbsp;/&nbsp;
-                <span class="stats-ratio-tie">{{ data.player.sumTie }}</span>&nbsp;/&nbsp;
-                <span class="stats-ratio-lose">{{ data.player.sumLose }}</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="eloGraph">
-        Graph anhand letzter Spiele mit ELO Werten
-    </div>
-
-    <div class="gamelist">
-        {% for game in data.games %}
-        <div class="gamelist-item">
-            <span class="gamelist-item-vs">vs</span>
-
-            {% for opponent in game.opponents %}
-            <img class="gamelist-item-playerimg" src="{{ opponent.img }}" />
-            {% endfor %}
-
-            <span class="gamelist-item-playername">
-                {% for opponent in game.opponents %} {{ opponent.name }}&nbsp; {% endfor %}
-            </span>
-
-            <span class="gamelist-item-score-{{ game.win ? 'win' : 'lose' }}">
-                {{ game.result }}
-            </span>
-        </div>
-        {% endfor %}
-    </div>
-</div>
+    </body>
+</html>
