@@ -15,8 +15,8 @@ filename = os.path.join(root, 'builds', 'player_all.html')
 with open(filename, 'w') as fh:
     fh.write(template.render(
         players = [
-        {'name': 'THEEL', 'url': '/theel'},
-        {'name': 'DOOMPY', 'url': '/doompy'},
-        {'name': 'MAZL', 'url': '/mazl'}
+        {'name': 'THEEL', 'image': 'images/vectorstock_21106731.png'},
+        {'name': 'DOOMPY', 'image': 'images/vectorstock_21320352.png'},
+        {'name': 'MAZL', 'image': '/mazl'}
         ]
     ))
