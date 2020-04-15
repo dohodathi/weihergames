@@ -2,9 +2,12 @@ import sys
 import json
 import datetime
 import plotly
+import os
 from pprint import pprint
 from operator import itemgetter
 
+
+root = os.path.dirname(os.path.abspath(__file__))
 
 # r(x) = current ranking points before the match for the player Px
 # e(x) = expected points for that player Px based on the old ranking points
@@ -31,7 +34,7 @@ def check_point_rules(match, total_points, made_points):
 
 def start_calculation():
     # Load data
-    j = json.load(open('data2012.json'))
+    j = json.load(open(os.path.join(root, '../data2012.json')))
 
     # pprint(j)
 
@@ -119,7 +122,8 @@ def create_plot(procesedData):
             "data": plotdata,
             "layout": layout
         },
-        auto_open=False
+        auto_open=False,
+        filename=os.path.join(root, 'builds/temp-plot.html')
     )
 
 
