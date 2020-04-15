@@ -1,4 +1,8 @@
-
+var head = jQuery("#iframe").contents().find("head");
+var css = '<style type="text/css">' +
+          '#banner{display:none}; ' +
+          '</style>';
+jQuery(head).append(css)
 
 <ul>
 {% for player in players %}
