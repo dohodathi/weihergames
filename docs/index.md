@@ -2,7 +2,7 @@
 
 
 <iframe src="../player_all.html"
-        height="600" width="100%"
+        width="100%"
         scrolling="no" seamless="seamless"
         frameBorder="0">
 </iframe>
