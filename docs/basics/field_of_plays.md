@@ -14,10 +14,10 @@ graph TD
 
 ## Outdoor
 
-- Classics Weiher
-- Cross
-- Court
-- Pool
+- Classics Weiher <img src="/images/noun_Lake_1479177.png" style="float: center; margin-left: .5em; width: 50px">
+- Cross <img src="/images/noun_field_3216521.png" style="float: center; margin-left: .5em; width: 50px">
+- Court <img src="/images/noun_field_2239788.png" style="float: center; margin-left: .5em; width: 50px">
+- Pool <img src="/images/noun_Pool_2239780.png" style="float: center; margin-left: .5em; width: 50px">
 
 
 ## Indoor
