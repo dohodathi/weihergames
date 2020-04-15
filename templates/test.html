@@ -1,0 +1,90 @@
+<div id="playercard">
+    <div class="header">
+        <div class="playerstats">
+            <img class="playerstats-image" src="{{ data.player.img }}" />
+
+            <div class="playerstats-elo">
+                <div class="label">elo rating</div>
+                <div class="value">{{ data.player.elo }}</div>
+            </div>
+
+            <div class="playerstats-rank">
+                <div class="value">{{ data.player.rank }}</div>
+                <div class="label">
+                    <div class="world">World</div>
+                    <div class="rank">Rank</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="playername">
+            <h1>{{ data.player.name }}</h1>
+        </div>
+    </div>
+
+    <div class="stats">
+        <div class="stats-header">
+            <div>Statistics</div>
+            <div>Ladder</div>
+            <div>Seasons</div>
+            <div>All</div>
+        </div>
+
+        <div class="stats-percentage">
+            <div class="title">Win rate</div>
+            <div class="value">
+                {{ data.player.sumLadderWon / (data.player.sumLadderTie + data.player.sumLadderLose) * 100 }}%
+            </div>
+            <div class="value">
+                {{ data.player.sumSeasonWon / (data.player.sumSeasonTie + data.player.sumSeasonLose) * 100 }}%
+            </div>
+            <div class="value">{{ data.player.sumWon / (data.player.sumTie + data.player.sumLose) * 100 }}%</div>
+        </div>
+
+        <div class="stats-ratio">
+            <div class="title">Matches</div>
+
+            <div class="value">
+                <span class="stats-ratio-win">{{ data.player.sumLadderWon }}</span>&nbsp;/&nbsp;
+                <span class="stats-ratio-tie">{{ data.player.sumLadderTie }}</span>&nbsp;/&nbsp;
+                <span class="stats-ratio-lose">{{ data.player.sumLadderLose }}</span>
+            </div>
+
+            <div class="value">
+                <span class="stats-ratio-win">{{ data.player.sumSeasonWon }}</span>&nbsp;/&nbsp;
+                <span class="stats-ratio-tie">{{ data.player.sumSeasonTie }}</span>&nbsp;/&nbsp;
+                <span class="stats-ratio-lose">{{ data.player.sumSeasonLose }}</span>
+            </div>
+
+            <div class="value">
+                <span class="stats-ratio-win">{{ data.player.sumWon }}</span>&nbsp;/&nbsp;
+                <span class="stats-ratio-tie">{{ data.player.sumTie }}</span>&nbsp;/&nbsp;
+                <span class="stats-ratio-lose">{{ data.player.sumLose }}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="eloGraph">
+        Graph anhand letzter Spiele mit ELO Werten
+    </div>
+
+    <div class="gamelist">
+        {% for game in data.games %}
+        <div class="gamelist-item">
+            <span class="gamelist-item-vs">vs</span>
+
+            {% for opponent in game.opponents %}
+            <img class="gamelist-item-playerimg" src="{{ opponent.img }}" />
+            {% endfor %}
+
+            <span class="gamelist-item-playername">
+                {% for opponent in game.opponents %} {{ opponent.name }}&nbsp; {% endfor %}
+            </span>
+
+            <span class="gamelist-item-score-{{ game.win ? 'win' : 'lose' }}">
+                {{ game.result }}
+            </span>
+        </div>
+        {% endfor %}
+    </div>
+</div>
