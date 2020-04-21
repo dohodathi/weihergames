@@ -400,12 +400,20 @@
         }
     ],
     "members": {
-        "THEEL": {},
-        "DOOMPY": {},
+        "THEEL": {
+            "img": "vectorstock_21106731.png"
+        },
+        "DOOMPY": {
+            "img": "vectorstock_21320352.png"
+        },
         "MAZL": {}
     },
     "games": {
-        "Fußgolf": { "lowerwins": true },
-        "Kubb": { "specific_leveling_value": 1 }
+        "Fußgolf": {
+            "pointrules": ["lowerwins"]
+        },
+        "Kubb": {
+            "specific_leveling_value": 1
+        }
     }
 }

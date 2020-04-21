@@ -168,15 +168,15 @@
                     <div class="stats-percentage">
                         <div class="title">Win rate</div>
                         <div class="value">
-                            {{ data.player.sumLadderWon / (data.player.sumLadderTie + data.player.sumLadderLose) * 100
+                            {{ data.player.sumOffSeasonWon / (data.player.sumOffSeasonTie + data.player.sumOffSeasonLose + 1) * 100
                             }}%
                         </div>
                         <div class="value">
-                            {{ data.player.sumSeasonWon / (data.player.sumSeasonTie + data.player.sumSeasonLose) * 100
+                            {{ data.player.sumSeasonWon / (data.player.sumSeasonTie + data.player.sumSeasonLose + 1) * 100
                             }}%
                         </div>
                         <div class="value">
-                            {{ data.player.sumWon / (data.player.sumTie + data.player.sumLose) * 100 }}%
+                            {{ data.player.sumWon / (data.player.sumTie + data.player.sumLose + 1) * 100 }}%
                         </div>
                     </div>
 
@@ -184,9 +184,9 @@
                         <div class="title">Matches</div>
 
                         <div class="value">
-                            <span class="stats-ratio-win">{{ data.player.sumLadderWon }}</span>&nbsp;/&nbsp;
-                            <span class="stats-ratio-tie">{{ data.player.sumLadderTie }}</span>&nbsp;/&nbsp;
-                            <span class="stats-ratio-lose">{{ data.player.sumLadderLose }}</span>
+                            <span class="stats-ratio-win">{{ data.player.sumOffSeasonWon }}</span>&nbsp;/&nbsp;
+                            <span class="stats-ratio-tie">{{ data.player.sumOffSeasonTie }}</span>&nbsp;/&nbsp;
+                            <span class="stats-ratio-lose">{{ data.player.sumOffSeasonLose }}</span>
                         </div>
 
                         <div class="value">
@@ -208,20 +208,20 @@
                 </div>
 
                 <div class="gamelist">
-                    {% for game in data.games %}
+                    {% for match in data.matches %}
                     <div class="gamelist-item">
                         <span class="gamelist-item-vs">vs</span>
 
-                        {% for opponent in game.opponents %}
+                        {% for opponent in match.participants %}
                         <img class="gamelist-item-playerimg" src="{{ opponent.img }}" />
                         {% endfor %}
 
                         <span class="gamelist-item-playername">
-                            {% for opponent in game.opponents %} {{ opponent.name }}&nbsp; {% endfor %}
+                            {% for opponent in match.participants %} {{ opponent.name }}&nbsp; {% endfor %}
                         </span>
 
-                        <span class="gamelist-item-score-{{ game.win ? 'win' : 'lose' }}">
-                            {{ game.result }}
+                        <span class="gamelist-item-score-">
+                            {{ match.result }}
                         </span>
                     </div>
                     {% endfor %}

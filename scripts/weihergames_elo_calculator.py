@@ -13,14 +13,14 @@ root = os.path.dirname(os.path.abspath(__file__))
 # e(x) = expected points for that player Px based on the old ranking points
 #      = (totalpoints)/(1+10^((mediaOpponentELO-ownELO)/ELO_START_VALUE))
 # r'(x) = new calculated ranking points for player Px
-#       =r(x)+REGULATION_VALUE*(ownPoints-e(x))
+#       =r(x)+ELO_REGULATION_VALUE*(ownPoints-e(x))
 
 ELO_DICT_KEY = 'ELO'
 ELO_START_VALUE = 10000.0
-REGULATION_VALUE = 8 # the higher the value, the more impact has the delta between expected and made points
-LEVELING_VALUE = 12 # all matches are leveld to have totalpoints of X, otherwise a game where loats of points are distrubuted may have to much impact
+ELO_REGULATION_VALUE = 8 # the higher the value, the more impact has the delta between expected and made points
+ELO_LEVELING_VALUE = 12 # all matches are leveld to have totalpoints of X, otherwise a game where loats of points are distrubuted may have to much impact
 # can be taht per game a different leveling factor must be evaluated
-PARTICIPATION_VALUE = 3 # this value is added to each participation, this makes a lot of participation also positive, can be 0 if no bonus schould be given, a value higher than 0 make an inflatation
+ELO_PARTICIPATION_VALUE = 3 # this value is added to each participation, this makes a lot of participation also positive, can be 0 if no bonus schould be given, a value higher than 0 make an inflatation
 
 
 
@@ -62,7 +62,7 @@ def start_calculation():
     for match in sorted_matchlist:
         # print('\n----- MATCH: ' + match['time'])
         totalpoints = sum(match['result'].values())
-        levelingfactor = LEVELING_VALUE / totalpoints
+        levelingfactor = ELO_LEVELING_VALUE / totalpoints
         totalparticipants = len(match['result'])
         totalelo = 0.0
 
@@ -79,7 +79,7 @@ def start_calculation():
             #     format(name, ownELO, mediaOpponentELO, expected_points, made_points))
             made_points = check_point_rules(match, totalpoints, points) * levelingfactor
             # new elo:
-            newELO = ownELO + REGULATION_VALUE*(made_points-expected_points) + PARTICIPATION_VALUE
+            newELO = ownELO + ELO_REGULATION_VALUE*(made_points-expected_points) + ELO_PARTICIPATION_VALUE
             #update data:
             j["members"][name][ELO_DICT_KEY] = newELO
             j["members"][name]['ELO_HISTORY'].append(j["members"][name][ELO_DICT_KEY])

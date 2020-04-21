@@ -5,10 +5,10 @@
 graph TD
    FoP(Field of Play) --> I(INDOOR)
    FoP --> O(OUTDOOR)
-   I --> I1[Classics Weiher]
-   I --> I2[Cross]
-   I --> I3[Court]
-   I --> I4[Pool]
+   O --> O1[Classics Weiher]
+   O --> O2[Cross]
+   O --> O3[Court]
+   O --> O4[Pool]
 </div>
 
 
