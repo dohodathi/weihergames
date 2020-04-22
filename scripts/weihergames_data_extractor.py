@@ -200,7 +200,7 @@ if __name__ == '__main__':
     template = env.get_template('test.html')
 
 
-    filename = os.path.join(_ROOT_FILE, '../temp', 'player.html')
+    filename = os.path.join(_ROOT_FILE, '../build', 'player.html')
     with open(filename, 'w') as fh:
         fh.write(template.render(
             data = {

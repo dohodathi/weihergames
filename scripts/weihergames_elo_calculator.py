@@ -123,7 +123,7 @@ def create_plot(procesedData):
             "layout": layout
         },
         auto_open=False,
-        filename=os.path.join(root, 'builds/plot_elo_overall.html')
+        filename=os.path.join(root, '../build', 'plot_elo_overall.html')
     )
 
 
