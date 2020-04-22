@@ -184,6 +184,10 @@ def process_matches(matches):
     pass # TODO
 
 
+def get_year_from_datetime_string(dt_string):
+    return 1999
+
+
 if __name__ == '__main__':
     logging.info('RUNNING DATA EXTRACTOR')
     players = read_player_from_json()
@@ -196,6 +200,7 @@ if __name__ == '__main__':
         loader=FileSystemLoader(templates_dir),
         autoescape=select_autoescape(['html', 'xml'])
     )
+    env.globals['getYearFromDateString'] = get_year_from_datetime_string
 
     template = env.get_template('test.html')
 
