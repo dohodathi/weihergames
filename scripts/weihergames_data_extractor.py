@@ -121,7 +121,7 @@ def read_player_from_json():
     for name, data in j['members'].items():
         p = PlayerData(name)
         p.elo = ELO_START_VALUE
-        p.img = data.get('img', '')
+        p.img = os.path.join(_ROOT_FILE, '..', 'docs','images',data.get('img', ''))
         players.append(p)
         logging.debug('Player found in DB: {0}'.format(p))
     return players
@@ -189,7 +189,7 @@ def get_year_from_datetime_string(dt_string):
     try:
         dt = datetime.strptime(dt_string, '%Y-%m-%dT%H:%M:%S')
         return dt.year
-    except:
+    except ValueError:
         return None
 
 
