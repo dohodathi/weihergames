@@ -2,11 +2,13 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <style>
-            html, body {
+            html,
+            body {
                 margin: 0;
                 padding: 0;
 
                 background-color: #27282d;
+                font-family: 'Roboto', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
             }
 
             /* general layout */
@@ -72,7 +74,8 @@
             }
 
             /* details:body */
-            .body .stats { }
+            .body .stats {
+            }
 
             .body .stats-header {
                 display: flex;
@@ -104,15 +107,21 @@
             .body .graph {
                 height: 180px;
 
-                background-color: #27282D;
-                border-top: 1px solid #3A3A3A;
-                border-bottom: 1px solid #3A3A3A;
+                background-color: #27282d;
+                border-top: 1px solid #3a3a3a;
+                border-bottom: 1px solid #3a3a3a;
             }
 
             /* gamelist */
-            .gamelist {}
+            .gamelist {
+            }
 
-            .gamelist .gamelist-item {
+            .gamelist-name {
+                padding-top: 16px;
+                padding-left: 16px;
+            }
+
+            .gamelist-item {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -120,10 +129,10 @@
                 padding: 0 16px;
                 height: 80px;
 
-                border-bottom: 1px solid #3A3A3A;
+                border-bottom: 1px solid #3a3a3a;
             }
 
-            .gamelist .gamelist-item-playerimg {
+            .gamelist-item-playerimg {
                 width: 45px;
                 height: 45px;
 
@@ -168,12 +177,12 @@
                     <div class="stats-percentage">
                         <div class="title">Win rate</div>
                         <div class="value">
-                            {{ data.player.sumOffSeasonWon / (data.player.sumOffSeasonTie + data.player.sumOffSeasonLose + 1) * 100
-                            }}%
+                            {{ data.player.sumOffSeasonWon / (data.player.sumOffSeasonTie + data.player.sumOffSeasonLose
+                            + 1) * 100 }}%
                         </div>
                         <div class="value">
-                            {{ data.player.sumSeasonWon / (data.player.sumSeasonTie + data.player.sumSeasonLose + 1) * 100
-                            }}%
+                            {{ data.player.sumSeasonWon / (data.player.sumSeasonTie + data.player.sumSeasonLose + 1) *
+                            100 }}%
                         </div>
                         <div class="value">
                             {{ data.player.sumWon / (data.player.sumTie + data.player.sumLose + 1) * 100 }}%
@@ -209,6 +218,8 @@
 
                 <div class="gamelist">
                     {% for match in data.matches %}
+                    <div class="gamelist-name">{{ match.game.name }}</div>
+
                     <div class="gamelist-item">
                         <span class="gamelist-item-vs">vs</span>
 
@@ -220,7 +231,7 @@
                             {% for opponent in match.participants %} {{ opponent.name }}&nbsp; {% endfor %}
                         </span>
 
-                        <span class="gamelist-item-score-">
+                        <span class="gamelist-item-score">
                             {{ match.result }}
                         </span>
                     </div>
