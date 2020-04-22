@@ -223,12 +223,13 @@
                     <div class="gamelist-item">
                         <span class="gamelist-item-vs">vs</span>
 
-                        {% for opponent in match.participants %}
+                        {% for opponent in match.participants if opponent.name != data.player.name %}
                         <img class="gamelist-item-playerimg" src="{{ opponent.img }}" />
                         {% endfor %}
 
                         <span class="gamelist-item-playername">
-                            {% for opponent in match.participants %} {{ opponent.name }}&nbsp; {% endfor %}
+                            {% for opponent in match.participants if opponent.name != data.player.name %} {{
+                            opponent.name }}&nbsp; {% endfor %}
                         </span>
 
                         <span class="gamelist-item-score">
