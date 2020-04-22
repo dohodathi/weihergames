@@ -3,11 +3,14 @@ import json
 import datetime
 import plotly
 import os
+import logging
 from pprint import pprint
 from operator import itemgetter
 
 
-root = os.path.dirname(os.path.abspath(__file__))
+logging.basicConfig(level=logging.DEBUG)
+
+_ROOT_FILE = os.path.dirname(os.path.abspath(__file__))
 
 # r(x) = current ranking points before the match for the player Px
 # e(x) = expected points for that player Px based on the old ranking points
@@ -34,7 +37,7 @@ def check_point_rules(match, total_points, made_points):
 
 def start_calculation():
     # Load data
-    j = json.load(open(os.path.join(root, '../data2012.json')))
+    j = json.load(open(os.path.join(_ROOT_FILE, '../data2012.json')))
 
     # pprint(j)
 
@@ -123,13 +126,14 @@ def create_plot(procesedData):
             "layout": layout
         },
         auto_open=False,
-        filename=os.path.join(root, '../build', 'plot_elo_overall.html')
+        filename=os.path.join(_ROOT_FILE, '../build', 'plot_elo_overall.html')
     )
 
 
 #-------------------------------
 if __name__ == "__main__":
+    logging.info('RUNNING ELO CALCULATOR')
     procesedData = start_calculation()
     create_plot(procesedData)
-    pprint("SUCCESS")
+    logging.info('SUCCEDEED ELO CALCULATOR')
     sys.exit(0)

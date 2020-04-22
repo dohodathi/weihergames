@@ -185,7 +185,7 @@ def process_matches(matches):
 
 
 if __name__ == '__main__':
-
+    logging.info('RUNNING DATA EXTRACTOR')
     players = read_player_from_json()
     games = read_games_from_json()
     matches = read_matches_from_json(players, games)
@@ -208,3 +208,5 @@ if __name__ == '__main__':
                 'matches': matches
             }
         ))
+        logging.info('... wrote: {0}'.format(filename))
+    logging.info('FINISHED DATA EXTRACTOR')
