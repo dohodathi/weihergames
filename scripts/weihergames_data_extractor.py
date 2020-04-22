@@ -44,11 +44,12 @@ OUTPUT SPECIFICATION
 }
 """
 
-from jinja2 import Environment, FileSystemLoader, select_autoescape
-from operator import itemgetter
 import os
 import logging
 import json
+from datetime import datetime
+from jinja2 import Environment, FileSystemLoader, select_autoescape
+from operator import itemgetter
 
 
 
@@ -175,7 +176,7 @@ def read_matches_from_json(players, games):
             m.result.append(points_db)
             m.location = match_db.get('location', '')
             m.remarks = match_db.get('remarks', '')
-            m.datetime = match_db.get('datetime', '')
+            m.datetime = match_db.get('time', '')
         matches.append(m)
         logging.debug('Match appended: {0}'.format(m))
     return matches
@@ -185,16 +186,14 @@ def process_matches(matches):
 
 
 def get_year_from_datetime_string(dt_string):
-    return 1999
+    try:
+        dt = datetime.strptime(dt_string, '%Y-%m-%dT%H:%M:%S')
+        return dt.year
+    except:
+        return None
 
 
-if __name__ == '__main__':
-    logging.info('RUNNING DATA EXTRACTOR')
-    players = read_player_from_json()
-    games = read_games_from_json()
-    matches = read_matches_from_json(players, games)
-    process_matches(matches)
-
+def render_template(players, games, matches):
     templates_dir = os.path.join(_ROOT_FILE, '../templates')
     env = Environment(
         loader=FileSystemLoader(templates_dir),
@@ -204,14 +203,24 @@ if __name__ == '__main__':
 
     template = env.get_template('test.html')
 
+    for player in players:
+        filename = os.path.join(_ROOT_FILE, '..', 'build', 
+            'player_{0}.html'.format(player.name))
+        with open(filename, 'w') as fh:
+            fh.write(template.render(
+                data = {
+                    'player': players[0],
+                    'matches': matches
+                }
+            ))
+            logging.info('... rendered: {0}'.format(filename))
 
-    filename = os.path.join(_ROOT_FILE, '../build', 'player.html')
-    with open(filename, 'w') as fh:
-        fh.write(template.render(
-            data = {
-                'player': players[0],
-                'matches': matches
-            }
-        ))
-        logging.info('... wrote: {0}'.format(filename))
+
+if __name__ == '__main__':
+    logging.info('RUNNING DATA EXTRACTOR')
+    players = read_player_from_json()
+    games = read_games_from_json()
+    matches = read_matches_from_json(players, games)
+    process_matches(matches)
+    render_template(players, games, matches)
     logging.info('FINISHED DATA EXTRACTOR')
