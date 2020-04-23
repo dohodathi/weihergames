@@ -56,11 +56,19 @@ from operator import itemgetter
 logging.basicConfig(level=logging.DEBUG)
 
 _ROOT_FILE = os.path.dirname(os.path.abspath(__file__))
+_IMAGE_FOLDER = os.path.join(_ROOT_FILE, '..', 'docs','images')
 JSON_DATABASE = os.path.join(_ROOT_FILE, '../data2012.json')
-
+_ALT_PLAYER_IMG = 'noun_Bear_54735.png'
+_ALT_GAME_IMG = 'noun_Accessories_1485294.png'
+_ALT_FIELDOFPLAY_IMG = 'noun_Lake_1479177.png'
 
 """ ELO CALC PARAMTER """
 ELO_START_VALUE = 10000.0
+ELO_REGULATION_VALUE = 8 # the higher the value, the more impact has the delta between expected and made points
+ELO_LEVELING_VALUE = 12 # all matches are leveld to have totalpoints of X, otherwise a game where loats of points are distrubuted may have to much impact
+# can be that per game a different leveling factor must be evaluated
+ELO_PARTICIPATION_VALUE = 3 # this value is added to each participation, this makes a lot of participation also positive, can be 0 if no bonus schould be given, a value higher than 0 make an inflatation
+
 
 
 class PlayerData():
@@ -68,7 +76,7 @@ class PlayerData():
         self.name = name
         self.elo = 0.0
         self.rank = 0
-        self.img = ''
+        self.img = None
         self.sumWon = 0
         self.sumTie = 0
         self.sumLose = 0
@@ -81,33 +89,91 @@ class PlayerData():
     def __str__(self):
         return 'PlayerData for {0}'.format(self.name)
 
+    @property
+    def img(self):
+        return self.__img
+
+    @img.setter
+    def img(self, img_filename=None):
+        img_path = os.path.join(_IMAGE_FOLDER, str(img_filename))
+        if os.path.isfile(img_path): 
+            self.__img = img_path
+        else:
+            self.__img = os.path.join(_IMAGE_FOLDER, _ALT_PLAYER_IMG)
+
 class GameData():
     def __init__(self, name):
         self.name = name
-        self.img = ''
+        self.img = None
         self.field_of_play = ''
-        self.field_of_play_icon = ''
+        self.field_of_play_icon = None
         self.pointrules = []
         self.specific_leveling_value = 0
     def __str__(self):
         return 'GameData for {0}'.format(self.name)
+
+    @property
+    def img(self):
+        return self.__img
+
+    @img.setter
+    def img(self, img_filename):
+        img_path = os.path.join(_IMAGE_FOLDER, str(img_filename))
+        if os.path.isfile(img_path): 
+            self.__img = img_path
+        else:
+            self.__img = os.path.join(_IMAGE_FOLDER, _ALT_GAME_IMG)
+
+    @property
+    def field_of_play_icon(self):
+        return self.__field_of_play_icon
+
+    @img.setter
+    def field_of_play_icon(self, img_filename):
+        img_path = os.path.join(_IMAGE_FOLDER, str(img_filename))
+        if os.path.isfile(img_path): 
+            self.__field_of_play_icon = img_path
+        else:
+            self.__field_of_play_icon = os.path.join(_IMAGE_FOLDER, _ALT_FIELDOFPLAY_IMG)
 
 
 class MatchData():
     def __init__(self, game):
         self.game = game
         self.participants= []
-        self.result = []
-        self.winner = None
+        self.elos_after = [] # must have same oder as participants
+        self.elos_delta = [] # must have same oder as participants
+        self.result = [] # must have same oder as participants
         self.datetime = ''
         self.tie = False
         self.location = ''
         self.remarks = ''
     def __str__(self):
         return 'MatchData of [{0}] played by: {1}'.format(self.game,self.participants)
+
+    @property
     def winner(self):
-        # return the winner as PlayerData object:
-        pass
+        if 'lowerwins' in self.game.pointrules:
+            # LOWEST SCORE WINS:
+            search_value = min(self.result)
+        else:
+            # HIGEHST SCORE WINS:
+            search_value = max(self.result)
+        # get index of result array with the highest or lowest result:
+        index_of = [i for i, j in enumerate(self.result) if j == search_value]
+        if len(index_of) > 1:
+            self.tie = True
+            return [self.participants[x] for x in index_of]
+        elif len(index_of) == 1:
+            return self.participants[index_of[0]]
+        else:
+            logging.error('NO WINNER IDENTIFIED ON: {0}'.format(self))
+            return None
+
+
+
+
+
 
 def read_player_from_json():
     players = []
@@ -121,7 +187,7 @@ def read_player_from_json():
     for name, data in j['members'].items():
         p = PlayerData(name)
         p.elo = ELO_START_VALUE
-        p.img = os.path.join(_ROOT_FILE, '..', 'docs','images',data.get('img', ''))
+        p.img = data.get('img', None)
         players.append(p)
         logging.debug('Player found in DB: {0}'.format(p))
     return players
@@ -138,7 +204,7 @@ def read_games_from_json():
     # set player:
     for name, data in j['games'].items():
         g = GameData(name)
-        g.img = data.get('img', '')
+        g.img = data.get('img', None)
         g.field_of_play = data.get('field_of_play', '')
         g.field_of_play_icon = data.get('field_of_play_icon', '')
         g.pointrules = data.get('pointrules', [])
@@ -182,7 +248,15 @@ def read_matches_from_json(players, games):
     return matches
 
 def process_matches(matches):
-    pass # TODO
+    """
+    oldest match first,
+    calculate elo of participants,
+        store new elo and delta in MatchData
+        store new elo in PlayerData,
+    next match,
+    """
+    for match in matches:
+        pass # TODO
 
 
 def get_year_from_datetime_string(dt_string):
@@ -193,7 +267,7 @@ def get_year_from_datetime_string(dt_string):
         return None
 
 
-def render_template(players, games, matches):
+def render_templates(players, games, matches):
     templates_dir = os.path.join(_ROOT_FILE, '../templates')
     env = Environment(
         loader=FileSystemLoader(templates_dir),
@@ -222,5 +296,6 @@ if __name__ == '__main__':
     games = read_games_from_json()
     matches = read_matches_from_json(players, games)
     process_matches(matches)
-    render_template(players, games, matches)
+    render_templates(players, games, matches)
     logging.info('FINISHED DATA EXTRACTOR')
+    logging.debug('Winner: {w}, Match {m}'.format(m=matches[-1], w=matches[-1].winner))

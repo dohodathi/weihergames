@@ -272,8 +272,7 @@
             "result": { "THEEL": 15, "DOOMPY": 5 },
             "game": "Weihergolf",
             "location": "Schlüter",
-            "remarks": "",
-            "pointrule": ["lowerwins"]
+            "remarks": ""
         },
         {
             "time": "2012-04-01T00:00:00",
@@ -373,8 +372,7 @@
             "result": { "THEEL": 32, "DOOMPY": 29 },
             "game": "Pool Golf",
             "location": "Lago di Garda",
-            "remarks": "Weiherlympics I",
-            "pointrule": ["lowerwins"]
+            "remarks": "Weiherlympics I"
         },
         {
             "time": "2018-05-14T15:00:00",
@@ -395,8 +393,7 @@
             "result": { "THEEL": 1, "DOOMPY": 6 },
             "game": "Fußgolf",
             "location": "Lago di Garda",
-            "remarks": "Weiherlympics I",
-            "pointrule": ["lowerwins"]
+            "remarks": "Weiherlympics I"
         }
     ],
     "members": {
@@ -409,7 +406,29 @@
         "MAZL": {}
     },
     "games": {
+        "Weihergolf 18-Loch Wurfmodus" : {},
+        "Crossboccia" : {},
+        "Crossboccia" : {},
+        "Prox the Line" : {},
+        "Lattenschießen" : {},
+        "Speedminton" : {},
+        "Kubb" : {},
+        "Cart-Rail" : {},
+        "Cart-Zone" : {},
+        "Jumpergame" : {},
+        "Hit The Line" : {},
+        "Sadistenspiel" : {},
+        "Melee-Boccia" : {},
+        "Weihergolf 9-Loch-Standard" : {},
+        "Pool Shot" : {},
+        "Körperball" : {},
+        "Weihergolf": {
+            "pointrules": ["lowerwins"]
+        },
         "Fußgolf": {
+            "pointrules": ["lowerwins"]
+        },
+        "Pool Golf": {
             "pointrules": ["lowerwins"]
         },
         "Kubb": {
