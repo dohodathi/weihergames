@@ -2,22 +2,28 @@ site_name: Weihergames
 site_author: Daniel Thiel, Dominik Hoffendahl
 
 theme:
-  name: material
+    name: material
 pages:
-- Home: 'index.md'
-- Rangliste: 'rangliste.md'
-- Basics:
-    - Grundregeln: 'basics/grundregeln.md'
-    - Field Of Plays: 'basics/field_of_plays.md'
-- Spiele:
-    - Unfertige Regeln (TODO): 'games/todo.md'
-    - Hit The Line: 'games/hit_the_line.md'
-    - Jumpergame: 'games/jumpergame.md'
-- Seasons:
-    - Info: 'seasons/weiherlympics.md'
-    - Sommerspiele 2012: 'seasons/2012_sommerspiele.md'
-    - Winterspiele 2012: 'seasons/2012_winterspiele.md'
-    - Weiherlympics 2018: 'seasons/weiherlympics_001.md'
+    - Home: 'index.md'
+    - Test: 'test.md'
+    - Rangliste: 'rangliste.md'
+    - Basics:
+          - Grundregeln: 'basics/grundregeln.md'
+          - Field Of Plays: 'basics/field_of_plays.md'
+    - Spiele:
+          - Unfertige Regeln (TODO): 'games/todo.md'
+          - Hit The Line: 'games/hit_the_line.md'
+          - Jumpergame: 'games/jumpergame.md'
+    - Seasons:
+          - Info: 'seasons/weiherlympics.md'
+          - Sommerspiele 2012: 'seasons/2012_sommerspiele.md'
+          - Winterspiele 2012: 'seasons/2012_winterspiele.md'
+          - Weiherlympics 2018: 'seasons/weiherlympics_001.md'
+    - Users:
+          - Overview: 'users/overview.md'
+          - Doompy: 'users/doompy.md'
+          - Marcel: 'users/marcel.md'
+          - Theel: 'users/theel.md'
 plugins:
     - markdownmermaid
 extra_javascript:

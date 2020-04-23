@@ -201,15 +201,15 @@ def render_template(players, games, matches):
     )
     env.globals['getYearFromDateString'] = get_year_from_datetime_string
 
-    template = env.get_template('test.html')
+    template = env.get_template('userprofile.html')
 
     for player in players:
-        filename = os.path.join(_ROOT_FILE, '..', 'build', 
-            'player_{0}.html'.format(player.name))
+        filename = os.path.join(_ROOT_FILE, '..', 'build/users/',
+            'dynamic_{0}.html'.format(player.name.lower()))
         with open(filename, 'w') as fh:
             fh.write(template.render(
                 data = {
-                    'player': players[0],
+                    'player': player,
                     'matches': matches
                 }
             ))
