@@ -64,6 +64,11 @@ _ALT_FIELDOFPLAY_IMG = 'noun_Lake_1479177.png'
 
 """ ELO CALC PARAMTER """
 ELO_START_VALUE = 10000.0
+ELO_REGULATION_VALUE = 8 # the higher the value, the more impact has the delta between expected and made points
+ELO_LEVELING_VALUE = 12 # all matches are leveld to have totalpoints of X, otherwise a game where loats of points are distrubuted may have to much impact
+# can be that per game a different leveling factor must be evaluated
+ELO_PARTICIPATION_VALUE = 3 # this value is added to each participation, this makes a lot of participation also positive, can be 0 if no bonus schould be given, a value higher than 0 make an inflatation
+
 
 
 class PlayerData():
@@ -136,7 +141,9 @@ class MatchData():
     def __init__(self, game):
         self.game = game
         self.participants= []
-        self.result = []
+        self.elos_after = [] # must have same oder as participants
+        self.elos_delta = [] # must have same oder as participants
+        self.result = [] # must have same oder as participants
         self.datetime = ''
         self.tie = False
         self.location = ''
@@ -241,7 +248,15 @@ def read_matches_from_json(players, games):
     return matches
 
 def process_matches(matches):
-    pass # TODO
+    """
+    oldest match first,
+    calculate elo of participants,
+        store new elo and delta in MatchData
+        store new elo in PlayerData,
+    next match,
+    """
+    for match in matches:
+        pass # TODO
 
 
 def get_year_from_datetime_string(dt_string):
@@ -252,7 +267,7 @@ def get_year_from_datetime_string(dt_string):
         return None
 
 
-def render_template(players, games, matches):
+def render_templates(players, games, matches):
     templates_dir = os.path.join(_ROOT_FILE, '../templates')
     env = Environment(
         loader=FileSystemLoader(templates_dir),
@@ -281,6 +296,6 @@ if __name__ == '__main__':
     games = read_games_from_json()
     matches = read_matches_from_json(players, games)
     process_matches(matches)
-    render_template(players, games, matches)
+    render_templates(players, games, matches)
     logging.info('FINISHED DATA EXTRACTOR')
     logging.debug('Winner: {w}, Match {m}'.format(m=matches[-1], w=matches[-1].winner))
