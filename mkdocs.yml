@@ -5,7 +5,6 @@ theme:
     name: material
 pages:
     - Home: 'index.md'
-    - Test: 'test.md'
     - Rangliste: 'rangliste.md'
     - Basics:
           - Grundregeln: 'basics/grundregeln.md'
