@@ -48,7 +48,6 @@
 
         height: 68px;
 
-        color: white;
         background-color: #18171d;
     }
 
@@ -56,6 +55,7 @@
         margin: 0;
         margin-left: 110px;
 
+        color: white;
         font-size: 24px;
         font-weight: 700;
     }
