@@ -1,3 +1,5 @@
+
+
 <style>
     .body {
         margin: 0;
@@ -46,6 +48,7 @@
 
         height: 68px;
 
+        color: white;
         background-color: #18171d;
     }
 
@@ -178,8 +181,8 @@
         </div>
 
         <div class="playername">
-            <img src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
-            <h1>THEEL</h1>
+            <img src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+            <h1>DOOMPY</h1>
         </div>
     </div>
 
@@ -233,17 +236,17 @@
         </div>
 
         <!-- https://stackoverflow.com/questions/9486393/jinja2-change-the-value-of-a-variable-inside-a-loop -->
-
+        
 
         <div class="gamelist">
-
+            
 
             <!-- handle year separators -->
-
+            
             <!-- update curr year and render the changed year -->
-
+            
             <div class="gamelist-year">2011</div>
-
+            
 
             <div class="gamelist-name">Weihergolf 18-Loch Wurfmodus</div>
 
@@ -252,26 +255,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     12-13
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Weihergolf 9-Loch-Standard</div>
 
@@ -280,26 +283,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     0-6
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Crossboccia</div>
 
@@ -308,26 +311,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     16-14
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Crossboccia</div>
 
@@ -336,26 +339,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     7-15
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Jumpergame</div>
 
@@ -364,26 +367,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     14-16
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Hit The Line</div>
 
@@ -392,32 +395,32 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/noun_Bear_54735.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                     <span class="gamelist-item-playername">
                         MAZL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     8-10-7
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Crossboccia</div>
 
@@ -426,26 +429,32 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/noun_Bear_54735.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
+                    <span class="gamelist-item-playername">
+                        THEEL&nbsp;
+                    </span>
+                    
                     <span class="gamelist-item-playername">
                         MAZL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     10-15
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Hit The Line</div>
 
@@ -454,32 +463,32 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/noun_Bear_54735.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                     <span class="gamelist-item-playername">
                         MAZL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     10-8-6
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Crossboccia</div>
 
@@ -488,26 +497,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     15-6
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Melee-Boccia</div>
 
@@ -516,26 +525,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     15-12
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Crossboccia</div>
 
@@ -544,26 +553,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     11-15
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Crossboccia</div>
 
@@ -572,26 +581,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     15-12
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Sadistenspiel</div>
 
@@ -600,26 +609,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     1-2
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Crossboccia</div>
 
@@ -628,26 +637,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     10-12
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Crossboccia</div>
 
@@ -656,30 +665,30 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     2-12
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
             <!-- update curr year and render the changed year -->
-
+            
             <div class="gamelist-year">2012</div>
-
+            
 
             <div class="gamelist-name">Speedminton</div>
 
@@ -688,26 +697,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     4-2
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Crossboccia</div>
 
@@ -716,26 +725,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     10-15
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Speedminton</div>
 
@@ -744,26 +753,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     4-0
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Crossboccia</div>
 
@@ -772,26 +781,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     9-15
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Lattenschießen</div>
 
@@ -800,26 +809,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     28-33
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Lattenschießen</div>
 
@@ -828,26 +837,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     33-27
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Lattenschießen</div>
 
@@ -856,26 +865,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     27-34
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Speedminton</div>
 
@@ -884,26 +893,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     4-1
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Crossboccia</div>
 
@@ -912,26 +921,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     15-11
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Speedminton</div>
 
@@ -940,26 +949,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     3-1
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Crossboccia</div>
 
@@ -968,26 +977,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     15-9
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Crossboccia</div>
 
@@ -996,26 +1005,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     15-8
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Crossboccia</div>
 
@@ -1024,26 +1033,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     15-5
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Crossboccia</div>
 
@@ -1052,26 +1061,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     7-15
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Lattenschießen</div>
 
@@ -1080,26 +1089,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     34-27
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Lattenschießen</div>
 
@@ -1108,26 +1117,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     22-34
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Lattenschießen</div>
 
@@ -1136,26 +1145,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     22-31
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Crossboccia</div>
 
@@ -1164,26 +1173,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     6-15
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Hit The Line</div>
 
@@ -1192,26 +1201,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     6-15
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Crossboccia</div>
 
@@ -1220,26 +1229,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     4-15
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Crossboccia</div>
 
@@ -1248,26 +1257,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     10-15
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Crossboccia</div>
 
@@ -1276,26 +1285,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     7-15
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Jumpergame</div>
 
@@ -1304,26 +1313,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     16-18
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Weihergolf</div>
 
@@ -1332,26 +1341,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     15-5
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Cart-Zone</div>
 
@@ -1360,26 +1369,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     3-1
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Cart-Rail</div>
 
@@ -1388,26 +1397,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     1-3
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Crossboccia</div>
 
@@ -1416,26 +1425,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     8-15
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Kubb</div>
 
@@ -1444,26 +1453,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     14-0
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Kubb</div>
 
@@ -1472,26 +1481,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     0-10
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Kubb</div>
 
@@ -1500,26 +1509,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     0-13
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Crossboccia</div>
 
@@ -1528,30 +1537,30 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     13-16
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
             <!-- update curr year and render the changed year -->
-
+            
             <div class="gamelist-year">2018</div>
-
+            
 
             <div class="gamelist-name">Pool Shot</div>
 
@@ -1560,26 +1569,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     2-1
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Crossboccia</div>
 
@@ -1588,26 +1597,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     14-16
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Speedminton</div>
 
@@ -1616,26 +1625,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     2-0
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Lattenschießen</div>
 
@@ -1644,26 +1653,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     2-1
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Prox the Line</div>
 
@@ -1672,26 +1681,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     13-15
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Körperball</div>
 
@@ -1700,26 +1709,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     1-2
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Pool Golf</div>
 
@@ -1728,26 +1737,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     32-29
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Pool Shot</div>
 
@@ -1756,26 +1765,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     2-4
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Crossboccia</div>
 
@@ -1784,26 +1793,26 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     15-11
                 </span>
             </div>
-
+            
 
             <!-- handle year separators -->
-
+            
 
             <div class="gamelist-name">Fußgolf</div>
 
@@ -1812,24 +1821,23 @@
                     <span class="gamelist-item-vs">vs</span>
 
                     <!-- opponent images -->
-
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
-
+                    
+                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+                    
 
                     <!-- opponent names -->
-
+                    
                     <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
+                        THEEL&nbsp;
                     </span>
-
+                    
                 </div>
 
                 <span class="gamelist-item-score">
                     1-6
                 </span>
             </div>
-
+            
         </div>
     </div>
-
 </div>

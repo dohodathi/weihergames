@@ -1,0 +1,278 @@
+{% set DEFAULT_SPACING = '16px' %}
+
+<style>
+    .body {
+        margin: 0;
+        padding: 0;
+
+        background-color: #27282d;
+        font-family: 'Roboto', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+    }
+
+    /* general layout */
+    #playercard {
+        color: white;
+    }
+
+    #playercard img {
+        border-radius: 50%;
+        object-fit: contain;
+        vertical-align: top;
+    }
+
+    #playercard .header {
+        margin: {{ DEFAULT_SPACING }};
+        margin-bottom: 0px;
+
+        background-color: transparent;
+    }
+
+    #playercard .body {
+        margin: {{ DEFAULT_SPACING }};
+        margin-top: 0px;
+
+        background-color: #2f2e33;
+    }
+
+    /* details:header */
+    .header .playerstats {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .header .playername {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        height: 68px;
+
+        color: white;
+        background-color: #18171d;
+    }
+
+    .header .playername h1 {
+        margin: 0;
+        margin-left: 110px;
+
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    .header .playername img {
+        position: absolute;
+        bottom: 34px;
+        left: {{ DEFAULT_SPACING }};
+        z-index: 1;
+
+        width: 94px;
+        height: 94px;
+
+        background-color: white;
+    }
+
+    /* details:body */
+    .body .stats {
+    }
+
+    .body .stats-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0 {{ DEFAULT_SPACING }};
+        height: 65px;
+    }
+
+    .body .stats-percentage {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0 {{ DEFAULT_SPACING }};
+        height: 65px;
+    }
+
+    .body .stats-ratio {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0 {{ DEFAULT_SPACING }};
+        height: 65px;
+    }
+
+    .body .graph {
+        height: 180px;
+
+        background-color: #27282d;
+        border-top: 1px solid #3a3a3a;
+        border-bottom: 1px solid #3a3a3a;
+    }
+
+    /* gamelist */
+    .gamelist {
+    }
+
+    .gamelist-year {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: {{ DEFAULT_SPACING }};
+
+        background-color: #18171d;
+    }
+
+    .gamelist-name {
+        padding-top: {{ DEFAULT_SPACING }};
+        padding-left: {{ DEFAULT_SPACING }};
+    }
+
+    .gamelist-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0 {{ DEFAULT_SPACING }};
+        height: 80px;
+
+        border-bottom: 1px solid #3a3a3a;
+    }
+
+    .gamelist-item-col-1 {
+        display: flex;
+        align-items: center;
+    }
+
+    .gamelist-item-vs {
+        margin-right: {{ DEFAULT_SPACING }};
+    }
+
+    .gamelist-item-playerimg {
+        width: 45px;
+        height: 45px;
+
+        border: 1px solid #707070;
+        background-color: white;
+    }
+
+    .gamelist-item-playername {
+        margin-left: {{ DEFAULT_SPACING }};
+    }
+</style>
+
+<div id="playercard">
+    <div class="header">
+        <div class="playerstats">
+            <div class="playerstats-elo">
+                <div class="label">elo rating</div>
+                <div class="value">{{ data.player.elo }}</div>
+            </div>
+
+            <div class="playerstats-rank">
+                <div class="value">{{ data.player.rank }}</div>
+                <div class="label">
+                    <div class="world">World</div>
+                    <div class="rank">Rank</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="playername">
+            <img src="{{ data.player.img }}" />
+            <h1>{{ data.player.name }}</h1>
+        </div>
+    </div>
+
+    <div class="body">
+        <div class="stats">
+            <div class="stats-header">
+                <div>Statistics</div>
+                <div>Ladder</div>
+                <div>Seasons</div>
+                <div>All</div>
+            </div>
+
+            <div class="stats-percentage">
+                <div class="title">Win rate</div>
+                <div class="value">
+                    {{ data.player.sumOffSeasonWon / (data.player.sumOffSeasonTie + data.player.sumOffSeasonLose + 1) *
+                    100 }}%
+                </div>
+                <div class="value">
+                    {{ data.player.sumSeasonWon / (data.player.sumSeasonTie + data.player.sumSeasonLose + 1) * 100 }}%
+                </div>
+                <div class="value">
+                    {{ data.player.sumWon / (data.player.sumTie + data.player.sumLose + 1) * 100 }}%
+                </div>
+            </div>
+
+            <div class="stats-ratio">
+                <div class="title">Matches</div>
+
+                <div class="value">
+                    <span class="stats-ratio-win">{{ data.player.sumOffSeasonWon }}</span>&nbsp;/&nbsp;
+                    <span class="stats-ratio-tie">{{ data.player.sumOffSeasonTie }}</span>&nbsp;/&nbsp;
+                    <span class="stats-ratio-lose">{{ data.player.sumOffSeasonLose }}</span>
+                </div>
+
+                <div class="value">
+                    <span class="stats-ratio-win">{{ data.player.sumSeasonWon }}</span>&nbsp;/&nbsp;
+                    <span class="stats-ratio-tie">{{ data.player.sumSeasonTie }}</span>&nbsp;/&nbsp;
+                    <span class="stats-ratio-lose">{{ data.player.sumSeasonLose }}</span>
+                </div>
+
+                <div class="value">
+                    <span class="stats-ratio-win">{{ data.player.sumWon }}</span>&nbsp;/&nbsp;
+                    <span class="stats-ratio-tie">{{ data.player.sumTie }}</span>&nbsp;/&nbsp;
+                    <span class="stats-ratio-lose">{{ data.player.sumLose }}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="graph">
+            Graph anhand letzter Spiele mit ELO Werten
+        </div>
+
+        <!-- https://stackoverflow.com/questions/9486393/jinja2-change-the-value-of-a-variable-inside-a-loop -->
+        {% set vars = namespace(currYear=0) %}
+
+        <div class="gamelist">
+            {% for match in data.matches %}
+
+            <!-- handle year separators -->
+            {% if getYearFromDateString(match.datetime) != vars.currYear %}
+            <!-- update curr year and render the changed year -->
+            {% set vars.currYear = getYearFromDateString(match.datetime) %}
+            <div class="gamelist-year">{{ vars.currYear }}</div>
+            {% endif %}
+
+            <div class="gamelist-name">{{ match.game.name }}</div>
+
+            <div class="gamelist-item">
+                <div class="gamelist-item-col-1">
+                    <span class="gamelist-item-vs">vs</span>
+
+                    <!-- opponent images -->
+                    {% for opponent in match.participants if opponent.name != data.player.name %}
+                    <img class="gamelist-item-playerimg" src="{{ opponent.img }}" />
+                    {% endfor %}
+
+                    <!-- opponent names -->
+                    {% for opponent in match.participants if opponent.name != data.player.name %}
+                    <span class="gamelist-item-playername">
+                        {{ opponent.name }}&nbsp;
+                    </span>
+                    {% endfor %}
+                </div>
+
+                <span class="gamelist-item-score">
+                    {{ match.result | join('-') }}
+                </span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

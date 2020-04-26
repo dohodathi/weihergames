@@ -96,7 +96,7 @@ class PlayerData():
     @img.setter
     def img(self, img_filename=None):
         img_path = os.path.join(_IMAGE_FOLDER, str(img_filename))
-        if os.path.isfile(img_path): 
+        if os.path.isfile(img_path):
             self.__img = img_path
         else:
             self.__img = os.path.join(_IMAGE_FOLDER, _ALT_PLAYER_IMG)
@@ -119,7 +119,7 @@ class GameData():
     @img.setter
     def img(self, img_filename):
         img_path = os.path.join(_IMAGE_FOLDER, str(img_filename))
-        if os.path.isfile(img_path): 
+        if os.path.isfile(img_path):
             self.__img = img_path
         else:
             self.__img = os.path.join(_IMAGE_FOLDER, _ALT_GAME_IMG)
@@ -131,7 +131,7 @@ class GameData():
     @img.setter
     def field_of_play_icon(self, img_filename):
         img_path = os.path.join(_IMAGE_FOLDER, str(img_filename))
-        if os.path.isfile(img_path): 
+        if os.path.isfile(img_path):
             self.__field_of_play_icon = img_path
         else:
             self.__field_of_play_icon = os.path.join(_IMAGE_FOLDER, _ALT_FIELDOFPLAY_IMG)
@@ -277,11 +277,27 @@ def render_templates(players, games, matches):
 
     template = env.get_template('userprofile.html')
 
+    # generate html to be embedded via iframe within the .md files
     for player in players:
         filename = os.path.join(_ROOT_FILE, '..', 'build/users/',
             'dynamic_{0}.html'.format(player.name.lower()))
         with open(filename, 'w') as fh:
             fh.write(template.render(
+                data = {
+                    'player': player,
+                    'matches': matches
+                }
+            ))
+            logging.info('... rendered: {0}'.format(filename))
+
+    mdTemplate = env.get_template('test_no_embed.html')
+
+    # generate .md files directly
+    for player in players:
+        filename = os.path.join(_ROOT_FILE, '..', 'docs/users/',
+            'dynamic_{0}.md'.format(player.name.lower()))
+        with open(filename, 'w') as fh:
+            fh.write(mdTemplate.render(
                 data = {
                     'player': player,
                     'matches': matches
