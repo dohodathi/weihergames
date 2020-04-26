@@ -181,7 +181,7 @@
         </div>
 
         <div class="playername">
-            <img src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21106731.png" />
+            <img src="/images/vectorstock_21106731.png" />
             <h1>THEEL</h1>
         </div>
     </div>
@@ -256,7 +256,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -284,7 +284,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -312,7 +312,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -340,7 +340,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -368,7 +368,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -396,9 +396,9 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/noun_Bear_54735.png" />
+                    <img class="gamelist-item-playerimg" src="/images/noun_Bear_54735.png" />
                     
 
                     <!-- opponent names -->
@@ -430,7 +430,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/noun_Bear_54735.png" />
+                    <img class="gamelist-item-playerimg" src="/images/noun_Bear_54735.png" />
                     
 
                     <!-- opponent names -->
@@ -458,9 +458,9 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/noun_Bear_54735.png" />
+                    <img class="gamelist-item-playerimg" src="/images/noun_Bear_54735.png" />
                     
 
                     <!-- opponent names -->
@@ -492,7 +492,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -520,7 +520,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -548,7 +548,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -576,7 +576,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -604,7 +604,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -632,7 +632,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -660,7 +660,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -692,7 +692,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -720,7 +720,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -748,7 +748,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -776,7 +776,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -804,7 +804,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -832,7 +832,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -860,7 +860,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -888,7 +888,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -916,7 +916,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -944,7 +944,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -972,7 +972,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -1000,7 +1000,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -1028,7 +1028,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -1056,7 +1056,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -1084,7 +1084,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -1112,7 +1112,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -1140,7 +1140,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -1168,7 +1168,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -1196,7 +1196,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -1224,7 +1224,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -1252,7 +1252,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -1280,7 +1280,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -1308,7 +1308,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -1336,7 +1336,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -1364,7 +1364,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -1392,7 +1392,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -1420,7 +1420,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -1448,7 +1448,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -1476,7 +1476,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -1504,7 +1504,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -1532,7 +1532,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -1564,7 +1564,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -1592,7 +1592,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -1620,7 +1620,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -1648,7 +1648,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -1676,7 +1676,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -1704,7 +1704,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -1732,7 +1732,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -1760,7 +1760,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -1788,7 +1788,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
@@ -1816,7 +1816,7 @@
 
                     <!-- opponent images -->
                     
-                    <img class="gamelist-item-playerimg" src="/Users/doompy/workspace/weihergames/scripts/../docs/images/vectorstock_21320352.png" />
+                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
                     
 
                     <!-- opponent names -->
