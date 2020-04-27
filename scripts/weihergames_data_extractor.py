@@ -70,6 +70,8 @@ ELO_LEVELING_VALUE = 12 # all matches are leveld to have totalpoints of X, other
 ELO_PARTICIPATION_VALUE = 3 # this value is added to each participation, this makes a lot of participation also positive, can be 0 if no bonus schould be given, a value higher than 0 make an inflatation
 
 
+def getRelativeImagePath(filename):
+    return '/images/' + filename
 
 class PlayerData():
     def __init__(self, name):
@@ -96,10 +98,10 @@ class PlayerData():
     @img.setter
     def img(self, img_filename=None):
         img_path = os.path.join(_IMAGE_FOLDER, str(img_filename))
-        if os.path.isfile(img_path): 
-            self.__img = img_path
+        if os.path.isfile(img_path):
+            self.__img = getRelativeImagePath(img_filename)
         else:
-            self.__img = os.path.join(_IMAGE_FOLDER, _ALT_PLAYER_IMG)
+            self.__img = getRelativeImagePath(_ALT_PLAYER_IMG)
 
 class GameData():
     def __init__(self, name):
@@ -119,10 +121,10 @@ class GameData():
     @img.setter
     def img(self, img_filename):
         img_path = os.path.join(_IMAGE_FOLDER, str(img_filename))
-        if os.path.isfile(img_path): 
-            self.__img = img_path
+        if os.path.isfile(img_path):
+            self.__img = getRelativeImagePath(img_filename)
         else:
-            self.__img = os.path.join(_IMAGE_FOLDER, _ALT_GAME_IMG)
+            self.__img = getRelativeImagePath(_ALT_GAME_IMG)
 
     @property
     def field_of_play_icon(self):
@@ -131,10 +133,10 @@ class GameData():
     @img.setter
     def field_of_play_icon(self, img_filename):
         img_path = os.path.join(_IMAGE_FOLDER, str(img_filename))
-        if os.path.isfile(img_path): 
-            self.__field_of_play_icon = img_path
+        if os.path.isfile(img_path):
+            self.__field_of_play_icon = getRelativeImagePath(img_filename)
         else:
-            self.__field_of_play_icon = os.path.join(_IMAGE_FOLDER, _ALT_FIELDOFPLAY_IMG)
+            self.__field_of_play_icon = getRelativeImagePath(_ALT_FIELDOFPLAY_IMG)
 
 
 class MatchData():
@@ -277,11 +279,27 @@ def render_templates(players, games, matches):
 
     template = env.get_template('userprofile.html')
 
+    # generate html to be embedded via iframe within the .md files
     for player in players:
-        filename = os.path.join(_ROOT_FILE, '..', 'build/users/',
-            'dynamic_{0}.html'.format(player.name.lower()))
+        filename = os.path.join(_ROOT_FILE, '..', 'build',
+            'player_{0}.html'.format(player.name.lower()))
         with open(filename, 'w') as fh:
             fh.write(template.render(
+                data = {
+                    'player': player,
+                    'matches': matches
+                }
+            ))
+            logging.info('... rendered: {0}'.format(filename))
+
+    mdTemplate = env.get_template('test_no_embed.html')
+
+    # generate .md files directly
+    for player in players:
+        filename = os.path.join(_ROOT_FILE, '..', 'docs/users/',
+            'dynamic_{0}.md'.format(player.name.lower()))
+        with open(filename, 'w') as fh:
+            fh.write(mdTemplate.render(
                 data = {
                     'player': player,
                     'matches': matches

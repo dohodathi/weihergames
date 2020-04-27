@@ -1,4 +1,4 @@
-{% set DEFAULT_SPACING = '16px' %}
+{% set DEFAULT_SPACING = '16px' %} {% set COLOR_WIN = '#43D181' %} {% set COLOR_LOSE = '#D85E40' %}
 
 <html>
     <head>
@@ -59,6 +59,7 @@
                 margin: 0;
                 margin-left: 110px;
 
+                color: white;
                 font-size: 24px;
                 font-weight: 700;
             }
@@ -106,9 +107,14 @@
                 height: 65px;
             }
 
-            .body .graph {
-                height: 180px;
+            .graph {
+                display: flex;
+                align-items: center;
+                justify-content: center;
 
+                height: 120px;
+
+                color: #aaa;
                 background-color: #27282d;
                 border-top: 1px solid #3a3a3a;
                 border-bottom: 1px solid #3a3a3a;
@@ -133,13 +139,25 @@
                 padding-left: {{ DEFAULT_SPACING }};
             }
 
-            .gamelist-item {
+            .gamelist-item.even {
+                background-color: rgba(0,0,0,0.1);
+            }
+
+            .gamelist-item-header {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
 
-                padding: 0 {{ DEFAULT_SPACING }};
-                height: 80px;
+                padding: {{ DEFAULT_SPACING }};
+                padding-bottom: 0;
+            }
+
+            .gamelist-item-content {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                padding: {{ DEFAULT_SPACING }};
 
                 border-bottom: 1px solid #3a3a3a;
             }
@@ -162,7 +180,15 @@
             }
 
             .gamelist-item-playername {
-                margin-left: {{ DEFAULT_SPACING }};
+                margin-left: 8px;
+            }
+
+            .gamelist-item-score.win {
+                color: {{ COLOR_WIN }};
+            }
+
+            .gamelist-item-score.lose {
+                color: {{ COLOR_LOSE }};
             }
         </style>
     </head>
@@ -254,28 +280,35 @@
                     <div class="gamelist-year">{{ vars.currYear }}</div>
                     {% endif %}
 
-                    <div class="gamelist-name">{{ match.game.name }}</div>
-
-                    <div class="gamelist-item">
-                        <div class="gamelist-item-col-1">
-                            <span class="gamelist-item-vs">vs</span>
-
-                            <!-- opponent images -->
-                            {% for opponent in match.participants if opponent.name != data.player.name %}
-                            <img class="gamelist-item-playerimg" src="{{ opponent.img }}" />
-                            {% endfor %}
-
-                            <!-- opponent names -->
-                            {% for opponent in match.participants if opponent.name != data.player.name %}
-                            <span class="gamelist-item-playername">
-                                {{ opponent.name }}&nbsp;
-                            </span>
-                            {% endfor %}
+                    <div class="gamelist-item {{ 'even' if loop.index % 2 == 0 }}">
+                        <div class="gamelist-item-header">
+                            <div class="gamelist-item-name">{{ match.game.name }}</div>
                         </div>
 
-                        <span class="gamelist-item-score">
-                            {{ match.result | join('-') }}
-                        </span>
+                        <div class="gamelist-item-content">
+                            <div class="gamelist-item-col-1">
+                                <span class="gamelist-item-vs">vs</span>
+
+                                <!-- opponent images -->
+                                {% if match.participants | length < 3 %}
+                                <!-- only insert images for 1v1 matches -->
+                                {% for opponent in match.participants if opponent.name != data.player.name %}
+                                <img class="gamelist-item-playerimg" src="{{ opponent.img }}" />
+                                {% endfor %} {% endif %}
+
+                                <!-- opponent names -->
+                                <span class="gamelist-item-playername">
+                                    {{ match.participants | map(attribute='name') | reject('in', [data.player.name]) |
+                                    join(', ') }}
+                                </span>
+                            </div>
+
+                            <span
+                                class="gamelist-item-score {{ 'win' if match.winner.name == data.player.name else 'lose' }}"
+                            >
+                                {{ match.result | join(' - ') }}
+                            </span>
+                        </div>
                     </div>
                     {% endfor %}
                 </div>
