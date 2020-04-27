@@ -1,17 +1,20 @@
-
+  
 
 <style>
-    .body {
-        margin: 0;
-        padding: 0;
+    a.unstyled, a.unstyled:visited {
+        text-decoration: none;
+        color: white;
+    }
 
-        background-color: #27282d;
-        font-family: 'Roboto', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+    a.unstyled:hover, a.unstyled:active {
+        color: #8AF;
     }
 
     /* general layout */
     #playercard {
         color: white;
+        background-color: #27282d;
+        font-family: 'Roboto', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
     }
 
     #playercard img {
@@ -103,9 +106,14 @@
         height: 65px;
     }
 
-    .body .graph {
-        height: 180px;
+    .graph {
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
+        height: 120px;
+
+        color: #aaa;
         background-color: #27282d;
         border-top: 1px solid #3a3a3a;
         border-bottom: 1px solid #3a3a3a;
@@ -130,13 +138,25 @@
         padding-left: 16px;
     }
 
-    .gamelist-item {
+    .gamelist-item.even {
+        background-color: rgba(0,0,0,0.1);
+    }
+
+    .gamelist-item-header {
         display: flex;
         align-items: center;
         justify-content: space-between;
 
-        padding: 0 16px;
-        height: 80px;
+        padding: 16px;
+        padding-bottom: 0;
+    }
+
+    .gamelist-item-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 16px;
 
         border-bottom: 1px solid #3a3a3a;
     }
@@ -158,8 +178,24 @@
         background-color: white;
     }
 
+    .gamelist-item-playerimg.transparent {
+        background-color: transparent;
+    }
+
     .gamelist-item-playername {
-        margin-left: 16px;
+        margin-left: 8px;
+    }
+
+    .gamelist-item-score  {
+        font-weight: 700;
+    }
+
+    .gamelist-item-score.win {
+        color: #43D181;
+    }
+
+    .gamelist-item-score.lose {
+        color: #D85E40;
     }
 </style>
 
@@ -248,504 +284,614 @@
             <div class="gamelist-year">2011</div>
             
 
-            <div class="gamelist-name">Weihergolf 18-Loch Wurfmodus</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item ">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/weihergolf_18_loch_wurfmodus">Weihergolf 18-Loch Wurfmodus</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    12-13
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        12 - 13
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Weihergolf 9-Loch-Standard</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item even">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/weihergolf_9_loch_standard">Weihergolf 9-Loch-Standard</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    0-6
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        0 - 6
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Crossboccia</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item ">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/crossboccia">Crossboccia</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    16-14
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        16 - 14
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Crossboccia</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item even">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/crossboccia">Crossboccia</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    7-15
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        7 - 15
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Jumpergame</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item ">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/jumpergame">Jumpergame</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    14-16
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        14 - 16
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Hit The Line</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item even">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/hit_the_line">Hit The Line</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    8-10-7
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <img class="gamelist-item-playerimg transparent" src="/images/users_multiple.png" />
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                            ,&nbsp; 
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                             
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        8 - 10 - 7
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Crossboccia</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item ">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/crossboccia">Crossboccia</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    10-15
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score win">
+                        10 - 15
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Hit The Line</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item even">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/hit_the_line">Hit The Line</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    10-8-6
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <img class="gamelist-item-playerimg transparent" src="/images/users_multiple.png" />
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                            ,&nbsp; 
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                             
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        10 - 8 - 6
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Crossboccia</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item ">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/crossboccia">Crossboccia</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    15-6
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        15 - 6
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Melee-Boccia</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item even">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/melee_boccia">Melee-Boccia</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    15-12
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        15 - 12
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Crossboccia</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item ">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/crossboccia">Crossboccia</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    11-15
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        11 - 15
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Crossboccia</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item even">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/crossboccia">Crossboccia</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    15-12
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        15 - 12
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Sadistenspiel</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item ">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/sadistenspiel">Sadistenspiel</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    1-2
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        1 - 2
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Crossboccia</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item even">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/crossboccia">Crossboccia</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    10-12
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        10 - 12
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Crossboccia</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item ">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/crossboccia">Crossboccia</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    2-12
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        2 - 12
+                    </span>
+                </div>
             </div>
             
 
@@ -756,1054 +902,1302 @@
             <div class="gamelist-year">2012</div>
             
 
-            <div class="gamelist-name">Speedminton</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item even">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/speedminton">Speedminton</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    4-2
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        4 - 2
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Crossboccia</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item ">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/crossboccia">Crossboccia</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    10-15
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        10 - 15
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Speedminton</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item even">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/speedminton">Speedminton</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    4-0
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        4 - 0
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Crossboccia</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item ">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/crossboccia">Crossboccia</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    9-15
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        9 - 15
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Lattenschießen</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item even">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/lattenschiessen">Lattenschießen</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    28-33
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        28 - 33
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Lattenschießen</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item ">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/lattenschiessen">Lattenschießen</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    33-27
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        33 - 27
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Lattenschießen</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item even">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/lattenschiessen">Lattenschießen</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    27-34
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        27 - 34
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Speedminton</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item ">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/speedminton">Speedminton</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    4-1
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        4 - 1
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Crossboccia</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item even">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/crossboccia">Crossboccia</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    15-11
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        15 - 11
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Speedminton</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item ">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/speedminton">Speedminton</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    3-1
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        3 - 1
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Crossboccia</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item even">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/crossboccia">Crossboccia</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    15-9
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        15 - 9
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Crossboccia</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item ">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/crossboccia">Crossboccia</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    15-8
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        15 - 8
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Crossboccia</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item even">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/crossboccia">Crossboccia</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    15-5
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        15 - 5
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Crossboccia</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item ">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/crossboccia">Crossboccia</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    7-15
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        7 - 15
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Lattenschießen</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item even">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/lattenschiessen">Lattenschießen</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    34-27
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        34 - 27
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Lattenschießen</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item ">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/lattenschiessen">Lattenschießen</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    22-34
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        22 - 34
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Lattenschießen</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item even">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/lattenschiessen">Lattenschießen</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    22-31
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        22 - 31
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Crossboccia</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item ">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/crossboccia">Crossboccia</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    6-15
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        6 - 15
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Hit The Line</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item even">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/hit_the_line">Hit The Line</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    6-15
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        6 - 15
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Crossboccia</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item ">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/crossboccia">Crossboccia</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    4-15
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        4 - 15
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Crossboccia</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item even">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/crossboccia">Crossboccia</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    10-15
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        10 - 15
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Crossboccia</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item ">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/crossboccia">Crossboccia</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    7-15
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        7 - 15
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Jumpergame</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item even">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/jumpergame">Jumpergame</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    16-18
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        16 - 18
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Weihergolf</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item ">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/weihergolf">Weihergolf</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    15-5
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        15 - 5
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Cart-Zone</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item even">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/cart_zone">Cart-Zone</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    3-1
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        3 - 1
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Cart-Rail</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item ">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/cart_rail">Cart-Rail</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    1-3
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        1 - 3
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Crossboccia</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item even">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/crossboccia">Crossboccia</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    8-15
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        8 - 15
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Kubb</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item ">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/kubb">Kubb</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    14-0
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        14 - 0
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Kubb</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item even">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/kubb">Kubb</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    0-10
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        0 - 10
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Kubb</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item ">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/kubb">Kubb</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    0-13
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        0 - 13
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Crossboccia</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item even">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/crossboccia">Crossboccia</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    13-16
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        13 - 16
+                    </span>
+                </div>
             </div>
             
 
@@ -1814,340 +2208,420 @@
             <div class="gamelist-year">2018</div>
             
 
-            <div class="gamelist-name">Pool Shot</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item ">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/pool_shot">Pool Shot</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    2-1
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        2 - 1
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Crossboccia</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item even">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/crossboccia">Crossboccia</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    14-16
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        14 - 16
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Speedminton</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item ">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/speedminton">Speedminton</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    2-0
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        2 - 0
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Lattenschießen</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item even">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/lattenschiessen">Lattenschießen</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    2-1
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        2 - 1
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Prox the Line</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item ">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/prox_the_line">Prox the Line</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    13-15
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        13 - 15
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Körperball</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item even">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/korperball">Körperball</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    1-2
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        1 - 2
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Pool Golf</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item ">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/pool_golf">Pool Golf</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    32-29
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        32 - 29
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Pool Shot</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item even">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/pool_shot">Pool Shot</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    2-4
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        2 - 4
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Crossboccia</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item ">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/crossboccia">Crossboccia</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    15-11
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        15 - 11
+                    </span>
+                </div>
             </div>
             
 
             <!-- handle year separators -->
             
 
-            <div class="gamelist-name">Fußgolf</div>
-
-            <div class="gamelist-item">
-                <div class="gamelist-item-col-1">
-                    <span class="gamelist-item-vs">vs</span>
-
-                    <!-- opponent images -->
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                    
-                    <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
-                    
-
-                    <!-- opponent names -->
-                    
-                    <span class="gamelist-item-playername">
-                        THEEL&nbsp;
-                    </span>
-                    
-                    <span class="gamelist-item-playername">
-                        DOOMPY&nbsp;
-                    </span>
-                    
+            <div class="gamelist-item even">
+                <div class="gamelist-item-header">
+                    <div class="gamelist-item-name">
+                        <a class="unstyled" href="/games/fussgolf">Fußgolf</a>
+                    </div>
                 </div>
 
-                <span class="gamelist-item-score">
-                    1-6
-                </span>
+                <div class="gamelist-item-content">
+                    <div class="gamelist-item-col-1">
+                        <span class="gamelist-item-vs">vs</span>
+
+                        <!-- opponent images -->
+                        
+                        <!-- only insert images for 1v1 matches -->
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
+                        
+                        <img class="gamelist-item-playerimg" src="/images/vectorstock_21320352.png" />
+                        
+                        <!-- else render a multi user image to indicate a multiplayer game -->
+                        
+
+                        <!-- opponent names -->
+                        <span class="gamelist-item-playername">
+                            
+                            <a class="unstyled" href="/users/theel">THEEL</a>
+                             
+                            <a class="unstyled" href="/users/doompy">DOOMPY</a>
+                            ,&nbsp; 
+                        </span>
+                    </div>
+
+                    <span class="gamelist-item-score lose">
+                        1 - 6
+                    </span>
+                </div>
             </div>
             
         </div>

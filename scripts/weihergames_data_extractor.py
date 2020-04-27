@@ -50,8 +50,7 @@ import json
 from datetime import datetime
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from operator import itemgetter
-
-
+from slugify import slugify
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -72,6 +71,16 @@ ELO_PARTICIPATION_VALUE = 3 # this value is added to each participation, this ma
 
 def getRelativeImagePath(filename):
     return '/images/' + filename
+
+def get_year_from_datetime_string(dt_string):
+    try:
+        dt = datetime.strptime(dt_string, '%Y-%m-%dT%H:%M:%S')
+        return dt.year
+    except ValueError:
+        return None
+
+def slugify_underscore(anyString):
+    return slugify(anyString, separator="_")
 
 class PlayerData():
     def __init__(self, name):
@@ -260,15 +269,6 @@ def process_matches(matches):
     for match in matches:
         pass # TODO
 
-
-def get_year_from_datetime_string(dt_string):
-    try:
-        dt = datetime.strptime(dt_string, '%Y-%m-%dT%H:%M:%S')
-        return dt.year
-    except ValueError:
-        return None
-
-
 def render_templates(players, games, matches):
     templates_dir = os.path.join(_ROOT_FILE, '../templates')
     env = Environment(
@@ -276,6 +276,7 @@ def render_templates(players, games, matches):
         autoescape=select_autoescape(['html', 'xml'])
     )
     env.globals['getYearFromDateString'] = get_year_from_datetime_string
+    env.globals['slugify'] = slugify_underscore
 
     template = env.get_template('userprofile.html')
 

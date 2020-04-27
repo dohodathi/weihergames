@@ -8,14 +8,22 @@
             body {
                 margin: 0;
                 padding: 0;
+            }
 
-                background-color: #27282d;
-                font-family: 'Roboto', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+            a.unstyled, a.unstyled:visited {
+                text-decoration: none;
+                color: white;
+            }
+
+            a.unstyled:hover, a.unstyled:active {
+                color: #8AF;
             }
 
             /* general layout */
             #playercard {
                 color: white;
+                background-color: #27282d;
+                font-family: 'Roboto', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
             }
 
             #playercard img {
@@ -179,8 +187,16 @@
                 background-color: white;
             }
 
+            .gamelist-item-playerimg.transparent {
+                background-color: transparent;
+            }
+
             .gamelist-item-playername {
                 margin-left: 8px;
+            }
+
+            .gamelist-item-score  {
+                font-weight: 700;
             }
 
             .gamelist-item-score.win {
@@ -282,7 +298,11 @@
 
                     <div class="gamelist-item {{ 'even' if loop.index % 2 == 0 }}">
                         <div class="gamelist-item-header">
-                            <div class="gamelist-item-name">{{ match.game.name }}</div>
+                            <div class="gamelist-item-name">
+                                <a class="unstyled" href="/games/{{ slugify(match.game.name) }}"
+                                    >{{ match.game.name }}</a
+                                >
+                            </div>
                         </div>
 
                         <div class="gamelist-item-content">
@@ -294,12 +314,20 @@
                                 <!-- only insert images for 1v1 matches -->
                                 {% for opponent in match.participants if opponent.name != data.player.name %}
                                 <img class="gamelist-item-playerimg" src="{{ opponent.img }}" />
-                                {% endfor %} {% endif %}
+                                {% endfor %}
+                                <!-- else render a multi user image to indicate a multiplayer game -->
+                                {% else %}
+                                <img class="gamelist-item-playerimg transparent" src="/images/users_multiple.png" />
+                                {% endif %}
 
                                 <!-- opponent names -->
                                 <span class="gamelist-item-playername">
-                                    {{ match.participants | map(attribute='name') | reject('in', [data.player.name]) |
-                                    join(', ') }}
+                                    {% for participant in match.participants if participant.name != data.player.name %}
+                                    <a class="unstyled" href="/users/{{ slugify(participant.name) }}"
+                                        >{{ participant.name}}</a
+                                    >
+                                    {% if loop.index != match.participants | length - 1 %},&nbsp;{% endif %} {% endfor
+                                    %}
                                 </span>
                             </div>
 
