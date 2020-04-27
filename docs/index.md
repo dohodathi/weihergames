@@ -1,6 +1,6 @@
 # WEIHERGAMES
 
-<iframe src="../player_all.html"
+<iframe src="./player_theel.html"
         scrolling="no" seamless="seamless"
         frameBorder="0" width="100%"
         onload="resizeIframe(this)">
