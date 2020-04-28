@@ -68,9 +68,9 @@ ELO_LEVELING_VALUE = 12 # all matches are leveld to have totalpoints of X, other
 # can be that per game a different leveling factor must be evaluated
 ELO_PARTICIPATION_VALUE = 3 # this value is added to each participation, this makes a lot of participation also positive, can be 0 if no bonus schould be given, a value higher than 0 make an inflatation
 
-
-def getRelativeImagePath(filename):
-    return '/images/' + filename
+#
+# template injected utils
+#
 
 def get_year_from_datetime_string(dt_string):
     try:
@@ -81,6 +81,16 @@ def get_year_from_datetime_string(dt_string):
 
 def slugify_underscore(anyString):
     return slugify(anyString, separator="_")
+
+#
+# model utils
+#
+
+def get_relative_image_path(filename):
+    return '/images/' + filename
+#
+# models
+#
 
 class PlayerData():
     def __init__(self, name):
@@ -108,9 +118,9 @@ class PlayerData():
     def img(self, img_filename=None):
         img_path = os.path.join(_IMAGE_FOLDER, str(img_filename))
         if os.path.isfile(img_path):
-            self.__img = getRelativeImagePath(img_filename)
+            self.__img = get_relative_image_path(img_filename)
         else:
-            self.__img = getRelativeImagePath(_ALT_PLAYER_IMG)
+            self.__img = get_relative_image_path(_ALT_PLAYER_IMG)
 
 class GameData():
     def __init__(self, name):
@@ -131,9 +141,9 @@ class GameData():
     def img(self, img_filename):
         img_path = os.path.join(_IMAGE_FOLDER, str(img_filename))
         if os.path.isfile(img_path):
-            self.__img = getRelativeImagePath(img_filename)
+            self.__img = get_relative_image_path(img_filename)
         else:
-            self.__img = getRelativeImagePath(_ALT_GAME_IMG)
+            self.__img = get_relative_image_path(_ALT_GAME_IMG)
 
     @property
     def field_of_play_icon(self):
@@ -143,10 +153,9 @@ class GameData():
     def field_of_play_icon(self, img_filename):
         img_path = os.path.join(_IMAGE_FOLDER, str(img_filename))
         if os.path.isfile(img_path):
-            self.__field_of_play_icon = getRelativeImagePath(img_filename)
+            self.__field_of_play_icon = get_relative_image_path(img_filename)
         else:
-            self.__field_of_play_icon = getRelativeImagePath(_ALT_FIELDOFPLAY_IMG)
-
+            self.__field_of_play_icon = get_relative_image_path(_ALT_FIELDOFPLAY_IMG)
 
 class MatchData():
     def __init__(self, game):
@@ -181,10 +190,9 @@ class MatchData():
             logging.error('NO WINNER IDENTIFIED ON: {0}'.format(self))
             return None
 
-
-
-
-
+#
+# data extraction
+#
 
 def read_player_from_json():
     players = []
@@ -202,7 +210,6 @@ def read_player_from_json():
         players.append(p)
         logging.debug('Player found in DB: {0}'.format(p))
     return players
-
 
 def read_games_from_json():
     games = []
@@ -223,7 +230,6 @@ def read_games_from_json():
         games.append(g)
         logging.debug('Game found in DB: {0}'.format(g))
     return games
-
 
 def read_matches_from_json(players, games):
     matches = []
@@ -257,6 +263,13 @@ def read_matches_from_json(players, games):
         matches.append(m)
         logging.debug('Match appended: {0}'.format(m))
     return matches
+
+#
+# data manipulation
+#
+
+def get_matches_by_player(matches, playerName):
+    pass
 
 def process_matches(matches):
     """
