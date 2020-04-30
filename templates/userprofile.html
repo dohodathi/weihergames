@@ -1,4 +1,5 @@
-{% set DEFAULT_SPACING = '16px' %} {% set COLOR_WIN = '#43D181' %} {% set COLOR_LOSE = '#D85E40' %}
+{% set DEFAULT_SPACING = '16px' %} {% set COLOR_WIN = '#43D181' %} {% set COLOR_LOSE = '#D85E40' %} {% set COLOR_BORDER
+= '#3a3a3a' %}
 
 <html>
     <head>
@@ -124,8 +125,8 @@
 
                 color: #aaa;
                 background-color: #27282d;
-                border-top: 1px solid #3a3a3a;
-                border-bottom: 1px solid #3a3a3a;
+                border-top: 1px solid {{ COLOR_BORDER }};
+                border-bottom: 1px solid {{ COLOR_BORDER }};
             }
 
             /* gamelist */
@@ -140,6 +141,8 @@
                 padding: {{ DEFAULT_SPACING }};
 
                 background-color: #18171d;
+                border-left: 1px solid {{ COLOR_BORDER }};
+                border-right: 1px solid {{ COLOR_BORDER }};
             }
 
             .gamelist-name {
@@ -148,7 +151,7 @@
             }
 
             .gamelist-item.even {
-                background-color: rgba(0,0,0,0.1);
+                background-color: rgba(255,255,255,0.06);
             }
 
             .gamelist-item-header {
@@ -160,6 +163,20 @@
                 padding-bottom: 0;
             }
 
+            .gamelist-item-header-name {
+                font-size: 1.0rem;
+                font-weight: 550;
+            }
+
+            .gamelist-item-header-time {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+
+                color: rgba(255,255,255,0.7);
+                font-size: 0.8rem;
+            }
+
             .gamelist-item-content {
                 display: flex;
                 align-items: center;
@@ -167,7 +184,7 @@
 
                 padding: {{ DEFAULT_SPACING }};
 
-                border-bottom: 1px solid #3a3a3a;
+                border-bottom: 1px solid {{ COLOR_BORDER }};
             }
 
             .gamelist-item-col-1 {
@@ -287,7 +304,7 @@
                 {% set vars = namespace(currYear=0) %}
 
                 <div class="gamelist">
-                    {% for match in data.matches %}
+                    {% for match in data.matches | sort(reverse=true, attribute="datetime") %}
 
                     <!-- handle year separators -->
                     {% if getYearFromDateString(match.datetime) != vars.currYear %}
@@ -298,9 +315,14 @@
 
                     <div class="gamelist-item {{ 'even' if loop.index % 2 == 0 }}">
                         <div class="gamelist-item-header">
-                            <div class="gamelist-item-name">
-                                <a class="unstyled" href="/games/{{ slugify(match.game.name) }}"
-                                    >{{ match.game.name }}</a
+                            <a class="gamelist-item-header-name unstyled" href="/games/{{ slugify(match.game.name) }}"
+                                >{{ match.game.name }}</a
+                            >
+
+                            <div class="gamelist-item-header-time">
+                                <span
+                                    >{{ formatDateTime(match.datetime, "%d %b %Y") }} - {{
+                                    formatDateTime(match.datetime, "%H:%M Uhr") }}</span
                                 >
                             </div>
                         </div>

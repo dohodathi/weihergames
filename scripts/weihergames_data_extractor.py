@@ -72,6 +72,12 @@ ELO_PARTICIPATION_VALUE = 3 # this value is added to each participation, this ma
 # template injected utils
 #
 
+def format_datetime(dt_string, date_format="%d %b %Y %I:%M %p"):
+    """Format a date time to (Default): d Mon YYYY HH:MM P"""
+    if dt_string is None:
+        return ""
+    return datetime.strptime(dt_string, '%Y-%m-%dT%H:%M:%S').strftime(date_format)
+
 def get_year_from_datetime_string(dt_string):
     try:
         dt = datetime.strptime(dt_string, '%Y-%m-%dT%H:%M:%S')
@@ -290,6 +296,7 @@ def render_templates(players, games, matches):
     )
     env.globals['getYearFromDateString'] = get_year_from_datetime_string
     env.globals['slugify'] = slugify_underscore
+    env.globals['formatDateTime'] = format_datetime
 
     template = env.get_template('userprofile.html')
 
