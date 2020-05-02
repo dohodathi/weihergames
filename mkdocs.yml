@@ -20,12 +20,12 @@ pages:
       - Weiherlympics 2018: 'seasons/weiherlympics_001.md'
   - Users:
       - Overview: 'users/overview.md'
-      - EmbeddedDoompy: 'users/doompy.md'
-      - EmbeddedMazl: 'users/mazl.md'
-      - EmbeddedTheel: 'users/theel.md'
-      - DynamicDoompy: 'users/dynamic_doompy.md'
-      - DynamicMazl: 'users/dynamic_mazl.md'
-      - DynamicTheel: 'users/dynamic_theel.md'
+      - Doompy: 'users/doompy.md'
+      - Mazl: 'users/mazl.md'
+      - Theel: 'users/theel.md'
+      - Test Doompy: 'users/dynamic_doompy.md'
+      - Test Mazl: 'users/dynamic_mazl.md'
+      - Test Theel: 'users/dynamic_theel.md'
 plugins:
   - markdownmermaid
 extra_javascript:
