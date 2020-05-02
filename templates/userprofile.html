@@ -54,6 +54,9 @@
 
             /* main layout */
             #playercard {
+                padding: 1px 0;
+                max-width: 500px;
+
                 color: white;
                 font-family: 'Roboto', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
             }
@@ -77,10 +80,71 @@
             }
 
             /* details:header */
-            .header .playerstats {
+            .playerstats {
                 display: flex;
                 align-items: center;
                 justify-content: flex-end;
+
+                margin-bottom: 8px;
+            }
+
+            /* rank */
+            .playerstats .rank {
+                display: flex;
+                align-items: center;
+            }
+
+            .playerstats .rank-value {
+                color: white;
+                font-size: 40px;
+                font-weight: bold;
+            }
+
+            .playerstats .rank-label {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                margin-left: {{ DEFAULT_SPACING }};
+            }
+
+            /* elo */
+            .playerstats .elo {
+                margin-right: 10%;
+
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+            }
+
+            .playerstats .elo-value {
+                color: white;
+
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .playerstats .elo-label {
+                color: #999999;
+
+                font-size: 12px;
+                font-weight: 550;
+                text-transform: uppercase;
+            }
+
+            .playerstats .rank-label-world {
+                color: white;
+
+                font-size: 16px;
+                font-weight: 500;
+            }
+
+            .playerstats .rank-label-rank {
+                color: #999999;
+
+                font-size: 16px;
+                font-weight: 550;
+                text-transform: uppercase;
             }
 
             .header .playername {
@@ -169,8 +233,7 @@
                 padding: {{ DEFAULT_SPACING }};
 
                 background-color: #18171d;
-                border-left: 1px solid {{ COLORS.BORDER }};
-                border-right: 1px solid {{ COLORS.BORDER }};
+                border: 1px solid {{ COLORS.BORDER }};
             }
 
             .gamelist-name {
@@ -192,15 +255,6 @@
                 font-weight: 550;
             }
 
-            .gamelist-item-header-time {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-end;
-
-                color: rgba(255,255,255,0.7);
-                font-size: 0.8rem;
-            }
-
             .gamelist-item-content {
                 display: flex;
                 align-items: center;
@@ -217,7 +271,7 @@
             }
 
             .gamelist-item-vs {
-                margin-right: {{ DEFAULT_SPACING }};
+                margin-right: 8px;
             }
 
             .gamelist-item-playerimg {
@@ -253,16 +307,18 @@
         <div id="playercard">
             <div class="header">
                 <div class="playerstats">
-                    <div class="playerstats-elo">
-                        <div class="label">elo rating</div>
-                        <div class="value">{{ data.player.elo }}</div>
+                    <!-- elo component -->
+                    <div class="elo">
+                        <div class="elo-label">elo rating</div>
+                        <div class="elo-value">{{ data.player.elo }}</div>
                     </div>
 
-                    <div class="playerstats-rank">
-                        <div class="value">{{ data.player.rank }}</div>
-                        <div class="label">
-                            <div class="world">World</div>
-                            <div class="rank">Rank</div>
+                    <!-- world rank component -->
+                    <div class="rank">
+                        <div class="rank-value">{{ data.player.rank }}</div>
+                        <div class="rank-label">
+                            <div class="rank-label-world">World</div>
+                            <div class="rank-label-rank">Rank</div>
                         </div>
                     </div>
                 </div>
@@ -356,10 +412,6 @@
                                     href="/games/{{ slugify(match.game.name) }}"
                                     >{{ match.game.name }}</a
                                 >
-
-                                <div class="gamelist-item-header-time">
-                                    <span>{{ formatDateTime(match.datetime, "%H:%M") }}</span>
-                                </div>
                             </div>
 
                             <div class="gamelist-item-content">

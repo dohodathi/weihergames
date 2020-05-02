@@ -2,32 +2,32 @@ site_name: Weihergames
 site_author: Daniel Thiel, Dominik Hoffendahl
 
 theme:
-    name: material
+  name: material
 pages:
-    - Home: 'index.md'
-    - Rangliste: 'rangliste.md'
-    - Basics:
-          - Grundregeln: 'basics/grundregeln.md'
-          - Field Of Plays: 'basics/field_of_plays.md'
-    - Spiele:
-          - Unfertige Regeln (TODO): 'games/todo.md'
-          - Hit The Line: 'games/hit_the_line.md'
-          - Jumpergame: 'games/jumpergame.md'
-    - Seasons:
-          - Info: 'seasons/weiherlympics.md'
-          - Sommerspiele 2012: 'seasons/2012_sommerspiele.md'
-          - Winterspiele 2012: 'seasons/2012_winterspiele.md'
-          - Weiherlympics 2018: 'seasons/weiherlympics_001.md'
-    - Users:
-          - Overview: 'users/overview.md'
-          - EmbeddedDoompy: 'users/doompy.md'
-          - EmbeddedMarcel: 'users/marcel.md'
-          - EmbeddedTheel: 'users/theel.md'
-          - DynamicDoompy: 'users/dynamic_doompy.md'
-          - DynamicMarcel: 'users/dynamic_mazl.md'
-          - DynamicTheel: 'users/dynamic_theel.md'
+  - Home: 'index.md'
+  - Rangliste: 'rangliste.md'
+  - Basics:
+      - Grundregeln: 'basics/grundregeln.md'
+      - Field Of Plays: 'basics/field_of_plays.md'
+  - Spiele:
+      - Unfertige Regeln (TODO): 'games/todo.md'
+      - Hit The Line: 'games/hit_the_line.md'
+      - Jumpergame: 'games/jumpergame.md'
+  - Seasons:
+      - Info: 'seasons/weiherlympics.md'
+      - Sommerspiele 2012: 'seasons/2012_sommerspiele.md'
+      - Winterspiele 2012: 'seasons/2012_winterspiele.md'
+      - Weiherlympics 2018: 'seasons/weiherlympics_001.md'
+  - Users:
+      - Overview: 'users/overview.md'
+      - EmbeddedDoompy: 'users/doompy.md'
+      - EmbeddedMazl: 'users/mazl.md'
+      - EmbeddedTheel: 'users/theel.md'
+      - DynamicDoompy: 'users/dynamic_doompy.md'
+      - DynamicMazl: 'users/dynamic_mazl.md'
+      - DynamicTheel: 'users/dynamic_theel.md'
 plugins:
-    - markdownmermaid
+  - markdownmermaid
 extra_javascript:
-    - https://unpkg.com/mermaid@8.5.0/dist/mermaid.min.js
-    - js/iframeUtils.js
+  - https://unpkg.com/mermaid@8.5.0/dist/mermaid.min.js
+  - js/iframeUtils.js

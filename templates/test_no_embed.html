@@ -1,4 +1,15 @@
-{% set DEFAULT_SPACING = '16px' %} {% set COLOR_WIN = '#43D181' %} {% set COLOR_LOSE = '#D85E40' %}
+<!-- measures -->
+{% set DEFAULT_SPACING = '16px' %}
+
+<!-- colors -->
+{% set COLORS = namespace(
+    WIN='#43D181',
+    LOSE='#D85E40',
+    BORDER='#3a3a3a',
+    BG='#27282d',
+    TILE_BG='#2f2e33',
+    TILE_HEADER_BG='#272829'
+) %}
 
 <style>
     a.unstyled, a.unstyled:visited {
@@ -10,11 +21,34 @@
         color: #8AF;
     }
 
-    /* general layout */
+    section {
+        margin: 12px 0px;
+
+        background-color: {{ COLORS.TILE_BG }};
+
+        border: 1px solid {{ COLORS.BORDER }};
+        border-radius: 3px;
+        box-shadow: 0px 2px 5px rgba(0,0,0,0.4);
+    }
+
+    .section-header {
+        display: flex;
+        padding: {{ DEFAULT_SPACING }};
+
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border-bottom: 1px solid {{ COLORS.BORDER }};
+        background-color: {{ COLORS.TILE_HEADER_BG }};
+    }
+
+    /* main layout */
     #playercard {
+        padding: 1px 0;
+        max-width: 500px;
+
         color: white;
-        background-color: #27282d;
         font-family: 'Roboto', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+        background-color: {{ COLORS.BG }};
     }
 
     #playercard img {
@@ -33,15 +67,74 @@
     #playercard .body {
         margin: {{ DEFAULT_SPACING }};
         margin-top: 0px;
-
-        background-color: #2f2e33;
     }
 
     /* details:header */
-    .header .playerstats {
+    .playerstats {
         display: flex;
         align-items: center;
         justify-content: flex-end;
+
+        margin-bottom: 8px;
+    }
+
+    /* rank */
+    .playerstats .rank {
+        display: flex;
+        align-items: center;
+    }
+
+    .playerstats .rank-value {
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    .playerstats .rank-label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        margin-left: {{ DEFAULT_SPACING }};
+    }
+
+    /* elo */
+    .playerstats .elo {
+        margin-right: 10%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .playerstats .elo-value {
+        color: white;
+
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .playerstats .elo-label {
+        color: #999999;
+
+        font-size: 12px;
+        font-weight: 550;
+        text-transform: uppercase;
+    }
+
+    .playerstats .rank-label-world {
+        color: white;
+
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .playerstats .rank-label-rank {
+        color: #999999;
+
+        font-size: 16px;
+        font-weight: 550;
+        text-transform: uppercase;
     }
 
     .header .playername {
@@ -76,10 +169,11 @@
     }
 
     /* details:body */
-    .body .stats {
+    .stats {
+        background-color: #2f2e33;
     }
 
-    .body .stats-header {
+    .stats-header {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -88,7 +182,7 @@
         height: 65px;
     }
 
-    .body .stats-percentage {
+    .stats-percentage {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -97,7 +191,7 @@
         height: 65px;
     }
 
-    .body .stats-ratio {
+    .stats-ratio {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -115,8 +209,6 @@
 
         color: #aaa;
         background-color: #27282d;
-        border-top: 1px solid #3a3a3a;
-        border-bottom: 1px solid #3a3a3a;
     }
 
     /* gamelist */
@@ -131,15 +223,12 @@
         padding: {{ DEFAULT_SPACING }};
 
         background-color: #18171d;
+        border: 1px solid {{ COLORS.BORDER }};
     }
 
     .gamelist-name {
         padding-top: {{ DEFAULT_SPACING }};
         padding-left: {{ DEFAULT_SPACING }};
-    }
-
-    .gamelist-item.even {
-        background-color: rgba(0,0,0,0.1);
     }
 
     .gamelist-item-header {
@@ -151,6 +240,11 @@
         padding-bottom: 0;
     }
 
+    .gamelist-item-header-name {
+        font-size: 1.0rem;
+        font-weight: 550;
+    }
+
     .gamelist-item-content {
         display: flex;
         align-items: center;
@@ -158,7 +252,7 @@
 
         padding: {{ DEFAULT_SPACING }};
 
-        border-bottom: 1px solid #3a3a3a;
+        border-bottom: 1px solid {{ COLORS.BORDER }};
     }
 
     .gamelist-item-col-1 {
@@ -167,7 +261,7 @@
     }
 
     .gamelist-item-vs {
-        margin-right: {{ DEFAULT_SPACING }};
+        margin-right: 8px;
     }
 
     .gamelist-item-playerimg {
@@ -191,27 +285,29 @@
     }
 
     .gamelist-item-score.win {
-        color: {{ COLOR_WIN }};
+        color: {{ COLORS.WIN }};
     }
 
     .gamelist-item-score.lose {
-        color: {{ COLOR_LOSE }};
+        color: {{ COLORS.LOSE }};
     }
 </style>
 
 <div id="playercard">
     <div class="header">
         <div class="playerstats">
-            <div class="playerstats-elo">
-                <div class="label">elo rating</div>
-                <div class="value">{{ data.player.elo }}</div>
+            <!-- elo component -->
+            <div class="elo">
+                <div class="elo-label">elo rating</div>
+                <div class="elo-value">{{ data.player.elo }}</div>
             </div>
 
-            <div class="playerstats-rank">
-                <div class="value">{{ data.player.rank }}</div>
-                <div class="label">
-                    <div class="world">World</div>
-                    <div class="rank">Rank</div>
+            <!-- world rank component -->
+            <div class="rank">
+                <div class="rank-value">{{ data.player.rank }}</div>
+                <div class="rank-label">
+                    <div class="rank-label-world">World</div>
+                    <div class="rank-label-rank">Rank</div>
                 </div>
             </div>
         </div>
@@ -223,7 +319,7 @@
     </div>
 
     <div class="body">
-        <div class="stats">
+        <section class="stats">
             <div class="stats-header">
                 <div>Statistics</div>
                 <div>Ladder</div>
@@ -234,11 +330,12 @@
             <div class="stats-percentage">
                 <div class="title">Win rate</div>
                 <div class="value">
-                    {{ data.player.sumOffSeasonWon / (data.player.sumOffSeasonTie + data.player.sumOffSeasonLose + 1) *
-                    100 }}%
+                    {{ data.player.sumOffSeasonWon / (data.player.sumOffSeasonTie + data.player.sumOffSeasonLose
+                    + 1) * 100 }}%
                 </div>
                 <div class="value">
-                    {{ data.player.sumSeasonWon / (data.player.sumSeasonTie + data.player.sumSeasonLose + 1) * 100 }}%
+                    {{ data.player.sumSeasonWon / (data.player.sumSeasonTie + data.player.sumSeasonLose + 1) *
+                    100 }}%
                 </div>
                 <div class="value">
                     {{ data.player.sumWon / (data.player.sumTie + data.player.sumLose + 1) * 100 }}%
@@ -266,60 +363,82 @@
                     <span class="stats-ratio-lose">{{ data.player.sumLose }}</span>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="graph">
+        <section class="graph">
             Graph anhand letzter Spiele mit ELO Werten
-        </div>
+        </section>
 
         <!-- https://stackoverflow.com/questions/9486393/jinja2-change-the-value-of-a-variable-inside-a-loop -->
-        {% set vars = namespace(currYear=0) %}
+        {% set vars = namespace(currYear=0, currDay=0) %}
 
         <div class="gamelist">
-            {% for match in data.matches %}
+            {% for match in data.matches | sort(reverse=true, attribute="datetime") %}
+
+            <!-- handle day separators -->
+            {% if formatDateTime(match.datetime, "%A, %d %b %Y") != vars.currDay %}
+                {% if vars.currDay != 0 %}
+                </section>
+                {% endif %}
 
             <!-- handle year separators -->
             {% if getYearFromDateString(match.datetime) != vars.currYear %}
             <!-- update curr year and render the changed year -->
             {% set vars.currYear = getYearFromDateString(match.datetime) %}
             <div class="gamelist-year">{{ vars.currYear }}</div>
-            {% endif %}
+            {% endif %} {% set vars.currYear = getYearFromDateString(match.datetime) %}
 
-            <div class="gamelist-item {{ 'even' if loop.index % 2 == 0 }}">
-                <div class="gamelist-item-header">
-                    <div class="gamelist-item-name">
-                        <a class="unstyled" href="/games/{{ slugify(match.game.name) }}">{{ match.game.name }}</a>
+            <!-- update curr day and render the changed day -->
+            {% set vars.currDay = formatDateTime(match.datetime, "%A, %d %b %Y") %}
+            <section>
+                <div class="section-header">{{ vars.currDay }}</div>
+                {% endif %}
+
+                <div class="gamelist-item">
+                    <div class="gamelist-item-header">
+                        <a
+                            class="gamelist-item-header-name unstyled"
+                            href="/games/{{ slugify(match.game.name) }}"
+                            >{{ match.game.name }}</a
+                        >
                     </div>
-                </div>
 
-                <div class="gamelist-item-content">
-                    <div class="gamelist-item-col-1">
-                        <span class="gamelist-item-vs">vs</span>
+                    <div class="gamelist-item-content">
+                        <div class="gamelist-item-col-1">
+                            <span class="gamelist-item-vs">vs</span>
 
-                        <!-- opponent images -->
-                        {% if match.participants | length < 3 %}
-                        <!-- only insert images for 1v1 matches -->
-                        {% for opponent in match.participants if opponent.name != data.player.name %}
-                        <img class="gamelist-item-playerimg" src="{{ opponent.img }}" />
-                        {% endfor %}
-                        <!-- else render a multi user image to indicate a multiplayer game -->
-                        {% else %}
-                        <img class="gamelist-item-playerimg transparent" src="/images/users_multiple.png" />
-                        {% endif %}
+                            <!-- opponent images -->
+                            {% if match.participants | length < 3 %}
+                            <!-- only insert images for 1v1 matches -->
+                            {% for opponent in match.participants if opponent.name != data.player.name %}
+                            <img class="gamelist-item-playerimg" src="{{ opponent.img }}" />
+                            {% endfor %}
+                            <!-- else render a multi user image to indicate a multiplayer game -->
+                            {% else %}
+                            <img class="gamelist-item-playerimg transparent" src="/images/users_multiple.png" />
+                            {% endif %}
 
-                        <!-- opponent names -->
-                        <span class="gamelist-item-playername">
-                            {% for participant in match.participants if participant.name != data.player.name %}
-                            <a class="unstyled" href="/users/{{ slugify(participant.name) }}">{{ participant.name}}</a>
-                            {% if loop.index != match.participants | length - 1 %},&nbsp;{% endif %} {% endfor %}
+                            <!-- opponent names -->
+                            <span class="gamelist-item-playername">
+                                {% for participant in match.participants if participant.name != data.player.name
+                                %}
+                                <a class="unstyled" href="/users/{{ slugify(participant.name) }}"
+                                    >{{ participant.name}}</a
+                                >
+                                {% if loop.index != match.participants | length - 1 %},&nbsp;{% endif %} {%
+                                endfor %}
+                            </span>
+                        </div>
+
+                        <span
+                            class="gamelist-item-score {{ 'win' if match.winner.name == data.player.name else 'lose' }}"
+                        >
+                            {{ match.result | join(' - ') }}
                         </span>
                     </div>
-
-                    <span class="gamelist-item-score {{ 'win' if match.winner.name == data.player.name else 'lose' }}">
-                        {{ match.result | join(' - ') }}
-                    </span>
                 </div>
-            </div>
+
+            <!-- end match loop -->
             {% endfor %}
         </div>
     </div>

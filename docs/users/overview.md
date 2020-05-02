@@ -3,11 +3,11 @@
 Embedded
 
 -   [doompy](./../doompy)
--   [marcel](./../marcel)
+-   [mazl](./../mazl)
 -   [theel](./../theel)
 
 Dynamic
 
 -   [doompy](./../dynamic_doompy)
--   [marcel](./../dynamic_marcel)
+-   [mazl](./../dynamic_mazl)
 -   [theel](./../dynamic_theel)
