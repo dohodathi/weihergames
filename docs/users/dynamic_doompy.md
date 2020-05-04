@@ -2908,58 +2908,6 @@
 
             <!-- handle day separators -->
             
-
-                <div class="gamelist-item">
-                    <div class="gamelist-item-header">
-                        <a
-                            class="gamelist-item-header-name unstyled"
-                            href="/games/crossboccia"
-                            >Crossboccia</a
-                        >
-                    </div>
-
-                    <div class="gamelist-item-content">
-                        <div class="gamelist-item-col-1">
-                            <span class="gamelist-item-vs">vs</span>
-
-                            <!-- opponent images -->
-                            
-                            <!-- only insert images for 1v1 matches -->
-                            
-                            <img class="gamelist-item-playerimg" src="/images/vectorstock_21106731.png" />
-                            
-                            <img class="gamelist-item-playerimg" src="/images/noun_Bear_54735.png" />
-                            
-                            <!-- else render a multi user image to indicate a multiplayer game -->
-                            
-
-                            <!-- opponent names -->
-                            <span class="gamelist-item-playername">
-                                
-                                <a class="unstyled" href="/users/theel"
-                                    >THEEL</a
-                                >
-                                 
-                                <a class="unstyled" href="/users/mazl"
-                                    >MAZL</a
-                                >
-                                ,&nbsp; 
-                            </span>
-                        </div>
-
-                        <span
-                            class="gamelist-item-score lose"
-                        >
-                            10 - 15
-                        </span>
-                    </div>
-                </div>
-
-            <!-- end match loop -->
-            
-
-            <!-- handle day separators -->
-            
                 
                 </section>
                 

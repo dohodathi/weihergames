@@ -271,11 +271,19 @@ def read_matches_from_json(players, games):
     return matches
 
 #
-# data manipulation
+# data transformation
 #
 
 def get_matches_by_player(matches, playerName):
-    pass
+    playerMatches = []
+
+    for match in matches:
+        participantNames = set([p.name for p in match.participants])
+
+        if (playerName in participantNames):
+            playerMatches.append(match)
+
+    return playerMatches
 
 def process_matches(matches):
     """
@@ -287,6 +295,10 @@ def process_matches(matches):
     """
     for match in matches:
         pass # TODO
+
+#
+# template rendering
+#
 
 def render_templates(players, games, matches):
     templates_dir = os.path.join(_ROOT_FILE, '../templates')
@@ -308,7 +320,7 @@ def render_templates(players, games, matches):
             fh.write(template.render(
                 data = {
                     'player': player,
-                    'matches': matches
+                    'matches': get_matches_by_player(matches, player.name)
                 }
             ))
             logging.info('... rendered: {0}'.format(filename))
@@ -323,7 +335,7 @@ def render_templates(players, games, matches):
             fh.write(mdTemplate.render(
                 data = {
                     'player': player,
-                    'matches': matches
+                    'matches': get_matches_by_player(matches, player.name)
                 }
             ))
             logging.info('... rendered: {0}'.format(filename))
