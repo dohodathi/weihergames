@@ -113,6 +113,7 @@ class PlayerData():
         self.sumOffSeasonWon = 0
         self.sumOffSeasonTie = 0
         self.sumOffSeasonLose = 0
+
     def __str__(self):
         return 'PlayerData for {0}'.format(self.name)
 
@@ -127,6 +128,7 @@ class PlayerData():
             self.__img = get_relative_image_path(img_filename)
         else:
             self.__img = get_relative_image_path(_ALT_PLAYER_IMG)
+
 
 class GameData():
     def __init__(self, name):
@@ -274,16 +276,13 @@ def read_matches_from_json(players, games):
 # data transformation
 #
 
-def get_matches_by_player(matches, playerName):
-    playerMatches = []
-
+def get_matches_of_player(matches, player):
+    player_matches = []
     for match in matches:
-        participantNames = set([p.name for p in match.participants])
+        if player in match.participants:
+            player_matches.append(match)
+    return player_matches
 
-        if (playerName in participantNames):
-            playerMatches.append(match)
-
-    return playerMatches
 
 def process_matches(matches):
     """
@@ -310,9 +309,9 @@ def render_templates(players, games, matches):
     env.globals['slugify'] = slugify_underscore
     env.globals['formatDateTime'] = format_datetime
 
-    template = env.get_template('userprofile.html')
 
     # generate html to be embedded via iframe within the .md files
+    template = env.get_template('userprofile.html')
     for player in players:
         filename = os.path.join(_ROOT_FILE, '..', 'build',
             'player_{0}.html'.format(player.name.lower()))
@@ -320,14 +319,14 @@ def render_templates(players, games, matches):
             fh.write(template.render(
                 data = {
                     'player': player,
-                    'matches': get_matches_by_player(matches, player.name)
+                    'matches': get_matches_of_player(matches, player.name)
                 }
             ))
             logging.info('... rendered: {0}'.format(filename))
 
-    mdTemplate = env.get_template('test_no_embed.html')
 
     # generate .md files directly
+    mdTemplate = env.get_template('test_no_embed.html')
     for player in players:
         filename = os.path.join(_ROOT_FILE, '..', 'docs/users/',
             'dynamic_{0}.md'.format(player.name.lower()))
@@ -335,7 +334,7 @@ def render_templates(players, games, matches):
             fh.write(mdTemplate.render(
                 data = {
                     'player': player,
-                    'matches': get_matches_by_player(matches, player.name)
+                    'matches': get_matches_of_player(matches, player.name)
                 }
             ))
             logging.info('... rendered: {0}'.format(filename))
