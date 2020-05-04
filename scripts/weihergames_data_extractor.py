@@ -68,10 +68,12 @@ ELO_LEVELING_VALUE = 12 # all matches are leveld to have totalpoints of X, other
 # can be that per game a different leveling factor must be evaluated
 ELO_PARTICIPATION_VALUE = 3 # this value is added to each participation, this makes a lot of participation also positive, can be 0 if no bonus schould be given, a value higher than 0 make an inflatation
 
+
+"""
 #
 # template injected utils
 #
-
+"""
 def format_datetime(dt_string, date_format="%d %b %Y %I:%M %p"):
     """Format a date time to (Default): d Mon YYYY HH:MM P"""
     if dt_string is None:
@@ -88,16 +90,21 @@ def get_year_from_datetime_string(dt_string):
 def slugify_underscore(anyString):
     return slugify(anyString, separator="_")
 
+
+"""
 #
 # model utils
 #
-
-def get_relative_image_path(filename):
+"""
+def _get_relative_image_path(filename):
     return '/images/' + filename
+
+
+"""
 #
 # models
 #
-
+"""
 class PlayerData():
     def __init__(self, name):
         self.name = name
@@ -113,6 +120,7 @@ class PlayerData():
         self.sumOffSeasonWon = 0
         self.sumOffSeasonTie = 0
         self.sumOffSeasonLose = 0
+        self.matches = []
 
     def __str__(self):
         return 'PlayerData for {0}'.format(self.name)
@@ -125,9 +133,23 @@ class PlayerData():
     def img(self, img_filename=None):
         img_path = os.path.join(_IMAGE_FOLDER, str(img_filename))
         if os.path.isfile(img_path):
-            self.__img = get_relative_image_path(img_filename)
+            self.__img = _get_relative_image_path(img_filename)
         else:
-            self.__img = get_relative_image_path(_ALT_PLAYER_IMG)
+            self.__img = _get_relative_image_path(_ALT_PLAYER_IMG)
+
+    def add_match(self, match):
+        if type(match) not MatchData:
+            logging.error('NOT MATCHTYPE: {0}'.format(match))
+            raise ValueError
+        if self not in match.participants:
+            logging.error('PLAYER NOT IN MATCH BUT HAD TO BE ADDED: {0}'.format(match))
+            raise ValueError
+        if match in self.matches:
+            logging.warning('Match already part of player: {0}'.format(match))
+            return False
+        self.matches.append(match)
+        return  True
+
 
 
 class GameData():
@@ -149,9 +171,9 @@ class GameData():
     def img(self, img_filename):
         img_path = os.path.join(_IMAGE_FOLDER, str(img_filename))
         if os.path.isfile(img_path):
-            self.__img = get_relative_image_path(img_filename)
+            self.__img = _get_relative_image_path(img_filename)
         else:
-            self.__img = get_relative_image_path(_ALT_GAME_IMG)
+            self.__img = _get_relative_image_path(_ALT_GAME_IMG)
 
     @property
     def field_of_play_icon(self):
@@ -161,9 +183,9 @@ class GameData():
     def field_of_play_icon(self, img_filename):
         img_path = os.path.join(_IMAGE_FOLDER, str(img_filename))
         if os.path.isfile(img_path):
-            self.__field_of_play_icon = get_relative_image_path(img_filename)
+            self.__field_of_play_icon = _get_relative_image_path(img_filename)
         else:
-            self.__field_of_play_icon = get_relative_image_path(_ALT_FIELDOFPLAY_IMG)
+            self.__field_of_play_icon = _get_relative_image_path(_ALT_FIELDOFPLAY_IMG)
 
 class MatchData():
     def __init__(self, game):
@@ -191,17 +213,20 @@ class MatchData():
         index_of = [i for i, j in enumerate(self.result) if j == search_value]
         if len(index_of) > 1:
             self.tie = True
-            return [self.participants[x] for x in index_of]
+            # return [self.participants[x] for x in index_of]
+            return None
         elif len(index_of) == 1:
             return self.participants[index_of[0]]
         else:
             logging.error('NO WINNER IDENTIFIED ON: {0}'.format(self))
             return None
 
+
+"""
 #
 # data extraction
 #
-
+"""
 def read_player_from_json():
     players = []
     # Load data
@@ -268,13 +293,19 @@ def read_matches_from_json(players, games):
             m.location = match_db.get('location', '')
             m.remarks = match_db.get('remarks', '')
             m.datetime = match_db.get('time', '')
+            p.add_match(m)
         matches.append(m)
         logging.debug('Match appended: {0}'.format(m))
     return matches
 
+
+
+
+"""
 #
 # data transformation
 #
+"""
 
 def get_matches_of_player(matches, player):
     player_matches = []
@@ -295,10 +326,13 @@ def process_matches(matches):
     for match in matches:
         pass # TODO
 
+
+
+"""
 #
 # template rendering
 #
-
+"""
 def render_templates(players, games, matches):
     templates_dir = os.path.join(_ROOT_FILE, '../templates')
     env = Environment(
