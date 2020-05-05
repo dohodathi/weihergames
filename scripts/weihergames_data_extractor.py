@@ -138,7 +138,7 @@ class PlayerData():
             self.__img = _get_relative_image_path(_ALT_PLAYER_IMG)
 
     def add_match(self, match):
-        if type(match) not MatchData:
+        if not isinstance(match, MatchData):
             logging.error('NOT MATCHTYPE: {0}'.format(match))
             raise ValueError
         if self not in match.participants:
