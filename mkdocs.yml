@@ -23,9 +23,6 @@ pages:
       - Doompy: 'users/doompy.md'
       - Mazl: 'users/mazl.md'
       - Theel: 'users/theel.md'
-      - Test Doompy: 'users/dynamic_doompy.md'
-      - Test Mazl: 'users/dynamic_mazl.md'
-      - Test Theel: 'users/dynamic_theel.md'
 plugins:
   - markdownmermaid
 extra_javascript:

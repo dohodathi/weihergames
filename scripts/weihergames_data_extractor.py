@@ -358,22 +358,6 @@ def render_templates(players, games, matches):
             ))
             logging.info('... rendered: {0}'.format(filename))
 
-
-    # generate .md files directly
-    mdTemplate = env.get_template('test_no_embed.html')
-    for player in players:
-        filename = os.path.join(_ROOT_FILE, '..', 'docs/users/',
-            'dynamic_{0}.md'.format(player.name.lower()))
-        with open(filename, 'w') as fh:
-            fh.write(mdTemplate.render(
-                data = {
-                    'player': player,
-                    'matches': get_matches_of_player(matches, player.name)
-                }
-            ))
-            logging.info('... rendered: {0}'.format(filename))
-
-
 if __name__ == '__main__':
     logging.info('RUNNING DATA EXTRACTOR')
     players = read_player_from_json()
