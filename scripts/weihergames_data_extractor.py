@@ -61,7 +61,13 @@ _ALT_PLAYER_IMG = 'noun_Bear_54735.png'
 _ALT_GAME_IMG = 'noun_Accessories_1485294.png'
 _ALT_FIELDOFPLAY_IMG = 'noun_Lake_1479177.png'
 
-""" ELO CALC PARAMTER """
+""" ELO CALC PARAMTER
+# r(x) = current ranking points before the match for the player Px
+# e(x) = expected points for that player Px based on the old ranking points
+#      = (totalpoints)/(1+10^((mediaOpponentELO-ownELO)/ELO_START_VALUE))
+# r'(x) = new calculated ranking points for player Px
+#       =r(x)+ELO_REGULATION_VALUE*(ownPoints-e(x))
+"""
 ELO_START_VALUE = 10000.0
 ELO_REGULATION_VALUE = 8 # the higher the value, the more impact has the delta between expected and made points
 ELO_LEVELING_VALUE = 12 # all matches are leveld to have totalpoints of X, otherwise a game where loats of points are distrubuted may have to much impact
@@ -152,6 +158,7 @@ class PlayerData():
 
 
 
+
 class GameData():
     def __init__(self, name):
         self.name = name
@@ -187,13 +194,19 @@ class GameData():
         else:
             self.__field_of_play_icon = _get_relative_image_path(_ALT_FIELDOFPLAY_IMG)
 
+    def check_point_rules(self, total_points, made_points):
+        if "lowerwins" in self.pointrules:
+            return total_points - made_points
+        return made_points
+
 class MatchData():
     def __init__(self, game):
         self.game = game
         self.participants= []
-        self.elos_after = [] # must have same oder as participants
-        self.elos_delta = [] # must have same oder as participants
-        self.result = [] # must have same oder as participants
+        self.elos_after = [] # must have same order as participants
+        self.elos_delta = [] # must have same order as participants
+        self.result_expected = [] # must have same order as participants
+        self.result = [] # must have same order as participants
         self.datetime = ''
         self.tie = False
         self.location = ''
@@ -315,6 +328,7 @@ def get_matches_of_player(matches, player):
     return player_matches
 
 
+
 def process_matches(matches):
     """
     oldest match first,
@@ -324,7 +338,33 @@ def process_matches(matches):
     next match,
     """
     for match in matches:
-        pass # TODO
+        totalpoints = sum(match.result)
+        levelingfactor = ELO_LEVELING_VALUE / totalpoints
+        totalparticipants = len(match.participants)
+
+        # get total elo value by adding all current ELOs:
+        temp_elos_before = []
+        for itemkey, participant in enumerate( match.participants ):
+            temp_elos_before.append( participant.elo )
+        totalelo = sum(temp_elos_before)
+
+        for itemkey, participant in enumerate( match.participants ):
+            mean_opponent_elo = (totalelo - participant.elo) / (totalparticipants-1)
+            expected_points = ((totalpoints*2/totalparticipants) \
+                / (1+10**((mean_opponent_elo-participant.elo)/ELO_START_VALUE)))*levelingfactor
+            made_points = match.game.check_point_rules(totalpoints, match.result[itemkey]) * levelingfactor
+
+            elo_delta = ELO_REGULATION_VALUE * (made_points - expected_points) + ELO_PARTICIPATION_VALUE
+            match.elos_delta.append(elo_delta)
+            match.elos_after.append(participant.elo + elo_delta)
+            match.result_expected.append(expected_points)
+            participant.elo += elo_delta
+
+
+def update_ranking(players):
+    # TODO
+    elos = []
+    logging.debug('SUM of all elos: {elosum}, list:{elolist}'.format(elosum=sum(elos), elolist=elos))
 
 
 
@@ -358,12 +398,21 @@ def render_templates(players, games, matches):
             ))
             logging.info('... rendered: {0}'.format(filename))
 
+
+
+"""
+#
+# script intro
+#
+"""
 if __name__ == '__main__':
     logging.info('RUNNING DATA EXTRACTOR')
     players = read_player_from_json()
     games = read_games_from_json()
     matches = read_matches_from_json(players, games)
     process_matches(matches)
+    update_ranking(players)
     render_templates(players, games, matches)
     logging.info('FINISHED DATA EXTRACTOR')
     logging.debug('Winner: {w}, Match {m}'.format(m=matches[-1], w=matches[-1].winner))
+    for p in players: logging.debug('Player: {name}, ELO {elo}'.format(name=p.name, elo=p.elo))
