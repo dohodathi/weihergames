@@ -384,7 +384,7 @@
                 {% set vars = namespace(currYear=0, currDay=0) %}
 
                 <div class="gamelist">
-                    {% for match in data.matches | sort(reverse=true, attribute="datetime") %}
+                    {% for match in data.player.matches | sort(reverse=true, attribute="datetime") %}
 
                     <!-- handle day separators -->
                     {% if formatDateTime(match.datetime, "%A, %d %b %Y") != vars.currDay %}
