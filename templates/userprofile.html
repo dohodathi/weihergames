@@ -15,7 +15,7 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <style>
-            /* base elements */
+            /* -- Basic Elements -- */
             html,
             body {
                 margin: 0;
@@ -52,7 +52,54 @@
                 background-color: {{ COLORS.TILE_HEADER_BG }};
             }
 
-            /* main layout */
+            /* Tooltip container */
+            .tooltip {
+                position: relative;
+                display: inline-block;
+                border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+            }
+
+            /* Tooltip text */
+            .tooltip .tooltip-text {
+                visibility: hidden;
+                min-width: 120px;
+                background-color: #555;
+                color: #fff;
+                text-align: center;
+                padding: 4px;
+                border-radius: 6px;
+
+                /* Position the tooltip text */
+                position: absolute;
+                z-index: 1;
+                bottom: 125%;
+                left: 50%;
+                margin-left: -60px;
+
+                /* Fade in tooltip */
+                opacity: 0;
+                transition: opacity 0.2s;
+            }
+
+            /* Tooltip arrow */
+            .tooltip .tooltip-text::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: #555 transparent transparent transparent;
+            }
+
+            /* Show the tooltip text when you mouse over the tooltip container */
+            .tooltip:hover .tooltip-text {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            /* -- Main Layout -- */
             #playercard {
                 padding: 1px 0;
                 max-width: 500px;
@@ -88,7 +135,7 @@
                 margin-bottom: 8px;
             }
 
-            /* rank */
+            /* Rank */
             .playerstats .rank {
                 display: flex;
                 align-items: center;
@@ -108,7 +155,7 @@
                 margin-left: {{ DEFAULT_SPACING }};
             }
 
-            /* elo */
+            /* Elo */
             .playerstats .elo {
                 margin-right: 10%;
 
@@ -221,11 +268,11 @@
                 background-color: #27282d;
             }
 
-            /* gamelist */
-            .gamelist {
+            /* match-list */
+            .match-list {
             }
 
-            .gamelist-year {
+            .match-list-year {
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -236,12 +283,12 @@
                 border: 1px solid {{ COLORS.BORDER }};
             }
 
-            .gamelist-name {
+            .match-list-name {
                 padding-top: {{ DEFAULT_SPACING }};
                 padding-left: {{ DEFAULT_SPACING }};
             }
 
-            .gamelist-item-header {
+            .match-item-header {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -250,12 +297,11 @@
                 padding-bottom: 0;
             }
 
-            .gamelist-item-header-name {
-                font-size: 1.0rem;
-                font-weight: 550;
+            .match-item-header-elo {
+                cursor: default;
             }
 
-            .gamelist-item-content {
+            .match-item-content {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -265,16 +311,16 @@
                 border-bottom: 1px solid {{ COLORS.BORDER }};
             }
 
-            .gamelist-item-col-1 {
+            .match-item-col-1 {
                 display: flex;
                 align-items: center;
             }
 
-            .gamelist-item-vs {
+            .match-item-vs {
                 margin-right: 8px;
             }
 
-            .gamelist-item-playerimg {
+            .match-item-playerimg {
                 width: 45px;
                 height: 45px;
 
@@ -282,23 +328,23 @@
                 background-color: white;
             }
 
-            .gamelist-item-playerimg.transparent {
+            .match-item-playerimg.transparent {
                 background-color: transparent;
             }
 
-            .gamelist-item-playername {
+            .match-item-playername {
                 margin-left: 8px;
             }
 
-            .gamelist-item-score  {
+            .match-item-score {
                 font-weight: 700;
             }
 
-            .gamelist-item-score.win {
+            .win {
                 color: {{ COLORS.WIN }};
             }
 
-            .gamelist-item-score.lose {
+            .lose {
                 color: {{ COLORS.LOSE }};
             }
         </style>
@@ -310,7 +356,7 @@
                     <!-- elo component -->
                     <div class="elo">
                         <div class="elo-label">elo rating</div>
-                        <div class="elo-value">{{ data.player.elo }}</div>
+                        <div class="elo-value">{{ data.player.elo|round|int }}</div>
                     </div>
 
                     <!-- world rank component -->
@@ -381,22 +427,27 @@
                 </section>
 
                 <!-- https://stackoverflow.com/questions/9486393/jinja2-change-the-value-of-a-variable-inside-a-loop -->
-                {% set vars = namespace(currYear=0, currDay=0) %}
+                {% set vars = namespace(currYear=0, currDay=0, playerIndex=0) %}
 
-                <div class="gamelist">
+                <div class="match-list">
                     {% for match in data.player.matches | sort(reverse=true, attribute="datetime") %}
+
+                    <!-- dataset is ordered by player for all list properties (participants, results, elos_*), so we could need the index of the current player -->
+                    {% for player in match.participants if player.name == data.player.name %}
+                        {% set vars.playerIndex = loop.index %}
+                    {% endfor %}
 
                     <!-- handle day separators -->
                     {% if formatDateTime(match.datetime, "%A, %d %b %Y") != vars.currDay %}
                         {% if vars.currDay != 0 %}
                         </section>
-                        {% endif %}
+                    {% endif %}
 
                     <!-- handle year separators -->
                     {% if getYearFromDateString(match.datetime) != vars.currYear %}
                     <!-- update curr year and render the changed year -->
                     {% set vars.currYear = getYearFromDateString(match.datetime) %}
-                    <div class="gamelist-year">{{ vars.currYear }}</div>
+                    <div class="match-list-year">{{ vars.currYear }}</div>
                     {% endif %} {% set vars.currYear = getYearFromDateString(match.datetime) %}
 
                     <!-- update curr day and render the changed day -->
@@ -405,32 +456,39 @@
                         <div class="section-header">{{ vars.currDay }}</div>
                         {% endif %}
 
-                        <div class="gamelist-item">
-                            <div class="gamelist-item-header">
+                        <div class="match-item">
+                            <div class="match-item-header">
                                 <a
-                                    class="gamelist-item-header-name unstyled"
+                                    class="match-item-header-name unstyled"
                                     href="/games/{{ slugify(match.game.name) }}"
                                     >{{ match.game.name }}</a
                                 >
+
+                                <span
+                                    class="match-item-header-elo tooltip {{ 'win' if match.elos_delta[vars.playerIndex] >= 0 else 'lose' }}"
+                                >
+                                    {{ '+' if match.elos_delta[vars.playerIndex] >= 0}}{{ match.elos_delta[vars.playerIndex] | round | int }}
+                                    <span class="tooltip-text">ELO gain for this match</span>
+                                </span>
                             </div>
 
-                            <div class="gamelist-item-content">
-                                <div class="gamelist-item-col-1">
-                                    <span class="gamelist-item-vs">vs</span>
+                            <div class="match-item-content">
+                                <div class="match-item-col-1">
+                                    <span class="match-item-vs">vs</span>
 
                                     <!-- opponent images -->
                                     {% if match.participants | length < 3 %}
                                     <!-- only insert images for 1v1 matches -->
                                     {% for opponent in match.participants if opponent.name != data.player.name %}
-                                    <img class="gamelist-item-playerimg" src="{{ opponent.img }}" />
+                                    <img class="match-item-playerimg" src="{{ opponent.img }}" />
                                     {% endfor %}
                                     <!-- else render a multi user image to indicate a multiplayer game -->
                                     {% else %}
-                                    <img class="gamelist-item-playerimg transparent" src="/images/users_multiple.png" />
+                                    <img class="match-item-playerimg transparent" src="/images/users_multiple.png" />
                                     {% endif %}
 
                                     <!-- opponent names -->
-                                    <span class="gamelist-item-playername">
+                                    <span class="match-item-playername">
                                         {% for participant in match.participants if participant.name != data.player.name
                                         %}
                                         <a class="unstyled" href="/users/{{ slugify(participant.name) }}"
@@ -441,11 +499,9 @@
                                     </span>
                                 </div>
 
-                                <span
-                                    class="gamelist-item-score {{ 'win' if match.winner.name == data.player.name else 'lose' }}"
-                                >
+                                <div class="match-item-score {{ 'win' if match.winner.name == data.player.name else 'lose' }}">
                                     {{ match.result | join(' - ') }}
-                                </span>
+                                </div>
                             </div>
                         </div>
 
