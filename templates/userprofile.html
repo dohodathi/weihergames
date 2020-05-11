@@ -433,9 +433,7 @@
                     {% for match in data.player.matches | sort(reverse=true, attribute="datetime") %}
 
                     <!-- dataset is ordered by player for all list properties (participants, results, elos_*), so we could need the index of the current player -->
-                    {% for player in match.participants if player.name == data.player.name %}
-                        {% set vars.playerIndex = loop.index - 1 %}
-                    {% endfor %}
+                    {% set vars.playerIndex = match.participants.index(data.player) %}
 
                     <!-- handle day separators -->
                     {% if formatDateTime(match.datetime, "%A, %d %b %Y") != vars.currDay %}
@@ -504,6 +502,11 @@
                                 </div>
                             </div>
                         </div>
+
+                        {{ match.result | join(' - ') }} <br />
+                        {{ match.participants | join(', ', attribute="name") }} <br />
+                        {{ match.elos_delta | join(', ') }} <br />
+                        {{ vars.playerIndex }}
 
                     <!-- end match loop -->
                     {% endfor %}
