@@ -434,7 +434,7 @@
 
                     <!-- dataset is ordered by player for all list properties (participants, results, elos_*), so we could need the index of the current player -->
                     {% for player in match.participants if player.name == data.player.name %}
-                        {% set vars.playerIndex = loop.index %}
+                        {% set vars.playerIndex = loop.index - 1 %}
                     {% endfor %}
 
                     <!-- handle day separators -->
