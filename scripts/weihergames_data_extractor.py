@@ -117,9 +117,6 @@ class PlayerData():
         self.elo = 0.0
         self.rank = 0
         self.img = None
-        self.sumWon = 0
-        self.sumTie = 0
-        self.sumLose = 0
         self.sumSeasonWon = 0
         self.sumSeasonTie = 0
         self.sumSeasonLose = 0
@@ -130,6 +127,17 @@ class PlayerData():
 
     def __str__(self):
         return 'PlayerData for {0}'.format(self.name)
+
+    @property
+    def sumWon(self):
+        return self.sumSeasonWon + self.sumOffSeasonWon
+    @property
+    def sumTie(self):
+        return self.sumSeasonTie + self.sumOffSeasonTie
+    @property
+    def sumLose(self):
+        return self.sumSeasonLose + self.sumOffSeasonLose
+
 
     @property
     def img(self):
@@ -209,6 +217,7 @@ class MatchData():
         self.result = [] # must have same order as participants
         self.datetime = ''
         self.tie = False
+        self.season = False
         self.location = ''
         self.remarks = ''
     def __str__(self):
@@ -306,6 +315,7 @@ def read_matches_from_json(players, games):
             m.location = match_db.get('location', '')
             m.remarks = match_db.get('remarks', '')
             m.datetime = match_db.get('time', '')
+            m.season = match_db.get('season', False)
             p.add_match(m)
         matches.append(m)
         logging.debug('Match appended: {0}'.format(m))
@@ -340,20 +350,27 @@ def process_matches(matches):
         next match,
     """
 
+    # A - OVERALL SUM
     for match in matches:
-
-        # TODO check first if season or offseason
-        # TODO overall sumWon should be within PlayerData calculation season+offseason
         if match.tie:
             for p in match.participants:
-                p.sumTie += 1
+                if match.season:
+                    p.sumSeasonTie += 1
+                else:
+                    p.sumOffSeasonTie +=1
         else:
             try:
-                match.winner.sumWon += 1
+                if match.season:
+                    match.winner.sumSeasonWon += 1
+                else:
+                    match.winner.sumOffSeasonWon +=1
                 loser_list = list(match.participants)
                 loser_list.remove(match.winner)
                 for p in loser_list:
-                    p.sumLose += 1
+                    if match.season:
+                        p.sumSeasonLose += 1
+                    else:
+                        p.sumOffSeasonLose +=1
             except TypeError as e:
                 logging.error('Match {m} particpants list faulty'.format(m=match))
                 raise e
@@ -364,7 +381,8 @@ def process_matches(matches):
                 logging.error('Winner {w} not in Match {m} particpants list'.format(w=match.winner, m=match))
                 raise e
 
-
+    # B - ELO
+    for match in matches:
         totalpoints = sum(match.result)
         levelingfactor = ELO_LEVELING_VALUE / totalpoints
         totalparticipants = len(match.participants)
@@ -448,5 +466,5 @@ if __name__ == '__main__':
     logging.info('FINISHED DATA EXTRACTOR')
     logging.debug('Winner: {w}, Match {m}'.format(m=matches[-1], w=matches[-1].winner))
     for p in players: 
-        logging.debug('Player: {name}, ELO {elo}, World Rank #{rank}, {w} Wins'.
-            format(name=p.name, elo=p.elo, w=p.sumWon, rank=p.rank))
+        logging.debug('Player: {name}, ELO {elo}, World Rank #{rank}, {w} Wins / {l} Loss'.
+            format(name=p.name, elo=p.elo, w=p.sumWon, l=p.sumLose, rank=p.rank))

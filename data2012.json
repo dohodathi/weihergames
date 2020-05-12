@@ -344,56 +344,64 @@
             "result": { "THEEL": 2, "DOOMPY": 0 },
             "game": "Speedminton",
             "location": "Lago di Garda",
-            "remarks": "Weiherlympics I"
+            "remarks": "Weiherlympics I",
+            "season": true
         },
         {
             "time": "2018-05-14T11:00:00",
             "result": { "THEEL": 2, "DOOMPY": 1 },
             "game": "Lattenschießen",
             "location": "Lago di Garda",
-            "remarks": "Weiherlympics I"
+            "remarks": "Weiherlympics I",
+            "season": true
         },
         {
             "time": "2018-05-14T12:00:00",
             "result": { "THEEL": 13, "DOOMPY": 15 },
             "game": "Prox the Line",
             "location": "Lago di Garda",
-            "remarks": "Weiherlympics I"
+            "remarks": "Weiherlympics I",
+            "season": true
         },
         {
             "time": "2018-05-14T13:00:00",
             "result": { "THEEL": 1, "DOOMPY": 2 },
             "game": "Körperball",
             "location": "Lago di Garda",
-            "remarks": "Weiherlympics I"
+            "remarks": "Weiherlympics I",
+            "season": true
         },
         {
             "time": "2018-05-14T14:00:00",
             "result": { "THEEL": 32, "DOOMPY": 29 },
             "game": "Pool Golf",
             "location": "Lago di Garda",
-            "remarks": "Weiherlympics I"
+            "remarks": "Weiherlympics I",
+            "season": true
         },
         {
             "time": "2018-05-14T15:00:00",
             "result": { "THEEL": 2, "DOOMPY": 4 },
             "game": "Pool Shot",
             "location": "Lago di Garda",
-            "remarks": "Weiherlympics I"
+            "remarks": "Weiherlympics I",
+            "season": true
         },
         {
             "time": "2018-05-15T10:00:00",
             "result": { "THEEL": 15, "DOOMPY": 11 },
             "game": "Crossboccia",
             "location": "Lago di Garda",
-            "remarks": "Weiherlympics I"
+            "remarks": "Weiherlympics I",
+            "season": true
         },
         {
             "time": "2018-05-15T11:00:00",
             "result": { "THEEL": 1, "DOOMPY": 6 },
             "game": "Fußgolf",
             "location": "Lago di Garda",
-            "remarks": "Weiherlympics I"
+            "remarks": "Weiherlympics I",
+            "season": true
         }
     ],
     "members": {
