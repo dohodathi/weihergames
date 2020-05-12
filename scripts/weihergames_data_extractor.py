@@ -331,13 +331,40 @@ def get_matches_of_player(matches, player):
 
 def process_matches(matches):
     """
-    oldest match first,
-    calculate elo of participants,
-        store new elo and delta in MatchData
-        store new elo in PlayerData,
-    next match,
+    a) sum the wins-ties-losses
+    b) generate elo
+        oldest match first,
+        calculate elo of participants,
+            store new elo and delta in MatchData
+            store new elo in PlayerData,
+        next match,
     """
+
     for match in matches:
+
+        # TODO check first if season or offseason
+        # TODO overall sumWon should be within PlayerData calculation season+offseason
+        if match.tie:
+            for p in match.participants:
+                p.sumTie += 1
+        else:
+            try:
+                match.winner.sumWon += 1
+                loser_list = list(match.participants)
+                loser_list.remove(match.winner)
+                for p in loser_list:
+                    p.sumLose += 1
+            except TypeError as e:
+                logging.error('Match {m} particpants list faulty'.format(m=match))
+                raise e
+            except AttributeError as e:
+                logging.error('Match {0} without winner (None)'.format(match))
+                raise e
+            except ValueError as e:
+                logging.error('Winner {w} not in Match {m} particpants list'.format(w=match.winner, m=match))
+                raise e
+
+
         totalpoints = sum(match.result)
         levelingfactor = ELO_LEVELING_VALUE / totalpoints
         totalparticipants = len(match.participants)
@@ -362,9 +389,14 @@ def process_matches(matches):
 
 
 def update_ranking(players):
-    # TODO
-    elos = []
-    logging.debug('SUM of all elos: {elosum}, list:{elolist}'.format(elosum=sum(elos), elolist=elos))
+    """
+    get all elos, sort them reversed (highest is rank 1), index them, allocate rank to player
+    """
+    elos = [p.elo for p in players]
+    rankings = [sorted(elos, reverse=True).index(elo)+1 for elo in elos]
+    logging.debug('SUM of all elos: {elosum}, elos:{elolist} ranked {r}'.
+        format(elosum=sum(elos), elolist=elos, r=rankings))
+    for p in players: p.rank = rankings[elos.index(p.elo)]
 
 
 
@@ -415,4 +447,6 @@ if __name__ == '__main__':
     render_templates(players, games, matches)
     logging.info('FINISHED DATA EXTRACTOR')
     logging.debug('Winner: {w}, Match {m}'.format(m=matches[-1], w=matches[-1].winner))
-    for p in players: logging.debug('Player: {name}, ELO {elo}'.format(name=p.name, elo=p.elo))
+    for p in players: 
+        logging.debug('Player: {name}, ELO {elo}, World Rank #{rank}, {w} Wins'.
+            format(name=p.name, elo=p.elo, w=p.sumWon, rank=p.rank))
