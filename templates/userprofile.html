@@ -15,7 +15,8 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <style>
-            /* -- Basic Elements -- */
+            /* -- Basic Element overwrites -- */
+
             html,
             body {
                 margin: 0;
@@ -50,6 +51,22 @@
                 border-top-right-radius: 3px;
                 border-bottom: 1px solid {{ COLORS.BORDER }};
                 background-color: {{ COLORS.TILE_HEADER_BG }};
+            }
+
+            /* -- Utilities -- */
+
+            /* Flex grid */
+            .flex-grid {
+                display: flex;
+                align-items: center;
+            }
+
+            .flex-col {
+                flex: 1;
+            }
+
+            .text-center {
+                text-align: center;
             }
 
             /* Tooltip container */
@@ -100,6 +117,7 @@
             }
 
             /* -- Main Layout -- */
+
             #playercard {
                 padding: 1px 0;
                 max-width: 500px;
@@ -240,19 +258,11 @@
             }
 
             .stats-percentage {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-
                 padding: 0 {{ DEFAULT_SPACING }};
                 height: 65px;
             }
 
             .stats-ratio {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-
                 padding: 0 {{ DEFAULT_SPACING }};
                 height: 65px;
             }
@@ -377,47 +387,49 @@
 
             <div class="body">
                 <section class="stats">
-                    <div class="stats-header">
-                        <div>Statistics</div>
-                        <div>Ladder</div>
-                        <div>Seasons</div>
-                        <div>All</div>
+                    <div class="stats-header flex-grid">
+                        <div class="flex-col">Statistics</div>
+                        <div class="flex-col text-center">Ladder</div>
+                        <div class="flex-col text-center">Seasons</div>
+                        <div class="flex-col text-center">All</div>
                     </div>
 
-                    <div class="stats-percentage">
-                        <div class="title">Win rate</div>
-                        <div class="value">
-                            {{ data.player.sumOffSeasonWon / (data.player.sumOffSeasonTie + data.player.sumOffSeasonLose
-                            + 1) * 100 }}%
+                    {% set totalSeasonPlayed = data.player.sumSeasonWon + data.player.sumSeasonTie + data.player.sumSeasonLose %}
+                    {% set totalOffSeasonPlayed = data.player.sumOffSeasonWon + data.player.sumOffSeasonTie + data.player.sumOffSeasonLose %}
+                    {% set totalPlayed = totalSeasonPlayed + totalOffSeasonPlayed %}
+
+                    <div class="stats-percentage flex-grid">
+                        <div class="flex-col">Win rate</div>
+                        <div class="flex-col text-center">
+                            {{ ((data.player.sumOffSeasonWon / totalOffSeasonPlayed * 100) if totalOffSeasonPlayed > 0 else 0) |round|int }}%
                         </div>
-                        <div class="value">
-                            {{ data.player.sumSeasonWon / (data.player.sumSeasonTie + data.player.sumSeasonLose + 1) *
-                            100 }}%
+                        <div class="flex-col text-center">
+                            {{ ((data.player.sumSeasonWon / totalSeasonPlayed * 100) if totalSeasonPlayed > 0 else 0) |round|int }}%
                         </div>
-                        <div class="value">
-                            {{ data.player.sumWon / (data.player.sumTie + data.player.sumLose + 1) * 100 }}%
+                        <div class="flex-col text-center">
+                            {{ ((data.player.sumWon / totalPlayed * 100) if totalPlayed > 0 else 0) |round|int }}%
                         </div>
                     </div>
 
-                    <div class="stats-ratio">
-                        <div class="title">Matches</div>
+                    <div class="stats-ratio flex-grid">
+                        <div class="flex-col">Matches</div>
 
-                        <div class="value">
-                            <span class="stats-ratio-win">{{ data.player.sumOffSeasonWon }}</span>&nbsp;/&nbsp;
-                            <span class="stats-ratio-tie">{{ data.player.sumOffSeasonTie }}</span>&nbsp;/&nbsp;
-                            <span class="stats-ratio-lose">{{ data.player.sumOffSeasonLose }}</span>
+                        <div class="flex-col text-center">
+                            <span class="win">{{ data.player.sumOffSeasonWon }}</span>&nbsp;/
+                            <span class="tie">{{ data.player.sumOffSeasonTie }}</span>&nbsp;/
+                            <span class="lose">{{ data.player.sumOffSeasonLose }}</span>
                         </div>
 
-                        <div class="value">
-                            <span class="stats-ratio-win">{{ data.player.sumSeasonWon }}</span>&nbsp;/&nbsp;
-                            <span class="stats-ratio-tie">{{ data.player.sumSeasonTie }}</span>&nbsp;/&nbsp;
-                            <span class="stats-ratio-lose">{{ data.player.sumSeasonLose }}</span>
+                        <div class="flex-col text-center">
+                            <span class="win">{{ data.player.sumSeasonWon }}</span>&nbsp;/
+                            <span class="tie">{{ data.player.sumSeasonTie }}</span>&nbsp;/
+                            <span class="lose">{{ data.player.sumSeasonLose }}</span>
                         </div>
 
-                        <div class="value">
-                            <span class="stats-ratio-win">{{ data.player.sumWon }}</span>&nbsp;/&nbsp;
-                            <span class="stats-ratio-tie">{{ data.player.sumTie }}</span>&nbsp;/&nbsp;
-                            <span class="stats-ratio-lose">{{ data.player.sumLose }}</span>
+                        <div class="flex-col text-center">
+                            <span class="win">{{ data.player.sumWon }}</span>&nbsp;/
+                            <span class="tie">{{ data.player.sumTie }}</span>&nbsp;/
+                            <span class="lose">{{ data.player.sumLose }}</span>
                         </div>
                     </div>
                 </section>
