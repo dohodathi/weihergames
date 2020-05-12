@@ -43,7 +43,7 @@ def start_calculation():
 
     # Sanity check of json file:
     pass
-    
+
     #output all warnings + errors, if no error continue:
     pass
 
@@ -118,7 +118,7 @@ def create_plot(procesedData):
         plotdata.append(trace)
     layout = dict(title = 'WEIHERGAMES ELO CHART',
               xaxis = dict(title = 'Matches'),
-              yaxis = dict(title = 'WG-ELO'),
+              yaxis = dict(title = 'ELO'),
               )
     plotly.offline.plot(
         {
