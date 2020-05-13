@@ -406,30 +406,30 @@
     ],
     "members": {
         "THEEL": {
-            "img": "vectorstock_21106731.png"
+            "img": "theel.jpg"
         },
         "DOOMPY": {
-            "img": "vectorstock_21320352.png"
+            "img": "doompy.jpg"
         },
         "MAZL": {}
     },
     "games": {
-        "Weihergolf 18-Loch Wurfmodus" : {},
-        "Crossboccia" : {},
-        "Crossboccia" : {},
-        "Prox the Line" : {},
-        "Lattenschießen" : {},
-        "Speedminton" : {},
-        "Kubb" : {},
-        "Cart-Rail" : {},
-        "Cart-Zone" : {},
-        "Jumpergame" : {},
-        "Hit The Line" : {},
-        "Sadistenspiel" : {},
-        "Melee-Boccia" : {},
-        "Weihergolf 9-Loch-Standard" : {},
-        "Pool Shot" : {},
-        "Körperball" : {},
+        "Weihergolf 18-Loch Wurfmodus": {},
+        "Crossboccia": {},
+        "Crossboccia": {},
+        "Prox the Line": {},
+        "Lattenschießen": {},
+        "Speedminton": {},
+        "Kubb": {},
+        "Cart-Rail": {},
+        "Cart-Zone": {},
+        "Jumpergame": {},
+        "Hit The Line": {},
+        "Sadistenspiel": {},
+        "Melee-Boccia": {},
+        "Weihergolf 9-Loch-Standard": {},
+        "Pool Shot": {},
+        "Körperball": {},
         "Weihergolf": {
             "pointrules": ["lowerwins"]
         },
