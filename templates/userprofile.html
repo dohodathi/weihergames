@@ -380,7 +380,7 @@
                 </div>
 
                 <div class="playername">
-                    <img src="{{ data.player.img }}" />
+                    <img src="{{ data.player.img }}" loading="lazy" alt={{ data.player.name }} />
                     <h1>{{ data.player.name }}</h1>
                 </div>
             </div>
@@ -490,11 +490,11 @@
                                     {% if match.participants | length < 3 %}
                                     <!-- only insert images for 1v1 matches -->
                                     {% for opponent in match.participants if opponent.name != data.player.name %}
-                                    <img class="match-item-playerimg" src="{{ opponent.img }}" />
+                                    <img class="match-item-playerimg" src="{{ opponent.img }}" loading="lazy" alt={{ opponent.name }} />
                                     {% endfor %}
                                     <!-- else render a multi user image to indicate a multiplayer game -->
                                     {% else %}
-                                    <img class="match-item-playerimg transparent" src="/images/users_multiple.png" />
+                                    <img class="match-item-playerimg transparent" src="/images/users_multiple.png" loading="lazy" alt="multiplayer match" />
                                     {% endif %}
 
                                     <!-- opponent names -->
