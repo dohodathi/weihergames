@@ -4,22 +4,30 @@ site_author: Daniel Thiel, Dominik Hoffendahl
 theme:
   name: material
 pages:
-- Home: 'index.md'
-- Rangliste: 'rangliste.md'
-- Basics:
-    - Grundregeln: 'basics/grundregeln.md'
-    - Field Of Plays: 'basics/field_of_plays.md'
-- Spiele:
-    - Unfertige Regeln (TODO): 'games/todo.md'
-    - Hit The Line: 'games/hit_the_line.md'
-    - Jumpergame: 'games/jumpergame.md'
-- Seasons:
-    - Info: 'seasons/weiherlympics.md'
-    - Sommerspiele 2012: 'seasons/2012_sommerspiele.md'
-    - Winterspiele 2012: 'seasons/2012_winterspiele.md'
-    - Weiherlympics 2018: 'seasons/weiherlympics_001.md'
+  - Home: 'index.md'
+  - Regelwerk:
+      - Grundregeln: 'basics/grundregeln.md'
+      - Season Regeln: 'seasons/weiherlympics.md'
+      - Field Of Plays: 'basics/field_of_plays.md'
+  - Spiele:
+      - Unfertige Regeln (TODO): 'games/todo.md'
+      - Hit The Line: 'games/hit_the_line.md'
+      - Jumpergame: 'games/jumpergame.md'
+  - 🏆 Upcoming:
+      - Funfix Open 2021: 'seasons/2021_funfix_open.md'
+  - 🏆 Ongoing:
+      - Weiherlympics 2018: 'seasons/2018_weiherlympics.md'
+  - 🏆 Completed:
+      - Winterspiele 2012: 'seasons/2012_winterspiele.md'
+      - Sommerspiele 2012: 'seasons/2012_sommerspiele.md'
+  - Teilnehmer:
+      - Übersicht: 'users/overview.md'
+      - Doompy: 'users/doompy.md'
+      - Mazl: 'users/mazl.md'
+      - Theel: 'users/theel.md'
+  - Rangliste: 'rangliste.md'
 plugins:
-    - markdownmermaid
+  - markdownmermaid
 extra_javascript:
-    - https://unpkg.com/mermaid@8.5.0/dist/mermaid.min.js
-    - js/iframeUtils.js
+  - https://unpkg.com/mermaid@8.5.0/dist/mermaid.min.js
+  - js/iframeUtils.js

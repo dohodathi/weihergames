@@ -272,8 +272,7 @@
             "result": { "THEEL": 15, "DOOMPY": 5 },
             "game": "Weihergolf",
             "location": "Schlüter",
-            "remarks": "",
-            "pointrule": ["lowerwins"]
+            "remarks": ""
         },
         {
             "time": "2012-04-01T00:00:00",
@@ -345,28 +344,32 @@
             "result": { "THEEL": 2, "DOOMPY": 0 },
             "game": "Speedminton",
             "location": "Lago di Garda",
-            "remarks": "Weiherlympics I"
+            "remarks": "Weiherlympics I",
+            "season": true
         },
         {
             "time": "2018-05-14T11:00:00",
             "result": { "THEEL": 2, "DOOMPY": 1 },
             "game": "Lattenschießen",
             "location": "Lago di Garda",
-            "remarks": "Weiherlympics I"
+            "remarks": "Weiherlympics I",
+            "season": true
         },
         {
             "time": "2018-05-14T12:00:00",
             "result": { "THEEL": 13, "DOOMPY": 15 },
             "game": "Prox the Line",
             "location": "Lago di Garda",
-            "remarks": "Weiherlympics I"
+            "remarks": "Weiherlympics I",
+            "season": true
         },
         {
             "time": "2018-05-14T13:00:00",
             "result": { "THEEL": 1, "DOOMPY": 2 },
             "game": "Körperball",
             "location": "Lago di Garda",
-            "remarks": "Weiherlympics I"
+            "remarks": "Weiherlympics I",
+            "season": true
         },
         {
             "time": "2018-05-14T14:00:00",
@@ -374,21 +377,23 @@
             "game": "Pool Golf",
             "location": "Lago di Garda",
             "remarks": "Weiherlympics I",
-            "pointrule": ["lowerwins"]
+            "season": true
         },
         {
             "time": "2018-05-14T15:00:00",
             "result": { "THEEL": 2, "DOOMPY": 4 },
             "game": "Pool Shot",
             "location": "Lago di Garda",
-            "remarks": "Weiherlympics I"
+            "remarks": "Weiherlympics I",
+            "season": true
         },
         {
             "time": "2018-05-15T10:00:00",
             "result": { "THEEL": 15, "DOOMPY": 11 },
             "game": "Crossboccia",
             "location": "Lago di Garda",
-            "remarks": "Weiherlympics I"
+            "remarks": "Weiherlympics I",
+            "season": true
         },
         {
             "time": "2018-05-15T11:00:00",
@@ -396,16 +401,46 @@
             "game": "Fußgolf",
             "location": "Lago di Garda",
             "remarks": "Weiherlympics I",
-            "pointrule": ["lowerwins"]
+            "season": true
         }
     ],
     "members": {
-        "THEEL": {},
-        "DOOMPY": {},
+        "THEEL": {
+            "img": "vectorstock_21106731.png"
+        },
+        "DOOMPY": {
+            "img": "vectorstock_21320352.png"
+        },
         "MAZL": {}
     },
     "games": {
-        "Fußgolf": { "lowerwins": true },
-        "Kubb": { "specific_leveling_value": 1 }
+        "Weihergolf 18-Loch Wurfmodus" : {},
+        "Crossboccia" : {},
+        "Crossboccia" : {},
+        "Prox the Line" : {},
+        "Lattenschießen" : {},
+        "Speedminton" : {},
+        "Kubb" : {},
+        "Cart-Rail" : {},
+        "Cart-Zone" : {},
+        "Jumpergame" : {},
+        "Hit The Line" : {},
+        "Sadistenspiel" : {},
+        "Melee-Boccia" : {},
+        "Weihergolf 9-Loch-Standard" : {},
+        "Pool Shot" : {},
+        "Körperball" : {},
+        "Weihergolf": {
+            "pointrules": ["lowerwins"]
+        },
+        "Fußgolf": {
+            "pointrules": ["lowerwins"]
+        },
+        "Pool Golf": {
+            "pointrules": ["lowerwins"]
+        },
+        "Kubb": {
+            "specific_leveling_value": 1
+        }
     }
 }
