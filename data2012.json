@@ -344,7 +344,7 @@
             "result": { "THEEL": 2, "DOOMPY": 0 },
             "game": "Speedminton",
             "location": "Lago di Garda",
-            "remarks": "Weiherlympics I",
+            "tournament": "Weiherlympics I",
             "season": true
         },
         {
@@ -352,7 +352,7 @@
             "result": { "THEEL": 2, "DOOMPY": 1 },
             "game": "Lattenschießen",
             "location": "Lago di Garda",
-            "remarks": "Weiherlympics I",
+            "tournament": "Weiherlympics I",
             "season": true
         },
         {
@@ -360,7 +360,7 @@
             "result": { "THEEL": 13, "DOOMPY": 15 },
             "game": "Prox the Line",
             "location": "Lago di Garda",
-            "remarks": "Weiherlympics I",
+            "tournament": "Weiherlympics I",
             "season": true
         },
         {
@@ -368,7 +368,7 @@
             "result": { "THEEL": 1, "DOOMPY": 2 },
             "game": "Körperball",
             "location": "Lago di Garda",
-            "remarks": "Weiherlympics I",
+            "tournament": "Weiherlympics I",
             "season": true
         },
         {
@@ -376,7 +376,7 @@
             "result": { "THEEL": 32, "DOOMPY": 29 },
             "game": "Pool Golf",
             "location": "Lago di Garda",
-            "remarks": "Weiherlympics I",
+            "tournament": "Weiherlympics I",
             "season": true
         },
         {
@@ -384,7 +384,7 @@
             "result": { "THEEL": 2, "DOOMPY": 4 },
             "game": "Pool Shot",
             "location": "Lago di Garda",
-            "remarks": "Weiherlympics I",
+            "tournament": "Weiherlympics I",
             "season": true
         },
         {
@@ -392,7 +392,7 @@
             "result": { "THEEL": 15, "DOOMPY": 11 },
             "game": "Crossboccia",
             "location": "Lago di Garda",
-            "remarks": "Weiherlympics I",
+            "tournament": "Weiherlympics I",
             "season": true
         },
         {
@@ -400,7 +400,7 @@
             "result": { "THEEL": 1, "DOOMPY": 6 },
             "game": "Fußgolf",
             "location": "Lago di Garda",
-            "remarks": "Weiherlympics I",
+            "tournament": "Weiherlympics I",
             "season": true
         }
     ],
@@ -441,6 +441,14 @@
         },
         "Kubb": {
             "specific_leveling_value": 1
+        }
+    },
+    "tournaments": {
+        "Weiherlympics I": {
+
+        },
+        "FunFix Open 2021": {
+            
         }
     }
 }
