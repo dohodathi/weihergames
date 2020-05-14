@@ -244,6 +244,14 @@ class MatchData():
             return None
 
 
+class TournamentData():
+    def __init__(self, name):
+        self.name = name
+        self.participants = []
+        self.matches = []
+        self.matches_to_play = 15
+
+
 """
 #
 # data extraction
