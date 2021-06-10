@@ -1,5 +1,10 @@
 # README
 
+* Domain: www.weihergames.com
+* Host: Netlify
+* Client: MkDocs
+* Backend: MkDocs
+
 [create virtual environment](https://docs.python.org/3/library/venv.html)
 
 ## windows guide
