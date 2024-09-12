@@ -99,12 +99,22 @@ def slugify_underscore(anyString):
 
 """
 #
-# model utils
+# utils
 #
 """
 def _get_relative_image_path(filename):
+    # TODO check if file exists
     return '/images/' + filename
 
+
+
+def _get_json_load():
+    j = json.load(open(JSON_DATABASE))
+    # Sanity check of json file: TODO
+    pass
+    #output all warnings + errors, if no error continue: TODO
+    pass
+    return j
 
 """
 #
@@ -244,6 +254,51 @@ class MatchData():
             return None
 
 
+class TournamentData():
+    def __init__(self, name):
+        self.name = name
+        self.participants = []
+        self.matches = []
+        self.match_fixtures = 15
+
+    def __str__(self):
+        return 'TournamentData: {n}, [{m}/{fix} matches played], with: {p}'.format(
+            n=self.name,p=self.participants,m=len(self.matches),fix=self.match_fixtures)
+
+    def add_match(self, match):
+        # check that match contains same participants
+        pass
+
+    @property
+    def matches_to_play(self):
+        return self.match_fixtures - len(self.matches)
+
+    @property
+    def ongoing(self):
+        return True if (self.match_fixtures - len(self.matches)) > 0 else False
+
+    @property
+    def started(self):
+        return True if len(self.matches) > 0 else False
+
+    @property
+    def finished(self):
+        return True if len(self.matches) == self.match_fixtures else False
+
+    @property
+    def points(self, after_match=None):
+        # return list of points (in same order as particpants):
+        if isinstance(after_match, int) and after_match <= self.match_fixtures:
+            pass
+        else:
+            pass
+
+    @property
+    def winner(self):
+        if matches_to_play != 0: return None # not finished tournament!
+        pass 
+
+
 """
 #
 # data extraction
@@ -252,11 +307,7 @@ class MatchData():
 def read_player_from_json():
     players = []
     # Load data
-    j = json.load(open(JSON_DATABASE))
-    # Sanity check of json file:
-    pass
-    #output all warnings + errors, if no error continue:
-    pass
+    j = _get_json_load()
     # set player:
     for name, data in j['members'].items():
         p = PlayerData(name)
@@ -269,11 +320,7 @@ def read_player_from_json():
 def read_games_from_json():
     games = []
     # Load data
-    j = json.load(open(JSON_DATABASE))
-    # Sanity check of json file:
-    pass
-    #output all warnings + errors, if no error continue:
-    pass
+    j = _get_json_load()
     # set player:
     for name, data in j['games'].items():
         g = GameData(name)
@@ -286,10 +333,22 @@ def read_games_from_json():
         logging.debug('Game found in DB: {0}'.format(g))
     return games
 
+
+def read_tournaments_from_json():
+    tournaments = []
+    # Load data
+    j = _get_json_load()
+    for name, data in j['tournaments'].items():
+        t = TournamentData(name)
+        tournaments.append(t)
+        logging.debug('Tournament found in DB: {0}'.format(t))
+    return tournaments
+
+
 def read_matches_from_json(players, games):
     matches = []
     # Load data
-    j = json.load(open(JSON_DATABASE))
+    j = _get_json_load()
     # sort matches by date:
     sorted_matchlist_db = sorted(j['matches'], key=itemgetter('time'))
     # go through all matches and iterate ELO:
@@ -459,12 +518,14 @@ if __name__ == '__main__':
     logging.info('RUNNING DATA EXTRACTOR')
     players = read_player_from_json()
     games = read_games_from_json()
+    tournaments = read_tournaments_from_json()
     matches = read_matches_from_json(players, games)
     process_matches(matches)
     update_ranking(players)
     render_templates(players, games, matches)
     logging.info('FINISHED DATA EXTRACTOR')
-    logging.debug('Winner: {w}, Match {m}'.format(m=matches[-1], w=matches[-1].winner))
+    # logging.debug('Winner: {w}, Match {m}'.format(m=matches[-1], w=matches[-1].winner))
     for p in players: 
-        logging.debug('Player: {name}, ELO {elo}, World Rank #{rank}, {w} Wins / {l} Loss'.
+        logging.debug('Player: {name}, ELO {elo:.2f}, World Rank #{rank}, {w} Wins / {l} Loss'.
             format(name=p.name, elo=p.elo, w=p.sumWon, l=p.sumLose, rank=p.rank))
+    for t in tournaments: logging.debug('{t}'.format(t=t))
